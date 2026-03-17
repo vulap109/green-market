@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gio Qua Tuoi - Thanh toan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body class="relative flex flex-col min-h-screen">
+    <div id="header"></div>
+
+    <div id="checkoutPage" class="bg-gray-50 min-h-screen pb-20">
+        <div class="bg-gray-100 py-3 border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 text-xs text-gray-500">
+                <a href="/" class="hover:text-primary transition">Home</a>
+                <span class="mx-2">|</span>
+                <a href="/cart.html" class="hover:text-primary transition">Gio hang</a>
+                <span class="mx-2">|</span>
+                <span class="text-gray-800 font-medium">Thanh toan</span>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 mt-8">
+            <form id="checkoutForm" novalidate class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-8 bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-100">Thong tin thanh toan</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="relative md:col-span-2">
+                            <input type="text" id="fullname" name="fullname"
+                                class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors"
+                                placeholder=" " required>
+                            <label for="fullname"
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Ho va ten *</label>
+                        </div>
+
+                        <div class="relative">
+                            <input type="tel" id="phone" name="phone"
+                                class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors"
+                                placeholder=" " required>
+                            <label for="phone"
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">So dien thoai *</label>
+                        </div>
+
+                        <div class="relative">
+                            <input type="email" id="email" name="email"
+                                class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors"
+                                placeholder=" ">
+                            <label for="email"
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Dia chi email (tuy chon)</label>
+                        </div>
+
+                        <div class="relative">
+                            <select id="province" name="province"
+                                class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors"
+                                required>
+                                <option value="" disabled selected hidden></option>
+                            </select>
+                            <label for="province"
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white pointer-events-none left-3 top-0 scale-[0.85] px-1 peer-invalid:top-1/2 peer-invalid:scale-100 peer-invalid:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Tinh/Thanh pho *</label>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <select id="district" name="district"
+                                class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors"
+                                required disabled>
+                                <option value="" disabled selected hidden></option>
+                            </select>
+                            <label for="district"
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white pointer-events-none left-3 top-0 scale-[0.85] px-1 peer-invalid:top-1/2 peer-invalid:scale-100 peer-invalid:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Quan/Huyen *</label>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+
+                        <div class="relative md:col-span-2 lg:col-span-1">
+                            <select id="ward" name="ward"
+                                class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors"
+                                required disabled>
+                                <option value="" disabled selected hidden></option>
+                            </select>
+                            <label for="ward"
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white pointer-events-none left-3 top-0 scale-[0.85] px-1 peer-invalid:top-1/2 peer-invalid:scale-100 peer-invalid:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Xa/Phuong/Thi tran *</label>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+
+                        <div class="relative md:col-span-2">
+                            <input type="text" id="address" name="address"
+                                class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors"
+                                placeholder=" " required>
+                            <label for="address"
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Dia chi cu the (so nha, ten duong...) *</label>
+                        </div>
+                    </div>
+
+                    <h2 class="text-xl font-bold text-gray-800 mt-10 mb-6 pb-4 border-b border-gray-100">Thong tin bo sung</h2>
+                    <div class="relative">
+                        <textarea id="notes" name="notes" rows="4"
+                            class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors resize-none"
+                            placeholder=" "></textarea>
+                        <label for="notes"
+                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-6 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Ghi chu don hang (tuy chon)</label>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm sticky top-8">
+                        <h2 class="text-xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-100">Don hang cua ban</h2>
+                        <div class="flex justify-between text-sm font-bold text-gray-600 mb-4 pb-2 border-b border-gray-100">
+                            <span>San pham</span>
+                            <span>Tam tinh</span>
+                        </div>
+                        <div id="checkout-order-items" class="space-y-4 mb-6 pb-6 border-b border-gray-100">
+                            <div class="text-sm text-gray-400">Dang tai don hang...</div>
+                        </div>
+                        <div class="space-y-3 mb-6 pb-6 border-b border-gray-100">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-600 font-medium">Tam tinh</span>
+                                <span id="checkout-subtotal" class="font-semibold">0 d</span>
+                            </div>
+                            <div class="flex justify-between items-end mt-2">
+                                <span class="text-base font-bold text-gray-800">Tong</span>
+                                <span id="checkout-total" class="text-xl font-bold text-red-600">0 d</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4 mb-8">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="radio" name="payment_method" value="bank"
+                                    class="w-4 h-4 accent-red-600 cursor-pointer" checked>
+                                <span class="text-sm text-gray-700 group-hover:text-red-600 transition-colors">Chuyen khoan ngan hang truc tiep</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="radio" name="payment_method" value="cod"
+                                    class="w-4 h-4 accent-red-600 cursor-pointer">
+                                <span class="text-sm text-gray-700 group-hover:text-red-600 transition-colors">Thanh toan khi nhan hang</span>
+                            </label>
+                        </div>
+                        <button id="checkout-submit-btn" type="button" onclick="validateAndSubmit()"
+                            class="w-full bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold text-sm uppercase tracking-wide py-4 rounded-lg transition-colors shadow-md">
+                            Dat hang
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <div id="contact-pop"></div>
+
+    <script src="/js/cart.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        const provinceSelect = document.getElementById("province");
+        const districtSelect = document.getElementById("district");
+        const wardSelect = document.getElementById("ward");
+        const checkoutOrderItems = document.getElementById("checkout-order-items");
+        const checkoutSubtotal = document.getElementById("checkout-subtotal");
+        const checkoutTotal = document.getElementById("checkout-total");
+        const checkoutSubmitBtn = document.getElementById("checkout-submit-btn");
+
+        let rawAddressData = [];
+        let checkoutProducts = [];
+        const EMAILJS_PUBLIC_KEY = "pRg2xzuGVPHOs4IN-";
+        const EMAILJS_SERVICE_ID = "service_fresh_fruit";
+        const EMAILJS_TEMPLATE_ID = "template_h7m22u2";
+
+        function formatMoney(amount) {
+            return Number(amount || 0).toLocaleString("vi-VN") + " đ";
+        }
+
+        function escapeHtml(value) {
+            return String(value ?? "").replace(/[&<>"']/g, function (char) {
+                const entities = {
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': "&quot;",
+                    "'": "&#39;"
+                };
+                return entities[char];
+            });
+        }
+
+        function setCheckoutDisabled(isDisabled) {
+            checkoutSubmitBtn.disabled = isDisabled;
+            checkoutSubmitBtn.classList.toggle("opacity-50", isDisabled);
+            checkoutSubmitBtn.classList.toggle("cursor-not-allowed", isDisabled);
+        }
+
+        function getAddressName(selectEl) {
+            if (!selectEl || selectEl.selectedIndex < 0) return "";
+            const option = selectEl.options[selectEl.selectedIndex];
+            return option ? option.textContent.trim() : "";
+        }
+
+        function getOrderItems() {
+            return getCart().map(function (cartItem) {
+                const product = checkoutProducts.find(function (item) {
+                    return String(item.id) === String(cartItem.id);
+                });
+                const qty = Number(cartItem.qty) || 0;
+                const unitPrice = cartItem.priceSnapshot !== undefined
+                    ? Number(cartItem.priceSnapshot)
+                    : Number(product ? product.price : 0);
+
+                return {
+                    id: cartItem.id,
+                    name: product ? product.name : `San pham #${cartItem.id}`,
+                    sku: product ? (product.sku || "N/A") : "N/A",
+                    qty: qty,
+                    unitPrice: unitPrice,
+                    lineTotal: unitPrice * qty
+                };
+            });
+        }
+
+        function buildOrderPayload() {
+            const items = getOrderItems();
+
+            return {
+                fullname: document.getElementById("fullname").value.trim(),
+                phone: document.getElementById("phone").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                province: getAddressName(provinceSelect),
+                district: getAddressName(districtSelect),
+                ward: getAddressName(wardSelect),
+                address: document.getElementById("address").value.trim(),
+                notes: document.getElementById("notes").value.trim(),
+                paymentMethod: document.querySelector('input[name="payment_method"]:checked')?.value || "bank",
+                items: items,
+                total: items.reduce(function (sum, item) {
+                    return sum + item.lineTotal;
+                }, 0)
+            };
+        }
+
+        function getPaymentMethodLabel(method) {
+            return method === "cod" ? "Thanh toan khi nhan hang" : "Chuyen khoan ngan hang truc tiep";
+        }
+
+        // function buildOrderEmailBody(order) {
+        //     const lines = [
+        //         "THONG TIN DON HANG MOI",
+        //         "",
+        //         "Thong tin nguoi mua:",
+        //         "Ho va ten: " + order.fullname,
+        //         "So dien thoai: " + order.phone,
+        //         "Email: " + (order.email || "Khong co"),
+        //         "Tinh/Thanh pho: " + order.province,
+        //         "Quan/Huyen: " + order.district,
+        //         "Xa/Phuong/Thi tran: " + order.ward,
+        //         "Dia chi cu the: " + order.address,
+        //         "Phuong thuc thanh toan: " + getPaymentMethodLabel(order.paymentMethod),
+        //         "Ghi chu: " + (order.notes || "Khong co"),
+        //         "",
+        //         "San pham:"
+        //     ];
+
+        //     order.items.forEach(function (item, index) {
+        //         lines.push(
+        //             `${index + 1}. ${item.name}`,
+        //             `   SKU: ${item.sku}`,
+        //             `   So luong: ${item.qty}`,
+        //             `   Don gia: ${formatMoney(item.unitPrice)}`,
+        //             `   Thanh tien: ${formatMoney(item.lineTotal)}`
+        //         );
+        //     });
+
+        //     lines.push("", "Tong thanh toan: " + formatMoney(order.total));
+
+        //     return lines.join("\n");
+        // }
+
+        function sendOrderEmail(order) {
+            const templateParams = {
+                subject: `Don hang moi - ${order.fullname} - ${order.phone}`,
+                customer_name: order.fullname,
+                customer_phone: order.phone,
+                customer_email: order.email || "Khong co",
+                province: order.province,
+                district: order.district,
+                ward: order.ward,
+                address: order.address,
+                notes: order.notes || "Khong co",
+                payment_method: getPaymentMethodLabel(order.paymentMethod),
+                item_count: order.items.reduce(function (sum, item) {
+                    return sum + item.qty;
+                }, 0),
+                order_total: formatMoney(order.total),
+                order_items: order.items.map(function (item, index) {
+                    return [
+                        `${index + 1}. ${item.name}`,
+                        `SKU: ${item.sku}`,
+                        `So luong: ${item.qty}`,
+                        `Don gia: ${formatMoney(item.unitPrice)}`,
+                        `Thanh tien: ${formatMoney(item.lineTotal)}`
+                    ].join("\n");
+                }).join("\n")
+            };
+
+            return emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                templateParams
+            );
+        }
+
+        function renderCheckoutOrder() {
+            const cart = getCart();
+
+            if (!cart.length) {
+                checkoutOrderItems.innerHTML = `
+                    <div class="text-center py-4">
+                        <i class="fa-solid fa-cart-shopping text-3xl text-gray-300 mb-3"></i>
+                        <p class="text-sm font-semibold text-gray-700">Gio hang cua ban dang trong</p>
+                        <a href="/all-products.html" class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-red-600 hover:text-red-700 transition-colors">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Quay lai mua hang
+                        </a>
+                    </div>
+                `;
+                checkoutSubtotal.textContent = formatMoney(0);
+                checkoutTotal.textContent = formatMoney(0);
+                setCheckoutDisabled(true);
+                return;
+            }
+
+            checkoutOrderItems.innerHTML = cart.map(function (cartItem) {
+                const product = checkoutProducts.find(function (item) {
+                    return String(item.id) === String(cartItem.id);
+                });
+                const qty = Number(cartItem.qty) || 0;
+                const unitPrice = cartItem.priceSnapshot !== undefined
+                    ? Number(cartItem.priceSnapshot)
+                    : Number(product ? product.price : 0);
+                const lineTotal = unitPrice * qty;
+                const name = product ? product.name : `San pham #${cartItem.id}`;
+                const image = product ? (product.img || "/images/sp1.jpg") : "/images/sp1.jpg";
+
+                return `
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4 min-w-0">
+                            <div class="relative w-14 h-14 border border-gray-200 rounded flex-shrink-0">
+                                <img src="${escapeHtml(image)}" alt="${escapeHtml(name)}" class="w-full h-full object-cover rounded p-0.5">
+                                <span class="absolute -top-2 -right-2 bg-gray-600 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full z-10 shadow-sm">${qty}</span>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800 line-clamp-2">${escapeHtml(name)}</span>
+                        </div>
+                        <span class="text-sm font-semibold text-gray-900 whitespace-nowrap">${formatMoney(lineTotal)}</span>
+                    </div>
+                `;
+            }).join("");
+
+            const total = getCartTotal(checkoutProducts);
+            checkoutSubtotal.textContent = formatMoney(total);
+            checkoutTotal.textContent = formatMoney(total);
+            setCheckoutDisabled(false);
+        }
+
+        function loadCheckoutOrder() {
+            fetch("data/products.json")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (products) {
+                    checkoutProducts = Array.isArray(products) ? products : [];
+                    renderCheckoutOrder();
+                })
+                .catch(function (error) {
+                    console.error("Loi tai du lieu san pham:", error);
+                    checkoutProducts = [];
+                    renderCheckoutOrder();
+                });
+        }
+
+        fetch("data/vietnamAddress.json")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                rawAddressData = data;
+                loadProvinces();
+            })
+            .catch(function (error) {
+                console.error("Loi tai du lieu dia chi:", error);
+                Swal.fire({
+                    text: "Khong tai duoc du lieu dia chi!",
+                    icon: "error",
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            });
+
+        function loadProvinces() {
+            rawAddressData.forEach(function (province) {
+                provinceSelect.innerHTML += `<option value="${province.Id}">${province.Name}</option>`;
+            });
+        }
+
+        provinceSelect.addEventListener("change", function () {
+            districtSelect.innerHTML = '<option value="" disabled selected hidden></option>';
+            wardSelect.innerHTML = '<option value="" disabled selected hidden></option>';
+            districtSelect.disabled = true;
+            wardSelect.disabled = true;
+
+            const selectedProvinceId = this.value;
+            const provinceData = rawAddressData.find(function (province) {
+                return province.Id === selectedProvinceId;
+            });
+
+            if (provinceData && provinceData.Districts) {
+                provinceData.Districts.forEach(function (district) {
+                    districtSelect.innerHTML += `<option value="${district.Id}">${district.Name}</option>`;
+                });
+                districtSelect.disabled = false;
+            }
+
+            removeError(this);
+        });
+
+        districtSelect.addEventListener("change", function () {
+            wardSelect.innerHTML = '<option value="" disabled selected hidden></option>';
+            wardSelect.disabled = true;
+
+            const selectedProvinceId = provinceSelect.value;
+            const selectedDistrictId = this.value;
+
+            const provinceData = rawAddressData.find(function (province) {
+                return province.Id === selectedProvinceId;
+            });
+            const districtData = provinceData && provinceData.Districts
+                ? provinceData.Districts.find(function (district) {
+                    return district.Id === selectedDistrictId;
+                })
+                : null;
+
+            if (districtData && districtData.Wards) {
+                districtData.Wards.forEach(function (ward) {
+                    wardSelect.innerHTML += `<option value="${ward.Id}">${ward.Name}</option>`;
+                });
+                wardSelect.disabled = false;
+            }
+
+            removeError(this);
+        });
+
+        wardSelect.addEventListener("change", function () {
+            removeError(this);
+        });
+
+        const requiredFields = ["fullname", "phone", "province", "district", "ward", "address"];
+
+        requiredFields.forEach(function (id) {
+            document.getElementById(id).addEventListener("input", function () {
+                removeError(this);
+            });
+            document.getElementById(id).addEventListener("change", function () {
+                removeError(this);
+            });
+        });
+
+        function removeError(element) {
+            element.classList.remove("input-error");
+            const label = element.parentElement.querySelector("label");
+            if (label) label.classList.remove("label-error");
+        }
+
+        function validateAndSubmit() {
+            if (getCartCount() <= 0) {
+                Swal.fire({
+                    title: "Gio hang trong!",
+                    text: "Vui long them san pham truoc khi dat hang.",
+                    icon: "info",
+                    confirmButtonColor: "#ef4444"
+                }).then(function () {
+                    window.location.href = "/cart.html";
+                });
+                return;
+            }
+
+            let isValid = true;
+            let firstInvalidEl = null;
+
+            requiredFields.forEach(function (id) {
+                const el = document.getElementById(id);
+                const label = el.parentElement.querySelector("label");
+
+                if (!String(el.value || "").trim()) {
+                    el.classList.add("input-error");
+                    if (label) label.classList.add("label-error");
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = el;
+                }
+            });
+
+            if (!isValid) {
+                firstInvalidEl.focus();
+                Swal.fire({
+                    title: "Thieu thong tin!",
+                    text: "Vui long dien day du cac thong tin bat buoc (co dau *).",
+                    icon: "error",
+                    confirmButtonColor: "#ef4444"
+                });
+                return;
+            }
+
+            const orderPayload = buildOrderPayload();
+
+            Swal.fire({
+                title: "Dang gui don hang...",
+                text: "Vui long cho trong giay lat.",
+                allowOutsideClick: false,
+                didOpen: function () {
+                    Swal.showLoading();
+                }
+            });
+
+            sendOrderEmail(orderPayload)
+                .then(function () {
+                    clearCart();
+                    document.getElementById("checkoutForm").reset();
+                    districtSelect.innerHTML = '<option value="" disabled selected hidden></option>';
+                    wardSelect.innerHTML = '<option value="" disabled selected hidden></option>';
+                    districtSelect.disabled = true;
+                    wardSelect.disabled = true;
+
+                    Swal.fire({
+                        title: "Dat hang thanh cong!",
+                        text: "Thong tin don hang da duoc gui ve email vql@gmail.com.",
+                        icon: "success",
+                        confirmButtonColor: "#006b38"
+                    }).then(function () {
+                        window.location.href = "/";
+                    });
+                })
+                .catch(function (error) {
+                    console.error("EmailJS send error:", error);
+                    Swal.fire({
+                        title: "Gui email that bai!",
+                        text: "Khong gui duoc don hang qua EmailJS. Vui long kiem tra service/template hoac thu lai.",
+                        icon: "error",
+                        confirmButtonColor: "#ef4444"
+                    });
+                });
+        }
+
+        window.addEventListener("cart:updated", renderCheckoutOrder);
+
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init({
+                publicKey: EMAILJS_PUBLIC_KEY
+            });
+            loadCheckoutOrder();
+        });
+    </script>
+</body>
+
+</html>

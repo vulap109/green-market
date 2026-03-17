@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap");
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #333;
+
+}
+
+.serif {
+    font-family: "Playfair Display", serif;
+}
+
+.bg-primary {
+    background-color: #006b38;
+}
+
+.text-primary {
+    color: #006b38;
+}
+
+.border-primary {
+    border-color: #006b38;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+#orderModal {
+    backdrop-filter: blur(5px);
+}
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    width: 33.333%;
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicator.active {
+    background-color: #c48e58;
+    width: 24px;
+    border-radius: 6px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.carousel-control:hover {
+    background-color: #c48e58;
+    border-color: #c48e58;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.control-prev {
+    left: 20px;
+}
+
+.control-next {
+    right: 20px;
+}
+
+.hover\:bg-primary-dark:hover {
+    background-color: #004e29;
+}

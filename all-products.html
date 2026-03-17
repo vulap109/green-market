@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gio Qua Tuoi - Trai Cay Nhap Khau & Qua Tang Cao Cap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .custom-checkbox {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 1px solid #d1d5db;
+            border-radius: 0.15em;
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+        }
+
+        .custom-checkbox::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em white;
+            background-color: white;
+            transform-origin: center;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+
+        .custom-checkbox:checked {
+            background-color: #006b38;
+            border-color: #006b38;
+        }
+
+        .custom-checkbox:checked::before {
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body class="bg-white relative">
+    <script>
+        function appNotify(msg) {
+            Swal.fire({
+                text: msg,
+                icon: "success",
+                timer: 1500,
+                showConfirmButton: false,
+                toast: true,
+                position: "top-end"
+            });
+        }
+
+        function handleAddToCartAndOrder(productSlug) {
+            window.location.href = "product.html?slug=" + encodeURIComponent(productSlug);
+        }
+
+        function filterByPrice() {
+            let minPrice = document.getElementById("minPrice").value;
+            let maxPrice = document.getElementById("maxPrice").value;
+            if (minPrice || maxPrice) {
+                appNotify("Dang loc san pham theo gia...");
+            } else {
+                appNotify("Vui long nhap khoang gia can loc.");
+            }
+        }
+    </script>
+
+    <div id="header"></div>
+
+    <div class="bg-gray-50 py-3">
+        <div class="max-w-7xl mx-auto px-4 text-xs text-gray-500">
+            <a href="/" class="hover:text-primary transition">Trang chu</a>
+            <span class="mx-2">/</span>
+            <span id="lnk_all_product" class="text-gray-800 font-medium">Tat Ca San Pham</span>
+        </div>
+    </div>
+
+    <div id="allProductsPage" class="bg-gray-50 min-h-screen pb-20">
+        <div class="max-w-7xl mx-auto px-4 mt-8 flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 flex-shrink-0">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 sticky top-32">
+                    <h3 class="font-black text-sm uppercase tracking-widest border-b border-gray-100 pb-4 mb-4 text-gray-900">
+                        Danh muc san pham
+                    </h3>
+                    <ul class="space-y-3 text-xs font-bold text-gray-600">
+                        <li onclick="appNotify('Da chon: Tat ca')" class="flex items-center gap-3 cursor-pointer text-primary transition">
+                            <input type="checkbox" checked class="custom-checkbox" readonly> Tat ca san pham
+                        </li>
+                        <li onclick="appNotify('Da chon: Theo gia')" class="flex justify-between items-center cursor-pointer hover:text-primary transition">
+                            <span class="flex items-center gap-3"><input type="checkbox" class="custom-checkbox"> Theo gia</span>
+                            <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </li>
+                        <li onclick="appNotify('Da chon: Qua tang trai cay')" class="flex justify-between items-center cursor-pointer hover:text-primary transition">
+                            <span class="flex items-center gap-3"><input type="checkbox" class="custom-checkbox"> Qua tang trai cay</span>
+                            <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </li>
+                        <li onclick="appNotify('Da chon: Gio qua tet')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
+                            <input type="checkbox" class="custom-checkbox"> Gio qua tet
+                        </li>
+                        <li onclick="appNotify('Da chon: Gio hoa qua Vinmart')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
+                            <input type="checkbox" class="custom-checkbox"> Gio hoa qua Vinmart
+                        </li>
+                        <li onclick="appNotify('Da chon: Gio hoa qua Klever Fruit')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
+                            <input type="checkbox" class="custom-checkbox"> Gio hoa qua Klever Fruit
+                        </li>
+                        <li onclick="appNotify('Da chon: Chua phan loai')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
+                            <input type="checkbox" class="custom-checkbox"> Chua phan loai
+                        </li>
+                    </ul>
+
+                    <h3 class="font-black text-sm uppercase tracking-widest border-b border-gray-100 pb-4 mt-8 mb-4 text-gray-900">
+                        Khoang gia
+                    </h3>
+                    <ul class="space-y-3 text-xs font-bold text-gray-600 mb-6">
+                        <li onclick="appNotify('Loc gia: 0 - 500k')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
+                            <input type="checkbox" class="custom-checkbox"> 0 - 500k
+                        </li>
+                        <li onclick="appNotify('Loc gia: 500k - 1tr')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
+                            <input type="checkbox" class="custom-checkbox"> 500k - 1tr
+                        </li>
+                        <li onclick="appNotify('Loc gia: 1tr - 1tr5')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
+                            <input type="checkbox" class="custom-checkbox"> 1tr - 1tr5
+                        </li>
+                        <li onclick="appNotify('Loc gia: 1tr5 - 2tr')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
+                            <input type="checkbox" class="custom-checkbox"> 1tr5 - 2tr
+                        </li>
+                        <li onclick="appNotify('Loc gia: 2tr - 3tr')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
+                            <input type="checkbox" class="custom-checkbox"> 2tr - 3tr
+                        </li>
+                        <li onclick="appNotify('Loc gia: 3tr tro len')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
+                            <input type="checkbox" class="custom-checkbox"> 3tr tro len
+                        </li>
+                    </ul>
+
+                    <div class="border-t border-gray-100 pt-4">
+                        <p class="text-[10px] text-gray-500 font-bold mb-2">Hoac nhap khoang gia:</p>
+                        <div class="flex items-center gap-2 mb-3">
+                            <input type="number" id="minPrice" placeholder="Tu..."
+                                class="w-full bg-gray-50 border border-gray-200 rounded p-2 text-xs focus:outline-none focus:border-primary">
+                            <span class="text-gray-400 font-bold">-</span>
+                            <input type="number" id="maxPrice" placeholder="Den..."
+                                class="w-full bg-gray-50 border border-gray-200 rounded p-2 text-xs focus:outline-none focus:border-primary">
+                        </div>
+                        <button onclick="filterByPrice()"
+                            class="w-full bg-primary text-white py-2 rounded text-[10px] font-black uppercase tracking-wider hover:bg-black transition-all">
+                            Ap dung loc
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-1">
+                <div class="flex justify-between items-center my-6">
+                    <h1 id="H1_Title" class="text-black font-bold text-lg">Tat Ca San Pham</h1>
+                    <p class="text-xs font-bold text-gray-500">Hien thi danh sach san pham</p>
+                    <select class="bg-white border border-gray-200 text-xs font-bold px-4 py-2 rounded-lg outline-none cursor-pointer">
+                        <option>Moi nhat</option>
+                        <option>Theo muc do pho bien</option>
+                        <option>Theo diem danh gia</option>
+                        <option>Theo gia: thap den cao</option>
+                        <option>Theo gia: cao xuong thap</option>
+                    </select>
+                </div>
+
+                <div id="productList" class="grid grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+                <div class="flex justify-center mt-12 gap-3 pb-10">
+                    <button onclick="appNotify('Dang o trang 1')"
+                        class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-lg font-bold shadow-md">1</button>
+                    <button onclick="appNotify('Chuyen sang trang 2')"
+                        class="w-10 h-10 flex items-center justify-center bg-white border border-gray-200 text-gray-600 hover:text-primary hover:border-primary hover:bg-gray-50 rounded-lg font-bold transition-all">2</button>
+                    <button onclick="appNotify('Chuyen sang trang 3')"
+                        class="w-10 h-10 flex items-center justify-center bg-white border border-gray-200 text-gray-600 hover:text-primary hover:border-primary hover:bg-gray-50 rounded-lg font-bold transition-all">3</button>
+                    <button onclick="appNotify('Trang tiep theo')"
+                        class="w-10 h-10 flex items-center justify-center bg-white border border-gray-200 text-gray-600 hover:text-primary hover:border-primary hover:bg-gray-50 rounded-lg font-bold transition-all">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <div id="contact-pop"></div>
+
+    <script src="/js/cart.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/product-card.js"></script>
+    <script>
+        function onPageLoad() {
+            const limit = 9;
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get("q") ? params.get("q").toLowerCase() : null;
+            let title = "";
+            let ids = [];
+
+            switch (query) {
+                case "ban-chay-nhat":
+                    ids = [1, 3, 5, 7, 9, 11, 13, 15, 17, 18, 19, 21];
+                    title = "San Pham Ban Chay";
+                    loadProducts(null, limit, ids);
+                    break;
+                case "khuyen-mai":
+                    ids = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22];
+                    title = "Khuyen Mai Hot";
+                    loadProducts(null, limit, ids);
+                    break;
+                case "gio-qua-trai-cay":
+                    title = "Gio Qua Tang Trai Cay";
+                    loadProducts("fruit-basket", limit);
+                    break;
+                case "qua-tang-thuc-pham":
+                    title = "Gio Qua Tang Thuc Pham";
+                    loadProducts("gift-box", limit);
+                    break;
+                case "trai-cay-nhap-khau":
+                    title = "Trai Cay Nhap Khau";
+                    loadProducts("imported-fruits", limit);
+                    break;
+                case "banh-kem":
+                    title = "Banh Kem Thiet Ke";
+                    loadProducts("cream-cake", limit);
+                    break;
+                default:
+                    loadProducts("", limit);
+            }
+
+            if (title) {
+                document.getElementById("lnk_all_product").innerText = title;
+                document.getElementById("H1_Title").innerText = title;
+            }
+        }
+
+        onPageLoad();
+    </script>
+</body>
+
+</html>

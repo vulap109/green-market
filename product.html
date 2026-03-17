@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gio Qua Tuoi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="relative flex flex-col min-h-screen">
+    <script>
+        let currentProduct = null;
+
+        function appNotify(msg) {
+            Swal.fire({
+                text: msg,
+                icon: "success",
+                timer: 1500,
+                showConfirmButton: false,
+                toast: true,
+                position: "top-end"
+            });
+        }
+
+        function getSelectedQty() {
+            const input = document.getElementById("productQty");
+            let qty = Number(input.value);
+
+            if (!Number.isFinite(qty) || qty < 1) {
+                qty = 1;
+            }
+
+            qty = Math.floor(qty);
+            input.value = qty;
+            return qty;
+        }
+
+        function handleAddToCart() {
+            if (!currentProduct) {
+                Swal.fire({
+                    text: "Khong tai duoc thong tin san pham.",
+                    icon: "error",
+                    confirmButtonColor: "#006b38"
+                });
+                return false;
+            }
+
+            const qty = getSelectedQty();
+            const finalPrice = Math.round(currentProduct.price * (1 - currentProduct.discount));
+
+            addToCart({
+                id: currentProduct.id,
+                qty: qty,
+                priceSnapshot: finalPrice
+            });
+
+            appNotify("Da them " + qty + " san pham vao gio hang!");
+            return true;
+        }
+
+        function buyNow() {
+            if (!handleAddToCart()) return;
+            window.location.href = "cart.html";
+        }
+
+        function decreaseQty() {
+            const input = document.getElementById("productQty");
+            const val = Number(input.value) || 1;
+            if (val > 1) input.value = val - 1;
+        }
+
+        function increaseQty() {
+            const input = document.getElementById("productQty");
+            const val = Number(input.value) || 1;
+            input.value = val + 1;
+        }
+
+        function submitOrder(event) {
+            event.preventDefault();
+            const name = document.getElementById("customerName").value;
+            const phone = document.getElementById("customerPhone").value;
+
+            if (name && phone) {
+                closeOrderForm();
+                Swal.fire({
+                    title: "Gui thanh cong!",
+                    html: `Cam on <b>${name}</b>.<br>Nhan vien Gio Qua Tuoi se lien he qua SDT <b>${phone}</b> trong it phut toi de tu van!`,
+                    icon: "success",
+                    confirmButtonColor: "#006b38"
+                });
+                document.getElementById("orderForm").reset();
+            }
+        }
+    </script>
+
+    <div id="orderModal"
+        class="hidden fixed inset-0 z-[9999] bg-black/60 flex items-center justify-center p-4 transition-all">
+        <div class="bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden relative">
+            <button onclick="closeOrderForm()"
+                class="absolute top-3 right-3 z-10 text-white bg-black/20 hover:bg-red-500 transition-all text-xl w-8 h-8 flex items-center justify-center rounded-full">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="bg-primary p-8 text-center text-white relative">
+                <i class="fa-solid fa-seedling text-4xl mb-3"></i>
+                <h3 class="serif text-2xl font-bold uppercase tracking-widest">Nhan Tu Van</h3>
+                <p class="text-xs font-medium opacity-90 mt-2">De lai thong tin, chung toi se goi lai ngay!</p>
+            </div>
+            <form id="orderForm" onsubmit="submitOrder(event)" class="p-8 space-y-5">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1.5">Ho va ten *</label>
+                    <input type="text" id="customerName" required placeholder="Nhap ten cua ban..."
+                        class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1.5">So dien thoai (Zalo) *</label>
+                    <input type="tel" id="customerPhone" required pattern="[0-9]{10,11}" placeholder="Vi du: 0973074063"
+                        class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1.5">Loi nhan (Khong bat buoc)</label>
+                    <textarea id="orderMessage" rows="3" placeholder="San pham ban dang quan tam..."
+                        class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-[#c48e58] hover:bg-black text-white font-black text-sm uppercase tracking-widest py-4 rounded-xl transition-all shadow-lg mt-4">
+                    GUI THONG TIN
+                </button>
+                <p class="text-center text-[10px] text-gray-400 font-medium mt-3">
+                    <i class="fa-solid fa-lock mr-1"></i>
+                    Thong tin cua ban duoc bao mat tuyet doi.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div id="header"></div>
+
+    <div class="bg-gray-50 py-3">
+        <div class="max-w-7xl mx-auto px-4 text-xs text-gray-500">
+            <a href="/" class="hover:text-primary transition">Trang chu</a>
+            <span class="mx-2">/</span>
+            <a href="all-products.html" class="hover:text-primary transition">San pham</a>
+            <span class="mx-2">/</span>
+            <span id="breadcrumbProductName" class="text-gray-800 font-medium">Chi tiet san pham</span>
+        </div>
+    </div>
+
+    <main class="flex-1 max-w-7xl mx-auto px-4 py-8 w-full">
+        <div
+            class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-10 relative">
+
+            <div class="w-full md:w-5/12 flex flex-col gap-4">
+                <div
+                    class="w-full aspect-square border border-gray-200 rounded-lg overflow-hidden relative group cursor-crosshair">
+                    <img id="productImg" src="" alt="San pham"
+                        class="img-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="flex gap-2">
+                    <div class="w-20 h-20 border-2 border-primary rounded cursor-pointer overflow-hidden opacity-100">
+                        <img id="imgCover" src="" alt="Anh nho san pham" class="img-cover">
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-4/12 flex flex-col">
+                <h1 id="productName" class="text-2xl font-bold text-gray-800 mb-2 leading-tight"></h1>
+
+                <div class="text-xs text-gray-500 mb-4 flex gap-4 border-b border-gray-100 pb-4">
+                    <span>SKU: <span id="productSku" class="text-gray-800">N/A</span></span>
+                    <span class="border-l border-gray-300 pl-4">
+                        Tinh trang: <span class="text-primary font-medium">Con hang</span>
+                    </span>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                    <div class="flex items-end gap-3 mb-1">
+                        <span id="productPrice" class="text-3xl font-black text-red-600">0 đ</span>
+                        <span id="productOldPrice" class="text-lg text-gray-400 line-through font-medium mb-1">0 đ</span>
+                    </div>
+                    <div class="text-red-500 font-bold text-xs flex items-center gap-1 mt-2">
+                        <i class="fa-solid fa-fire text-orange-500"></i> SAN PHAM FLASH SALE
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <p class="text-sm font-bold text-gray-700 mb-2">So luong:</p>
+                    <div class="flex items-center border border-gray-300 rounded w-fit h-10 overflow-hidden">
+                        <button onclick="decreaseQty()"
+                            class="w-10 h-full bg-gray-50 hover:bg-gray-200 text-gray-600 font-bold transition flex items-center justify-center">-</button>
+                        <input type="number" id="productQty" value="1" min="1"
+                            class="w-12 h-full text-center border-x border-gray-300 text-sm font-bold text-gray-800 focus:outline-none">
+                        <button onclick="increaseQty()"
+                            class="w-10 h-full bg-gray-50 hover:bg-gray-200 text-gray-600 font-bold transition flex items-center justify-center">+</button>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 mt-auto">
+                    <button onclick="handleAddToCart()"
+                        class="flex-1 bg-primary hover:bg-primary-dark text-white font-bold py-3.5 rounded text-sm uppercase transition shadow-md hover:shadow-lg flex justify-center items-center gap-2">
+                        THEM VAO GIO
+                    </button>
+                    <button onclick="buyNow()"
+                        class="flex-1 bg-primary hover:bg-primary-dark text-white font-bold py-3.5 rounded text-sm uppercase transition shadow-md hover:shadow-lg flex justify-center items-center gap-2">
+                        MUA NGAY
+                    </button>
+                </div>
+            </div>
+
+            <div class="w-full md:w-3/12">
+                <div class="border border-primary rounded-lg p-5 bg-white h-full">
+                    <h3 class="font-bold text-gray-800 mb-5 border-b border-gray-100 pb-2">Tieu chuan dich vu</h3>
+                    <ul class="space-y-5 text-sm text-gray-600">
+                        <li class="flex gap-3 items-start">
+                            <span class="text-primary text-xl mt-0.5"><i class="fa-solid fa-basket-wheat"></i></span>
+                            <span class="leading-snug text-xs">
+                                Gio trai cay mix tone mau theo yeu cau de phu hop voi tung dip dac biet
+                            </span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="text-primary text-xl mt-0.5"><i
+                                    class="fa-solid fa-envelope-open-text"></i></span>
+                            <span class="leading-snug text-xs">Tang kem banner va thiep chuc mung thiet ke theo yeu cau</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="text-red-500 text-xl mt-0.5"><i
+                                    class="fa-solid fa-file-invoice-dollar"></i></span>
+                            <span class="leading-snug text-xs">Ho tro xuat hoa don VAT cho doanh nghiep</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="text-yellow-500 text-xl mt-0.5"><i class="fa-solid fa-truck-fast"></i></span>
+                            <span class="leading-snug text-xs">Giao hang nhanh chong, dam bao chat luong</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-8 bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-800 mb-4 border-b border-primary inline-block pb-2">Mo ta san pham
+            </h3>
+            <div class="text-sm text-gray-600 leading-relaxed space-y-4 mt-4">
+                <p>San pham duoc chon loc ky, phu hop lam qua tang cho sinh nhat, khai truong, tham hoi va nhieu dip dac biet.</p>
+                <p><strong>Diem noi bat:</strong></p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Nguyen lieu tuoi moi va duoc chuan bi ky truoc khi giao.</li>
+                    <li>Hinh thuc dong goi sang trong, phu hop bieu tang.</li>
+                    <li>Ho tro banner, thiep va hoa don theo nhu cau.</li>
+                </ul>
+                <p class="italic text-xs mt-4">* Luu y: San pham thuc te co the thay doi nhe theo mua nhung van giu dung tone mau va gia tri tuong duong.</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <div id="contact-pop"></div>
+
+    <script src="/js/cart.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        function renderProduct(product) {
+            const finalPrice = Math.round(product.price * (1 - product.discount));
+
+            currentProduct = product;
+
+            document.getElementById("productName").innerText = product.name;
+            document.getElementById("breadcrumbProductName").innerText = product.name;
+            document.getElementById("productSku").innerText = product.sku || product.SKU || "N/A";
+            document.getElementById("productImg").src = product.img;
+            document.getElementById("imgCover").src = product.img;
+            document.getElementById("productPrice").innerText = finalPrice.toLocaleString("vi-VN") + " đ";
+            document.getElementById("productOldPrice").innerText = Number(product.price).toLocaleString("vi-VN") + " đ";
+            document.title = product.name + " | Gio Qua Tuoi";
+        }
+
+        function loadProduct() {
+            const params = new URLSearchParams(window.location.search);
+            const productSlug = params.get("slug") ? params.get("slug").toLowerCase() : null;
+            const productId = params.get("id");
+
+            if (!productSlug && !productId) {
+                window.location.href = "/";
+                return;
+            }
+
+            fetch("data/products.json")
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function (products) {
+                    const product = products.find(function (item) {
+                        if (productSlug) {
+                            return item.slug === productSlug;
+                        }
+
+                        return String(item.id) === String(productId);
+                    });
+
+                    if (!product) {
+                        Swal.fire({
+                            text: "Khong tim thay san pham.",
+                            icon: "error",
+                            confirmButtonColor: "#006b38"
+                        }).then(function () {
+                            window.location.href = "/all-products.html";
+                        });
+                        return;
+                    }
+
+                    renderProduct(product);
+                })
+                .catch(function (error) {
+                    console.error("loadProduct error:", error);
+                    Swal.fire({
+                        text: "Khong tai duoc du lieu san pham.",
+                        icon: "error",
+                        confirmButtonColor: "#006b38"
+                    });
+                });
+        }
+
+        loadProduct();
+    </script>
+</body>
+
+</html>
