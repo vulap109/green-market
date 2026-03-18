@@ -45,8 +45,8 @@ function renderProducts(products, containerId) {
 		.join("");
 }
 
-function loadProducts(category = null, limit = null, ids = null, containerId = "productList"){
-    fetch("data/products.json")
+function loadProducts(category = null, limit = null, ids = null, containerId = "productList", options = {}){
+    return fetch("data/products.json")
     .then(res => res.json())
     .then(products => {
         if (Array.isArray(ids) && ids.length > 0) {
@@ -60,8 +60,16 @@ function loadProducts(category = null, limit = null, ids = null, containerId = "
             products = products.filter(p => p.category === category);
         }
 
-        if(limit){
-            products = products.slice(0, limit);
+        const hasLimit = Number(limit) > 0;
+        const pageSize = hasLimit ? Number(limit) : products.length;
+        const totalProducts = products.length;
+        const totalPages = totalProducts === 0 ? 0 : (hasLimit ? Math.ceil(totalProducts / pageSize) : 1);
+        const requestedPage = Number(options.page) || 1;
+        const currentPage = totalPages === 0 ? 1 : Math.min(Math.max(requestedPage, 1), totalPages);
+
+        if (hasLimit) {
+            const startIndex = (currentPage - 1) * pageSize;
+            products = products.slice(startIndex, startIndex + pageSize);
         }
 
         //Calculate discount & final price
@@ -71,6 +79,19 @@ function loadProducts(category = null, limit = null, ids = null, containerId = "
         });
 
         renderProducts(products, containerId);
+
+        const pageInfo = {
+            currentPage,
+            totalPages,
+            totalProducts,
+            pageSize
+        };
+
+        if (typeof options.onPageInfo === "function") {
+            options.onPageInfo(pageInfo);
+        }
+
+        return pageInfo;
     })
     .catch(err => console.error("loadProducts Err:" +  err));
 }

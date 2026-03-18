@@ -1,5 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap");
 
+@font-face {
+    font-family: "Stackyard";
+    src: url("./fonts/0030-LNTH-Stackyard.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "FzMontserrat";
+    src: url("./fonts/FzMontserrat-SemiBold.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SVN Gilroy";
+    src: url("./fonts/SVN-Gilroy Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     font-family: "Montserrat", sans-serif;
     color: #333;
@@ -8,6 +32,18 @@ body {
 
 .serif {
     font-family: "Playfair Display", serif;
+}
+
+.stackyard {
+    font-family: "Stackyard", serif;
+}
+
+.FzMontserrat {
+    font-family: "FzMontserrat", serif;
+}
+
+.SVNGilroy {
+    font-family: "SVN Gilroy", serif;
 }
 
 .bg-primary {

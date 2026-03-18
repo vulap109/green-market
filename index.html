@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Giỏ Quà Tươi - Trái Cây Nhập Khẩu & Quà Tặng Cao Cấp</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="/images/logo_1.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -67,16 +68,6 @@
                 document.getElementById("orderForm").reset();
             }
         }
-
-        function filterByPrice() {
-            let minPrice = document.getElementById("minPrice").value;
-            let maxPrice = document.getElementById("maxPrice").value;
-            if (minPrice || maxPrice) {
-                appNotify("Đang lọc sản phẩm theo giá...");
-            } else {
-                appNotify("Vui lòng nhập khoảng giá cần lọc.");
-            }
-        }
     </script>
 
     <div id="orderModal"
@@ -125,22 +116,32 @@
     <div id="header"></div>
 
     <div id="homePage">
-        <section class="relative w-full h-[450px] md:h-[550px] lg:h-[650px] overflow-hidden bg-[#f4f7f2]">
+        <section class="relative w-full h-[400px] md:h-[300px] lg:h-[550px] overflow-hidden bg-[#f4f7f2]">
             <div class="carousel" id="heroCarousel">
                 <div class="carousel-inner" id="carouselInner">
-                    <div class="carousel-item">
-                        <img src="/images/cover.jpg" class="img-cover" alt="Banner 1" />
-                        <div class="absolute inset-0 flex items-center bg-black/10">
+                    <a href="all-products.html?q=gio-qua-trai-cay" class="carousel-item" title="GREEN MARKET">
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="./images/cover-kinh-vieng-LH1.jpg">
+                            <img src="./images/cover-kinh-vieng-LH2.jpg" alt="Cover 1" class="w-full h-full object-cover">
+                        </picture>
+                        <!-- <div class="absolute inset-0 bg-black/30 flex items-center">
                             <div class="max-w-7xl mx-auto px-16 w-full flex justify-end">
-                                <div class="max-w-lg text-right pt-56 lg:pt-64">
+                                <div class="max-w-lg text-right">
+                                    <h2
+                                        class="stackyard text-[ca9e54] text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-2 drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
+                                        Hương Trắng Buồn</span>
+                                    </h2>
+                                    <p class="text-white text-lg md:text-2xl font-semibold italic mb-8 drop-shadow-sm">
+                                        Tiễn Biệt
+                                    </p>
                                     <button onclick="openOrderForm()"
-                                        class="inline-block bg-[#006b38] hover:bg-black text-white px-10 py-4 rounded-xl font-extrabold text-sm uppercase tracking-widest transition-all shadow-2xl hover:-translate-y-1 border border-white/20">
-                                        Đặt Hàng Ngay
+                                        class="inline-block bg-[#c48e58] hover:bg-black text-white px-10 py-4 rounded-xl font-extrabold text-sm uppercase tracking-widest transition-all shadow-2xl hover:-translate-y-1 border border-white/20">
+                                        Khám Phá Ngay
                                     </button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> -->
+                    </a>
 
                     <div class="carousel-item">
                         <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=1920&q=80"
@@ -212,10 +213,10 @@
                         <span class="bg-red-500 text-white text-[10px] px-2 py-0.5 rounded italic font-bold">HOT</span>
                     </h2>
                 </div>
-                <a href="all-products.html?q=ban-chay-nhat"
+                <button onclick="showAllProductsPage('ban-chay-nhat')"
                     class="text-primary font-bold text-xs uppercase hover:underline cursor-pointer flex items-center transition-all hover:translate-x-1">
                     Xem tất cả <i class="fa-solid fa-arrow-right-long ml-2"></i>
-                </a>
+                </button>
             </div>
 
             <div id="home-best-sellers" class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -585,7 +586,7 @@
         }
         function resetInterval() {
             clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 10000);
+            slideInterval = setInterval(nextSlide, 50000);
         }
 
         function initHomeProductSections() {
@@ -603,7 +604,7 @@
             loadProducts("cream-cake", limit, null, "home-cream-cake");
         }
 
-        slideInterval = setInterval(nextSlide, 10000);
+        slideInterval = setInterval(nextSlide, 50000);
         initHomeProductSections();
     </script>
 </body>
