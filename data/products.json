@@ -222,82 +222,82 @@
   {
     "id": 23,
     "sku": "FB031200023",
-    "slug": "bo-hoa-tk023",
-    "name": "Bó Hoa TK023",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-tk216",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi TK216",
     "price": 790000,
     "discount": 0.1,
-    "img": "images/flowers.jpg",
-    "category": "flowers"
+    "img": "images/gio-trai-cay-kem-hoa-tuoi-tk216.jpg",
+    "category": "fruit-basket"
   },
   {
     "id": 24,
     "sku": "FB031200024",
-    "slug": "bo-hoa-tk024",
-    "name": "Bó Hoa TK024",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-size-dai-tk217",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi Size Dài TK217",
     "price": 500000,
     "discount": 0.08,
-    "img": "images/flowers.jpg",
-    "category": "flowers"
+    "img": "images/gio-trai-cay-kem-hoa-tuoi-size-dai-tk217.jpg",
+    "category": "fruit-basket"
   },
   {
     "id": 25,
     "sku": "FB031200025",
-    "slug": "bo-hoa-tk025",
-    "name": "Bó Hoa TK025",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-tk218",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi TK218",
     "price": 900000,
     "discount": 0.09,
-    "img": "images/flowers.jpg",
-    "category": "flowers"
+    "img": "images/gio-trai-cay-kem-hoa-tuoi-tk218.jpg",
+    "category": "fruit-basket"
   },
   {
     "id": 26,
     "sku": "FB031200026",
-    "slug": "bo-hoa-tk026",
-    "name": "Bó Hoa TK026",
+    "slug": "gio-trai-cay-tk219",
+    "name": "Giỏ Trái Cây TK219",
     "price": 900000,
     "discount": 0.09,
-    "img": "images/flowers.jpg",
-    "category": "flowers"
+    "img": "images/gio-trai-cay-tk219.jpg",
+    "category": "fruit-basket"
   },
   {
     "id": 27,
     "sku": "FB031200027",
-    "slug": "bo-hoa-tk027",
-    "name": "Bó Hoa TK027",
+    "slug": "hop-qua-trai-cay-tk221",
+    "name": "Hộp Quà Trái Cây TK221",
     "price": 790000,
     "discount": 0.1,
-    "img": "images/flowers.jpg",
-    "category": "flowers"
+    "img": "images/hop-qua-trai-cay-tk221.jpg",
+    "category": "fruit-basket"
   },
   {
     "id": 28,
     "sku": "FB031200028",
-    "slug": "bo-hoa-tk028",
-    "name": "Bó Hoa TK028",
+    "slug": "hop-qua-nho-sua-tk222",
+    "name": "Hộp Quà Nho Sữa TK222",
     "price": 500000,
     "discount": 0.08,
-    "img": "images/flowers.jpg",
-    "category": "flowers"
+    "img": "images/hop-qua-nho-sua-tk222.jpg",
+    "category": "fruit-basket"
   },
   {
     "id": 29,
     "sku": "FB031200029",
-    "slug": "bo-hoa-tk026",
-    "name": "Bó Hoa TK026",
+    "slug": "thap-tao-dang-huong-tk223",
+    "name": "Tháp Táo Dâng Hương TK223",
     "price": 900000,
     "discount": 0.09,
-    "img": "images/flowers.jpg",
-    "category": "flowers"
+    "img": "images/thap-tao-dang-huong-tk223.jpg",
+    "category": "fruit-basket"
   },
   {
     "id": 30,
     "sku": "FB031200030",
-    "slug": "bo-hoa-tk027",
-    "name": "Bó Hoa TK027",
+    "slug": "gio-trai-cay-kinh-vieng-tk224",
+    "name": "Giỏ Trái Cây Kính Viếng TK224",
     "price": 790000,
     "discount": 0.1,
-    "img": "images/flowers.jpg",
-    "category": "flowers"
+    "img": "images/gio-trai-cay-kinh-vieng-tk224.jpg",
+    "category": "fruit-basket"
   },
   {
     "id": 31,
@@ -498,5 +498,25 @@
     "discount": 0.1,
     "img": "images/flowers.jpg",
     "category": "flowers"
+  },
+  {
+    "id": 51,
+    "sku": "FB031200051",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-tk225",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi TK225",
+    "price": 129000,
+    "discount": 0,
+    "img": "images/gio-trai-cay-kem-hoa-tuoi-tk225.jpg",
+    "category": "fruit-basket"
+  },
+  {
+    "id": 52,
+    "sku": "FB031200052",
+    "slug": "gio-trai-cay-tk227",
+    "name": "Giỏ Trái Cây TK227",
+    "price": 129000,
+    "discount": 0,
+    "img": "images/gio-trai-cay-tk227.jpg",
+    "category": "fruit-basket"
   }
 ]
