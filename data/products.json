@@ -518,5 +518,105 @@
     "discount": 0,
     "img": "images/gio-trai-cay-tk227.jpg",
     "category": "fruit-basket"
+  },
+  {
+    "id": 53,
+    "sku": "FB031200053",
+    "slug": "hoa-qua-vieng-vh1",
+    "name": "Hoa Quả Viếng VH01",
+    "price": 1990000,
+    "discount": 0,
+    "img": "images/hoa-qua-vieng-vh1.jpg",
+    "category": "fruit-basket"
+  },
+  {
+    "id": 54,
+    "sku": "FB031200054",
+    "slug": "hoa-qua-vieng-vh2",
+    "name": "Hoa Quả Viếng VH02",
+    "price": 2900000,
+    "discount": 0,
+    "img": "images/hoa-qua-vieng-vh2.jpg",
+    "category": "fruit-basket"
+  },
+  {
+    "id": 55,
+    "sku": "FB031200055",
+    "slug": "hoa-qua-vieng-vh3",
+    "name": "Hoa Quả Viếng VH03",
+    "price": 1200000,
+    "discount": 0,
+    "img": "images/hoa-qua-vieng-vh3.jpg",
+    "category": "fruit-basket"
+  },
+  {
+    "id": 56,
+    "sku": "FB031200056",
+    "slug": "hoa-qua-vieng-vh4",
+    "name": "Hoa Quả Viếng VH04",
+    "price": 850000,
+    "discount": 0,
+    "img": "images/hoa-qua-vieng-vh4.jpg",
+    "category": "fruit-basket"
+  },
+  {
+    "id": 57,
+    "sku": "FB031200057",
+    "slug": "hoa-qua-vieng-vh5",
+    "name": "Hoa Quả Viếng VH05",
+    "price": 1500000,
+    "discount": 0,
+    "img": "images/hoa-qua-vieng-vh5.jpg",
+    "category": "fruit-basket"
+  },
+  {
+    "id": 58,
+    "sku": "FB031200058",
+    "slug": "hoa-qua-vieng-vh6",
+    "name": "Hoa Quả Viếng VH06",
+    "price": 2500000,
+    "discount": 0,
+    "img": "images/hoa-qua-vieng-vh6.jpg",
+    "category": "fruit-basket"
+  },
+  {
+    "id": 59,
+    "sku": "FB031200059",
+    "slug": "hoa-qua-vieng-vh7",
+    "name": "Hoa Quả Viếng VH07",
+    "price": 999000,
+    "discount": 0,
+    "img": "images/hoa-qua-vieng-vh7.jpg",
+    "category": "fruit-basket"
+  },
+  {
+    "id": 60,
+    "sku": "FB031200060",
+    "slug": "hoa-qua-vieng-vh8",
+    "name": "Hoa Quả Viếng VH08",
+    "price": 850000,
+    "discount": 0,
+    "img": "images/hoa-qua-vieng-vh8.jpg",
+    "category": "fruit-basket"
+  },
+  {
+    "id": 61,
+    "sku": "FB031200061",
+    "slug": "hoa-qua-vieng-vh9",
+    "name": "Hoa Quả Viếng VH09",
+    "price": 4500000,
+    "discount": 0,
+    "img": "images/hoa-qua-vieng-vh9.jpg",
+    "category": "fruit-basket"
+  },
+  {
+    "id": 62,
+    "sku": "FB031200062",
+    "slug": "hoa-qua-vieng-vh10",
+    "name": "Hoa Quả Viếng VH10",
+    "price": 1500000,
+    "discount": 0,
+    "img": "images/hoa-qua-vieng-vh10.jpg",
+    "category": "fruit-basket"
   }
 ]
