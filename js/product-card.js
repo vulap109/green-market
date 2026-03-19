@@ -19,12 +19,12 @@ function productCard(p) {
                     class="img-cover group-hover:scale-105 transition-all duration-500">
                 <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-black px-2 py-1 rounded">${p.discount}</span>
             </div>
-            <div class="p-5 flex-1 flex flex-col text-center">
+            <div class="py-5 px-2 sm:px-5 flex-1 flex flex-col text-center">
                 <h3 class="text-sm font-bold text-gray-800 line-clamp-2 mb-2 leading-tight hover:text-primary transition cursor-pointer">${p.name}</h3>
                 <div class="mt-auto">
-                    <div class="flex justify-center items-center gap-2">
-                        <span class="text-red-600 font-black text-base">${p.price.toLocaleString()} ₫</span>
-                        <span class="text-gray-400 line-through text-xs font-medium">${p.finalPrice.toLocaleString()} ₫</span>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-2">
+                        <span class="text-red-600 font-black text-base">${p.finalPrice.toLocaleString()} ₫</span>
+                        <span class="text-gray-400 line-through text-xs font-medium">${p.price.toLocaleString()} ₫</span>
                     </div>
                     <button onclick="handleAddToCartAndOrder('${productSlug}')"
                         class="w-full mt-4 bg-white border border-primary text-primary py-2.5 rounded-lg text-[11px] font-black uppercase tracking-wider hover:bg-red-500 hover:text-white transition-all flex items-center justify-center gap-2">

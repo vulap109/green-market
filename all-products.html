@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gio Qua Tuoi - Trai Cay Nhap Khau & Qua Tang Cao Cap</title>
+    <title>Green Market - Trái Cây Nhập Khẩu & Quà Tặng Cao Cấp</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="/images/logo_1.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -81,9 +81,9 @@
 
     <div class="bg-gray-50 py-3">
         <div class="max-w-7xl mx-auto px-4 text-xs text-gray-500">
-            <a href="/" class="hover:text-primary transition">Trang chu</a>
+            <a href="/" class="hover:text-primary transition">Trang Chủ</a>
             <span class="mx-2">/</span>
-            <span id="lnk_all_product" class="text-gray-800 font-medium">Tat Ca San Pham</span>
+            <span id="lnk_all_product" class="text-gray-800 font-medium">Tất Cả Sản Phẩm</span>
         </div>
     </div>
 
@@ -91,8 +91,8 @@
         <div class="max-w-7xl mx-auto px-4 mt-8 flex flex-col md:flex-row gap-8">
             <div class="w-full md:w-64 flex-shrink-0">
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 sticky top-32">
-                    <h3 class="font-black text-sm uppercase tracking-widest border-b border-gray-100 pb-4 mb-4 text-gray-900">
-                        Danh muc san pham
+                    <h3 class="text-sm uppercase tracking-widest border-b border-gray-100 pb-4 mb-4 text-gray-900">
+                        Danh mục sản phẩm
                     </h3>
                     <ul class="space-y-3 text-xs font-bold text-gray-600">
                         <li onclick="appNotify('Da chon: Tat ca')" class="flex items-center gap-3 cursor-pointer text-primary transition">
@@ -164,10 +164,10 @@
             <div class="flex-1">
                 <div class="flex justify-between items-center my-6">
                     <h1 id="H1_Title" class="text-black font-bold text-lg">Tat Ca San Pham</h1>
-                    <p class="text-xs font-bold text-gray-500">Hien thi danh sach san pham</p>
+                    <p class="text-xs text-black">Hien thi danh sach san pham</p>
                     <select class="bg-white border border-gray-200 text-xs font-bold px-4 py-2 rounded-lg outline-none cursor-pointer">
-                        <option>Moi nhat</option>
-                        <option>Theo muc do pho bien</option>
+                        <option>Mới nhất</option>
+                        <option>Theo mức độ phổ biến</option>
                         <option>Theo diem danh gia</option>
                         <option>Theo gia: thap den cao</option>
                         <option>Theo gia: cao xuong thap</option>
@@ -285,26 +285,26 @@
             switch (query) {
                 case "ban-chay-nhat":
                     allProductsState.ids = [1, 3, 5, 7, 9, 11, 13, 15, 17, 18, 19, 21];
-                    title = "San Pham Ban Chay";
+                    title = "Sản Phẩm Bán Chạy";
                     break;
                 case "khuyen-mai":
                     allProductsState.ids = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22];
-                    title = "Khuyen Mai Hot";
+                    title = "Khuyến Mãi Hot";
                     break;
                 case "gio-qua-trai-cay":
-                    title = "Gio Qua Tang Trai Cay";
+                    title = "Giỏ Quà Tặng Trái Cây";
                     allProductsState.category = "fruit-basket";
                     break;
                 case "qua-tang-thuc-pham":
-                    title = "Gio Qua Tang Thuc Pham";
+                    title = "Giỏ Quà Tặng Thực Phẩm";
                     allProductsState.category = "gift-box";
                     break;
                 case "trai-cay-nhap-khau":
-                    title = "Trai Cay Nhap Khau";
+                    title = "Trái Cây Nhập Khẩu";
                     allProductsState.category = "imported-fruits";
                     break;
                 case "banh-kem":
-                    title = "Banh Kem Thiet Ke";
+                    title = "Bánh Kem Thiết Kế";
                     allProductsState.category = "cream-cake";
                     break;
             }
