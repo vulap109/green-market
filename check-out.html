@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gio Qua Tuoi - Thanh toan</title>
+    <title>Thanh Toán - Green Market</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="/images/logo_1.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,25 +19,25 @@
     <div id="checkoutPage" class="bg-gray-50 min-h-screen pb-20">
         <div class="bg-gray-100 py-3 border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4 text-xs text-gray-500">
-                <a href="/" class="hover:text-primary transition">Home</a>
+                <a href="/" class="hover:text-primary transition">Trang Chủ</a>
                 <span class="mx-2">|</span>
-                <a href="/cart.html" class="hover:text-primary transition">Gio hang</a>
+                <a href="/cart.html" class="hover:text-primary transition">Giỏ Hàng</a>
                 <span class="mx-2">|</span>
-                <span class="text-gray-800 font-medium">Thanh toan</span>
+                <span class="text-gray-800 font-medium">Thanh Toán</span>
             </div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 mt-8">
             <form id="checkoutForm" novalidate class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <div class="lg:col-span-8 bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm">
-                    <h2 class="text-xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-100">Thong tin thanh toan</h2>
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-100">Thông tin thanh toán</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="relative md:col-span-2">
                             <input type="text" id="fullname" name="fullname"
                                 class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors"
                                 placeholder=" " required>
                             <label for="fullname"
-                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Ho va ten *</label>
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Họ và tên *</label>
                         </div>
 
                         <div class="relative">
@@ -45,7 +45,7 @@
                                 class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors"
                                 placeholder=" " required>
                             <label for="phone"
-                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">So dien thoai *</label>
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Số điện thoại *</label>
                         </div>
 
                         <div class="relative">
@@ -53,7 +53,7 @@
                                 class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors"
                                 placeholder=" ">
                             <label for="email"
-                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Dia chi email (tuy chon)</label>
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Địa chỉ email (tùy chọn)</label>
                         </div>
 
                         <div class="relative">
@@ -63,7 +63,7 @@
                                 <option value="" disabled selected hidden></option>
                             </select>
                             <label for="province"
-                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white pointer-events-none left-3 top-0 scale-[0.85] px-1 peer-invalid:top-1/2 peer-invalid:scale-100 peer-invalid:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Tinh/Thanh pho *</label>
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white pointer-events-none left-3 top-0 scale-[0.85] px-1 peer-invalid:top-1/2 peer-invalid:scale-100 peer-invalid:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Tỉnh/Thành phố *</label>
                             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </div>
@@ -76,7 +76,7 @@
                                 <option value="" disabled selected hidden></option>
                             </select>
                             <label for="district"
-                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white pointer-events-none left-3 top-0 scale-[0.85] px-1 peer-invalid:top-1/2 peer-invalid:scale-100 peer-invalid:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Quan/Huyen *</label>
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white pointer-events-none left-3 top-0 scale-[0.85] px-1 peer-invalid:top-1/2 peer-invalid:scale-100 peer-invalid:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Quận/Huyện *</label>
                             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </div>
@@ -89,7 +89,7 @@
                                 <option value="" disabled selected hidden></option>
                             </select>
                             <label for="ward"
-                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white pointer-events-none left-3 top-0 scale-[0.85] px-1 peer-invalid:top-1/2 peer-invalid:scale-100 peer-invalid:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Xa/Phuong/Thi tran *</label>
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white pointer-events-none left-3 top-0 scale-[0.85] px-1 peer-invalid:top-1/2 peer-invalid:scale-100 peer-invalid:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Xã/Phường/Thị trấn *</label>
                             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </div>
@@ -100,7 +100,7 @@
                                 class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors"
                                 placeholder=" " required>
                             <label for="address"
-                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Dia chi cu the (so nha, ten duong...) *</label>
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Địa chỉ cụ thể (số nhà, tên đường...) *</label>
                         </div>
                     </div>
 
@@ -110,27 +110,27 @@
                             class="peer block w-full px-4 py-3.5 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600 transition-colors resize-none"
                             placeholder=" "></textarea>
                         <label for="notes"
-                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-6 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Ghi chu don hang (tuy chon)</label>
+                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-1/2 z-10 origin-[0] bg-white cursor-text left-3 top-0 scale-[0.85] px-1 peer-placeholder-shown:top-6 peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-focus:top-0 peer-focus:scale-[0.85] peer-focus:px-1 peer-focus:text-red-600">Ghi chú đơn hàng (tùy chọn)</label>
                     </div>
                 </div>
 
                 <div class="lg:col-span-4">
                     <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm sticky top-8">
-                        <h2 class="text-xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-100">Don hang cua ban</h2>
+                        <h2 class="text-xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-100">Đơn hàng của bạn</h2>
                         <div class="flex justify-between text-sm font-bold text-gray-600 mb-4 pb-2 border-b border-gray-100">
-                            <span>San pham</span>
-                            <span>Tam tinh</span>
+                            <span>Sản phẩm</span>
+                            <span>Tạm tính</span>
                         </div>
                         <div id="checkout-order-items" class="space-y-4 mb-6 pb-6 border-b border-gray-100">
-                            <div class="text-sm text-gray-400">Dang tai don hang...</div>
+                            <div class="text-sm text-gray-400">Đang tải đơn hàng...</div>
                         </div>
                         <div class="space-y-3 mb-6 pb-6 border-b border-gray-100">
                             <div class="flex justify-between text-sm">
-                                <span class="text-gray-600 font-medium">Tam tinh</span>
+                                <span class="text-gray-600 font-medium">Tạm tính</span>
                                 <span id="checkout-subtotal" class="font-semibold">0 d</span>
                             </div>
                             <div class="flex justify-between items-end mt-2">
-                                <span class="text-base font-bold text-gray-800">Tong</span>
+                                <span class="text-base font-bold text-gray-800">Tổng</span>
                                 <span id="checkout-total" class="text-xl font-bold text-red-600">0 d</span>
                             </div>
                         </div>
@@ -138,17 +138,17 @@
                             <label class="flex items-center gap-3 cursor-pointer group">
                                 <input type="radio" name="payment_method" value="bank"
                                     class="w-4 h-4 accent-red-600 cursor-pointer" checked>
-                                <span class="text-sm text-gray-700 group-hover:text-red-600 transition-colors">Chuyen khoan ngan hang truc tiep</span>
+                                <span class="text-sm text-gray-700 group-hover:text-red-600 transition-colors">Chuyển khoản ngân hàng trực tiếp</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer group">
                                 <input type="radio" name="payment_method" value="cod"
                                     class="w-4 h-4 accent-red-600 cursor-pointer">
-                                <span class="text-sm text-gray-700 group-hover:text-red-600 transition-colors">Thanh toan khi nhan hang</span>
+                                <span class="text-sm text-gray-700 group-hover:text-red-600 transition-colors">Thanh toán khi nhận hàng</span>
                             </label>
                         </div>
                         <button id="checkout-submit-btn" type="button" onclick="validateAndSubmit()"
                             class="w-full bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold text-sm uppercase tracking-wide py-4 rounded-lg transition-colors shadow-md">
-                            Dat hang
+                            Đặt hàng
                         </button>
                     </div>
                 </div>
@@ -217,7 +217,7 @@
 
                 return {
                     id: cartItem.id,
-                    name: product ? product.name : `San pham #${cartItem.id}`,
+                    name: product ? product.name : `Sản phẩm #${cartItem.id}`,
                     sku: product ? (product.sku || "N/A") : "N/A",
                     qty: qty,
                     unitPrice: unitPrice,
@@ -285,7 +285,7 @@
 
         function sendOrderEmail(order) {
             const templateParams = {
-                subject: `Don hang moi - ${order.fullname} - ${order.phone}`,
+                subject: `Đơn hàng mới - ${order.fullname} - ${order.phone}`,
                 customer_name: order.fullname,
                 customer_phone: order.phone,
                 customer_email: order.email || "Khong co",
@@ -303,9 +303,9 @@
                     return [
                         `${index + 1}. ${item.name}`,
                         `SKU: ${item.sku}`,
-                        `So luong: ${item.qty}`,
-                        `Don gia: ${formatMoney(item.unitPrice)}`,
-                        `Thanh tien: ${formatMoney(item.lineTotal)}`
+                        `Số lượng: ${item.qty}`,
+                        `Đơn giá: ${formatMoney(item.unitPrice)}`,
+                        `Thành tiền: ${formatMoney(item.lineTotal)}`
                     ].join("\n");
                 }).join("\n")
             };
@@ -324,10 +324,10 @@
                 checkoutOrderItems.innerHTML = `
                     <div class="text-center py-4">
                         <i class="fa-solid fa-cart-shopping text-3xl text-gray-300 mb-3"></i>
-                        <p class="text-sm font-semibold text-gray-700">Gio hang cua ban dang trong</p>
+                        <p class="text-sm font-semibold text-gray-700">Giỏ hàng của bạn đang trống</p>
                         <a href="/all-products.html" class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-red-600 hover:text-red-700 transition-colors">
                             <i class="fa-solid fa-arrow-left"></i>
-                            Quay lai mua hang
+                            Quay lại mua hàng
                         </a>
                     </div>
                 `;
@@ -346,7 +346,7 @@
                     ? Number(cartItem.priceSnapshot)
                     : Number(product ? product.price : 0);
                 const lineTotal = unitPrice * qty;
-                const name = product ? product.name : `San pham #${cartItem.id}`;
+                const name = product ? product.name : `Sản phẩmm #${cartItem.id}`;
                 const image = product ? (product.img || "/images/sp1.jpg") : "/images/sp1.jpg";
 
                 return `
@@ -482,8 +482,8 @@
         function validateAndSubmit() {
             if (getCartCount() <= 0) {
                 Swal.fire({
-                    title: "Gio hang trong!",
-                    text: "Vui long them san pham truoc khi dat hang.",
+                    title: "Giỏ hàng trống!",
+                    text: "Vui lòng thêm sản phẩm trước khi đặt hàng.",
                     icon: "info",
                     confirmButtonColor: "#ef4444"
                 }).then(function () {
@@ -510,8 +510,8 @@
             if (!isValid) {
                 firstInvalidEl.focus();
                 Swal.fire({
-                    title: "Thieu thong tin!",
-                    text: "Vui long dien day du cac thong tin bat buoc (co dau *).",
+                    title: "Thiếu thông tin!",
+                    text: "Vui lòng điền đầy đủ các thông tin bắt buộc (có dấu *).",
                     icon: "error",
                     confirmButtonColor: "#ef4444"
                 });
@@ -521,8 +521,8 @@
             const orderPayload = buildOrderPayload();
 
             Swal.fire({
-                title: "Dang gui don hang...",
-                text: "Vui long cho trong giay lat.",
+                title: "đang gửi đơn hàng...",
+                text: "Vui lòng chờ trong giây lát.",
                 allowOutsideClick: false,
                 didOpen: function () {
                     Swal.showLoading();
@@ -539,8 +539,8 @@
                     wardSelect.disabled = true;
 
                     Swal.fire({
-                        title: "Dat hang thanh cong!",
-                        text: "Thong tin don hang da duoc gui ve email vql@gmail.com.",
+                        title: "Đặt hàng thành công!",
+                        text: "Thông tin đơn hàng đã được gửi về Shop.",
                         icon: "success",
                         confirmButtonColor: "#006b38"
                     }).then(function () {

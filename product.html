@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gio Qua Tuoi</title>
+    <title>Green Market - Thông Tin Sản Phẩm</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="/images/logo_1.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,7 +50,7 @@
         function handleAddToCart() {
             if (!currentProduct) {
                 Swal.fire({
-                    text: "Khong tai duoc thong tin san pham.",
+                    text: "Không tải được thông tin sản phẩm.",
                     icon: "error",
                     confirmButtonColor: "#006b38"
                 });
@@ -66,7 +66,7 @@
                 priceSnapshot: finalPrice
             });
 
-            appNotify("Da them " + qty + " san pham vao gio hang!");
+            appNotify("đã thêm " + qty + " sản phẩm vào giỏ hàng!");
             return true;
         }
 
@@ -149,9 +149,9 @@
 
     <div class="bg-gray-50 py-3">
         <div class="max-w-7xl mx-auto px-4 text-xs text-gray-500">
-            <a href="/" class="hover:text-primary transition">Trang chu</a>
+            <a href="/" class="hover:text-primary transition">Trang Chủ</a>
             <span class="mx-2">/</span>
-            <a href="all-products.html" class="hover:text-primary transition">San pham</a>
+            <a href="all-products.html" class="hover:text-primary transition">Sản Phẩm</a>
             <span class="mx-2">/</span>
             <span id="breadcrumbProductName" class="text-gray-800 font-medium">Chi tiet san pham</span>
         </div>
@@ -180,7 +180,7 @@
                 <div class="text-xs text-gray-500 mb-4 flex gap-4 border-b border-gray-100 pb-4">
                     <span>SKU: <span id="productSku" class="text-gray-800">N/A</span></span>
                     <span class="border-l border-gray-300 pl-4">
-                        Tinh trang: <span class="text-primary font-medium">Con hang</span>
+                        Tình trạng: <span class="text-primary font-medium">Còn hàng</span>
                     </span>
                 </div>
 
@@ -190,12 +190,12 @@
                         <span id="productOldPrice" class="text-lg text-gray-400 line-through font-medium mb-1">0 đ</span>
                     </div>
                     <div class="text-red-500 font-bold text-xs flex items-center gap-1 mt-2">
-                        <i class="fa-solid fa-fire text-orange-500"></i> SAN PHAM FLASH SALE
+                        <i class="fa-solid fa-fire text-orange-500"></i> SẢN PHẨM FLASH SALE
                     </div>
                 </div>
 
                 <div class="mb-6">
-                    <p class="text-sm font-bold text-gray-700 mb-2">So luong:</p>
+                    <p class="text-sm font-bold text-gray-700 mb-2">Số lượng:</p>
                     <div class="flex items-center border border-gray-300 rounded w-fit h-10 overflow-hidden">
                         <button onclick="decreaseQty()"
                             class="w-10 h-full bg-gray-50 hover:bg-gray-200 text-gray-600 font-bold transition flex items-center justify-center">-</button>
@@ -209,7 +209,7 @@
                 <div class="flex gap-3 mt-auto">
                     <button onclick="handleAddToCart()"
                         class="flex-1 bg-primary hover:bg-primary-dark text-white font-bold py-3.5 rounded text-sm uppercase transition shadow-md hover:shadow-lg flex justify-center items-center gap-2">
-                        THEM VAO GIO
+                        THÊM VÀO GIỎ
                     </button>
                     <button onclick="buyNow()"
                         class="flex-1 bg-primary hover:bg-primary-dark text-white font-bold py-3.5 rounded text-sm uppercase transition shadow-md hover:shadow-lg flex justify-center items-center gap-2">
@@ -220,27 +220,27 @@
 
             <div class="w-full md:w-3/12">
                 <div class="border border-primary rounded-lg p-5 bg-white h-full">
-                    <h3 class="font-bold text-gray-800 mb-5 border-b border-gray-100 pb-2">Tieu chuan dich vu</h3>
+                    <h3 class="font-bold text-gray-800 mb-5 border-b border-gray-100 pb-2">Tiêu chuẩn dịch vụ</h3>
                     <ul class="space-y-5 text-sm text-gray-600">
                         <li class="flex gap-3 items-start">
                             <span class="text-primary text-xl mt-0.5"><i class="fa-solid fa-basket-wheat"></i></span>
                             <span class="leading-snug text-xs">
-                                Gio trai cay mix tone mau theo yeu cau de phu hop voi tung dip dac biet
+                                Giỏ trái cây mix tone màu theo yêu cầu để phù hợp với từng dịp đặc biệt
                             </span>
                         </li>
                         <li class="flex gap-3 items-start">
                             <span class="text-primary text-xl mt-0.5"><i
                                     class="fa-solid fa-envelope-open-text"></i></span>
-                            <span class="leading-snug text-xs">Tang kem banner va thiep chuc mung thiet ke theo yeu cau</span>
+                            <span class="leading-snug text-xs">Tặng kèm banner và thiệp chúc mừng thiết kế theo yêu cầu</span>
                         </li>
                         <li class="flex gap-3 items-start">
                             <span class="text-red-500 text-xl mt-0.5"><i
                                     class="fa-solid fa-file-invoice-dollar"></i></span>
-                            <span class="leading-snug text-xs">Ho tro xuat hoa don VAT cho doanh nghiep</span>
+                            <span class="leading-snug text-xs">Hỗ trợ xuất hoá đơn VAT cho doanh nghiệp</span>
                         </li>
                         <li class="flex gap-3 items-start">
                             <span class="text-yellow-500 text-xl mt-0.5"><i class="fa-solid fa-truck-fast"></i></span>
-                            <span class="leading-snug text-xs">Giao hang nhanh chong, dam bao chat luong</span>
+                            <span class="leading-snug text-xs">Giao hàng nhanh chóng, đảm bảo chất lượng</span>
                         </li>
                     </ul>
                 </div>
@@ -310,7 +310,7 @@
 
                     if (!product) {
                         Swal.fire({
-                            text: "Khong tim thay san pham.",
+                            text: "Không tìm thấy sản phẩm.",
                             icon: "error",
                             confirmButtonColor: "#006b38"
                         }).then(function () {
@@ -324,7 +324,7 @@
                 .catch(function (error) {
                     console.error("loadProduct error:", error);
                     Swal.fire({
-                        text: "Khong tai duoc du lieu san pham.",
+                        text: "Không tải được dữ liệu sản phẩm.",
                         icon: "error",
                         confirmButtonColor: "#006b38"
                     });
