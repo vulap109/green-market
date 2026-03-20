@@ -1,6 +1,6 @@
-<div id="contact-container" class="fixed bottom-24 right-6 flex flex-col items-end">
+<div id="contact-container" class="fixed bottom-24 right-6 flex flex-col items-end pointer-events-none">
     <div id="contact-menu"
-        class="opacity-0 scale-95 pointer-events-none translate-y-4 transition-all duration-300 ease-out origin-bottom-right bg-white rounded-lg shadow-xl mb-3 w-52 border border-gray-100 relative">
+        class="absolute bottom-full right-0 mb-3 w-52 opacity-0 scale-95 pointer-events-none translate-y-4 transition-all duration-300 ease-out origin-bottom-right bg-white rounded-lg shadow-xl border border-gray-100">
         <ul class="flex flex-col text-gray-600">
             <li class="border-b border-gray-50">
                 <a href="tel:18006930"
@@ -42,7 +42,7 @@
         </ul>
     </div>
     <button onclick="toggleContact()"
-        class="relative w-12 h-12 bg-[#164e87] hover:bg-[#113d69] text-white rounded-full shadow-lg flex items-center justify-center transition-transform duration-300 hover:scale-105 focus:outline-none overflow-hidden">
+        class="relative w-12 h-12 bg-[#164e87] hover:bg-[#113d69] text-white rounded-full shadow-lg flex items-center justify-center transition-transform duration-300 hover:scale-105 focus:outline-none overflow-hidden pointer-events-auto">
         <div id="btn-chat-icon"
             class="absolute inset-0 flex flex-col items-center justify-center transition-all duration-300 transform rotate-0 opacity-100">
             <img src="/images/chat.png">

@@ -1,4 +1,78 @@
 let isMenuOpen = false;
+let contactRingIntervalId = null;
+let contactRingTimeoutId = null;
+
+function ensureContactRingStyle() {
+    if (document.getElementById('contact-ring-style')) {
+        return;
+    }
+
+    const style = document.createElement('style');
+    style.id = 'contact-ring-style';
+    style.textContent = `
+        @keyframes contactPhoneRing {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            8% { transform: rotate(16deg) scale(1.04); }
+            16% { transform: rotate(-14deg) scale(1.04); }
+            24% { transform: rotate(12deg) scale(1.03); }
+            32% { transform: rotate(-10deg) scale(1.03); }
+            40% { transform: rotate(6deg) scale(1.02); }
+            48% { transform: rotate(-4deg) scale(1.01); }
+            56% { transform: rotate(0deg) scale(1); }
+        }
+
+        .contact-ring-active {
+            animation: contactPhoneRing 1.2s ease-in-out;
+            transform-origin: center bottom;
+            will-change: transform;
+        }
+    `;
+
+    document.head.appendChild(style);
+}
+
+function stopContactRing(button) {
+    if (!button) {
+        return;
+    }
+
+    button.classList.remove('contact-ring-active');
+    clearTimeout(contactRingTimeoutId);
+}
+
+function triggerContactRing() {
+    const button = document.querySelector('#contact-container button');
+
+    if (!button || isMenuOpen || document.hidden) {
+        stopContactRing(button);
+        return;
+    }
+
+    stopContactRing(button);
+
+    // Restart animation cleanly on each cycle.
+    void button.offsetWidth;
+    button.classList.add('contact-ring-active');
+
+    contactRingTimeoutId = window.setTimeout(() => {
+        button.classList.remove('contact-ring-active');
+    }, 1200);
+}
+
+function initContactRing() {
+    const button = document.querySelector('#contact-container button');
+
+    if (!button) {
+        return;
+    }
+
+    ensureContactRingStyle();
+    clearInterval(contactRingIntervalId);
+    stopContactRing(button);
+
+    contactRingTimeoutId = window.setTimeout(triggerContactRing, 1200);
+    contactRingIntervalId = window.setInterval(triggerContactRing, 4500);
+}
 
 function toggleContact() {
     isMenuOpen = !isMenuOpen;
@@ -7,6 +81,7 @@ function toggleContact() {
     const menu = document.getElementById('contact-menu');
     const chatIcon = document.getElementById('btn-chat-icon');
     const closeIcon = document.getElementById('btn-close-icon');
+    const contactButton = container ? container.querySelector('button') : null;
 
     if (isMenuOpen) {
         // open menu
@@ -14,6 +89,7 @@ function toggleContact() {
         menu.classList.add('opacity-100', 'scale-100', 'pointer-events-auto', 'translate-y-0');
 
         container.classList.add('z-50');
+        stopContactRing(contactButton);
 
         // Rotate and hide icon chat
         chatIcon.classList.remove('rotate-0', 'opacity-100');
@@ -50,6 +126,9 @@ function loadComponent(id, file) {
             if (id === "header") {
                 window.dispatchEvent(new CustomEvent("header:loaded"));
             }
+            if (id === "contact-pop") {
+                initContactRing();
+            }
         });
 }
 
@@ -65,4 +144,13 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("header", "/components/header.html");
     loadComponent("footer", "/components/footer.html");
     loadComponent("contact-pop","/components/contact-popup.html");
+});
+
+document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+        stopContactRing(document.querySelector('#contact-container button'));
+        return;
+    }
+
+    triggerContactRing();
 });
