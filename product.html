@@ -86,64 +86,7 @@
             const val = Number(input.value) || 1;
             input.value = val + 1;
         }
-
-        function submitOrder(event) {
-            event.preventDefault();
-            const name = document.getElementById("customerName").value;
-            const phone = document.getElementById("customerPhone").value;
-
-            if (name && phone) {
-                closeOrderForm();
-                Swal.fire({
-                    title: "Gui thanh cong!",
-                    html: `Cam on <b>${name}</b>.<br>Nhan vien Gio Qua Tuoi se lien he qua SDT <b>${phone}</b> trong it phut toi de tu van!`,
-                    icon: "success",
-                    confirmButtonColor: "#006b38"
-                });
-                document.getElementById("orderForm").reset();
-            }
-        }
     </script>
-
-    <div id="orderModal"
-        class="hidden fixed inset-0 z-[9999] bg-black/60 flex items-center justify-center p-4 transition-all">
-        <div class="bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden relative">
-            <button onclick="closeOrderForm()"
-                class="absolute top-3 right-3 z-10 text-white bg-black/20 hover:bg-red-500 transition-all text-xl w-8 h-8 flex items-center justify-center rounded-full">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="bg-primary p-8 text-center text-white relative">
-                <i class="fa-solid fa-seedling text-4xl mb-3"></i>
-                <h3 class="serif text-2xl font-bold uppercase tracking-widest">Nhan Tu Van</h3>
-                <p class="text-xs font-medium opacity-90 mt-2">De lai thong tin, chung toi se goi lai ngay!</p>
-            </div>
-            <form id="orderForm" onsubmit="submitOrder(event)" class="p-8 space-y-5">
-                <div>
-                    <label class="block text-xs font-bold text-gray-700 mb-1.5">Ho va ten *</label>
-                    <input type="text" id="customerName" required placeholder="Nhap ten cua ban..."
-                        class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-700 mb-1.5">So dien thoai (Zalo) *</label>
-                    <input type="tel" id="customerPhone" required pattern="[0-9]{10,11}" placeholder="Vi du: 0973074063"
-                        class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-700 mb-1.5">Loi nhan (Khong bat buoc)</label>
-                    <textarea id="orderMessage" rows="3" placeholder="San pham ban dang quan tam..."
-                        class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
-                </div>
-                <button type="submit"
-                    class="w-full bg-[#c48e58] hover:bg-black text-white font-black text-sm uppercase tracking-widest py-4 rounded-xl transition-all shadow-lg mt-4">
-                    GUI THONG TIN
-                </button>
-                <p class="text-center text-[10px] text-gray-400 font-medium mt-3">
-                    <i class="fa-solid fa-lock mr-1"></i>
-                    Thong tin cua ban duoc bao mat tuyet doi.
-                </p>
-            </form>
-        </div>
-    </div>
 
     <div id="header"></div>
 
@@ -280,8 +223,8 @@
             document.getElementById("productSku").innerText = product.sku || product.SKU || "N/A";
             document.getElementById("productImg").src = product.img;
             document.getElementById("imgCover").src = product.img;
-            document.getElementById("productPrice").innerText = finalPrice.toLocaleString("vi-VN") + " đ";
-            document.getElementById("productOldPrice").innerText = Number(product.price).toLocaleString("vi-VN") + " đ";
+            document.getElementById("productPrice").innerText = Number(product.price).toLocaleString("vi-VN") + " đ";
+            document.getElementById("productOldPrice").innerText = finalPrice.toLocaleString("vi-VN") + " đ";
             document.title = product.name + " | Gio Qua Tuoi";
         }
 
