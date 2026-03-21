@@ -58,12 +58,11 @@
             }
 
             const qty = getSelectedQty();
-            const finalPrice = Math.round(currentProduct.price * (1 - currentProduct.discount));
 
             addToCart({
                 id: currentProduct.id,
                 qty: qty,
-                priceSnapshot: finalPrice
+                priceSnapshot: currentProduct.finalprice
             });
 
             appNotify("đã thêm " + qty + " sản phẩm vào giỏ hàng!");
@@ -214,8 +213,6 @@
     <script src="/js/main.js"></script>
     <script>
         function renderProduct(product) {
-            const finalPrice = Math.round(product.price * (1 - product.discount));
-
             currentProduct = product;
 
             document.getElementById("productName").innerText = product.name;
@@ -224,7 +221,7 @@
             document.getElementById("productImg").src = product.img;
             document.getElementById("imgCover").src = product.img;
             document.getElementById("productPrice").innerText = Number(product.price).toLocaleString("vi-VN") + " đ";
-            document.getElementById("productOldPrice").innerText = finalPrice.toLocaleString("vi-VN") + " đ";
+            document.getElementById("productOldPrice").innerText = Number(product.finalprice).toLocaleString("vi-VN") + " đ";
             document.title = product.name + " | Gio Qua Tuoi";
         }
 

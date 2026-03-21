@@ -4,8 +4,9 @@
     "sku": "FB03120001",
     "slug": "mam-le-tk01",
     "name": "Mâm Lễ TK01",
-    "price": 790000,
-    "discount": 0.1,
+    "price": 1600000,
+    "discount": 0.06,
+    "finalprice": 1500000,
     "img": "images/mam-le-tk01.jpg",
     "category": "fruit-basket"
   },
@@ -14,8 +15,9 @@
     "sku": "FB03120002",
     "slug": "gio-cherry-kem-hoa-tuoi-tk247",
     "name": "Giỏ Cherry Kèm Hoa Tươi TK247",
-    "price": 500000,
-    "discount": 0.08,
+    "price": 1400000,
+    "discount": 0.07,
+    "finalprice": 1300000,
     "img": "images/gio-cherry-kem-hoa-tuoi-tk247.jpg",
     "category": "fruit-basket"
   },
@@ -24,8 +26,9 @@
     "sku": "FB03120003",
     "slug": "gio-tao-envy-tk82",
     "name": "Giỏ Táo Envy TK82",
-    "price": 900000,
-    "discount": 0.09,
+    "price": 950000,
+    "discount": 0.05,
+    "finalprice": 900000,
     "img": "images/gio-tao-envy-tk82.jpg",
     "category": "fruit-basket"
   },
@@ -34,8 +37,9 @@
     "sku": "FB03120004",
     "slug": "thap-cam-dang-huong-tk172",
     "name": "Thập Cẩm Dâng Hương TK172",
-    "price": 790000,
+    "price": 2100000,
     "discount": 0.1,
+    "finalprice": 1900000,
     "img": "images/thap-cam-dang-huong-tk172.jpg",
     "category": "fruit-basket"
   },
@@ -44,8 +48,9 @@
     "sku": "FB03120005",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk119",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK119",
-    "price": 500000,
+    "price": 1200000,
     "discount": 0.08,
+    "finalprice": 1100000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk119.jpg",
     "category": "fruit-basket"
   },
@@ -54,8 +59,9 @@
     "sku": "FB03120006",
     "slug": "gio-trai-cay-thuong-hang-tika-230",
     "name": "Giỏ Trái Cây Thượng Hạng TK230",
-    "price": 900000,
-    "discount": 0.09,
+    "price": 6500000,
+    "discount": 0.07,
+    "finalprice": 6000000,
     "img": "images/gio-trai-cay-thuong-hang-tika-230.jpg",
     "category": "fruit-basket"
   },
@@ -64,8 +70,9 @@
     "sku": "FB03120007",
     "slug": "gio-trai-cay-cat-tuong-tk233",
     "name": "Giỏ Trái Cây Cát Tường TK233",
-    "price": 790000,
-    "discount": 0.1,
+    "price": 3200000,
+    "discount": 0.06,
+    "finalprice": 3000000,
     "img": "images/gio-trai-cay-cat-tuong-tk233.jpg",
     "category": "fruit-basket"
   },
@@ -73,9 +80,10 @@
     "id": 8,
     "sku": "FB03120008",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk235",
-    "name": "Giỏ Trái Cây TK08",
-    "price": 500000,
-    "discount": 0.08,
+    "name": "Giỏ Trái Cây TK235",
+    "price": 1600000,
+    "discount": 0.125,
+    "finalprice": 1400000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk235.jpg",
     "category": "fruit-basket"
   },
@@ -84,8 +92,9 @@
     "sku": "FB03120009",
     "slug": "gio-trai-cay-cao-cap-tk236",
     "name": "Giỏ Trái Cây Cao Cấp TK236",
-    "price": 900000,
-    "discount": 0.09,
+    "price": 2300000,
+    "discount": 0.08,
+    "finalprice": 2100000,
     "img": "images/gio-trai-cay-cao-cap-tk236.jpg",
     "category": "fruit-basket"
   },
@@ -94,8 +103,9 @@
     "sku": "FB031200010",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk239",
     "name": "Giỏ Cherry Kèm Hoa Tươi TK239",
-    "price": 790000,
-    "discount": 0.1,
+    "price": 850000,
+    "discount": 0.05,
+    "finalprice": 800000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk239.jpg",
     "category": "fruit-basket"
   },
@@ -104,8 +114,9 @@
     "sku": "FB031200011",
     "slug": "gio-trai-cay-tk240",
     "name": "Giỏ Trái Cây TK240",
-    "price": 500000,
-    "discount": 0.08,
+    "price": 1100000,
+    "discount": 0.09,
+    "finalprice": 1000000,
     "img": "images/gio-trai-cay-tk240.jpg",
     "category": "fruit-basket"
   },
@@ -114,8 +125,9 @@
     "sku": "FB031200012",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk238",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK238",
-    "price": 900000,
-    "discount": 0.09,
+    "price": 1900000,
+    "discount": 0.05,
+    "finalprice": 1800000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk238.jpg",
     "category": "fruit-basket"
   },
@@ -124,8 +136,9 @@
     "sku": "FB031200013",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk241",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK241",
-    "price": 790000,
-    "discount": 0.1,
+    "price": 1300000,
+    "discount": 0.07,
+    "finalprice": 1200000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk241.jpg",
     "category": "fruit-basket"
   },
@@ -134,8 +147,9 @@
     "sku": "FB031200014",
     "slug": "gio-trai-cay-kinh-vieng-tk248",
     "name": "Giỏ Trái Cây Kính Viếng TK248",
-    "price": 500000,
-    "discount": 0.08,
+    "price": 1100000,
+    "discount": 0.09,
+    "finalprice": 1000000,
     "img": "images/gio-trai-cay-kinh-vieng-tk248.jpg",
     "category": "fruit-basket"
   },
@@ -144,8 +158,9 @@
     "sku": "FB031200015",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk249",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK249",
-    "price": 900000,
-    "discount": 0.09,
+    "price": 1900000,
+    "discount": 0.105,
+    "finalprice": 1700000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk249.jpg",
     "category": "fruit-basket"
   },
@@ -154,8 +169,9 @@
     "sku": "FB031200016",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk250",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK250",
-    "price": 900000,
+    "price": 2200000,
     "discount": 0.09,
+    "finalprice": 2000000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk250.jpg",
     "category": "fruit-basket"
   },
@@ -164,8 +180,9 @@
     "sku": "FB031200017",
     "slug": "gio-trai-cay-tk251",
     "name": "Giỏ Trái Cây TK251",
-    "price": 790000,
-    "discount": 0.1,
+    "price": 1800000,
+    "discount": 0.08,
+    "finalprice": 1650000,
     "img": "images/gio-trai-cay-tk251.jpg",
     "category": "fruit-basket"
   },
@@ -174,8 +191,9 @@
     "sku": "FB031200018",
     "slug": "hop-qua-cherry-tk252",
     "name": "Hộp Quà Cherry TK252",
-    "price": 500000,
-    "discount": 0.08,
+    "price": 1000000,
+    "discount": 0.1,
+    "finalprice": 900000,
     "img": "images/hop-qua-cherry-tk252.jpg",
     "category": "fruit-basket"
   },
@@ -184,8 +202,9 @@
     "sku": "FB031200019",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk254",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK254",
-    "price": 900000,
-    "discount": 0.09,
+    "price": 2400000,
+    "discount": 0.08,
+    "finalprice": 2200000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk254.jpg",
     "category": "fruit-basket"
   },
@@ -194,8 +213,9 @@
     "sku": "FB031200020",
     "slug": "mam-ngu-qua-tk255",
     "name": "Mâm Ngũ Quả TK255",
-    "price": 790000,
-    "discount": 0.1,
+    "price": 2600000,
+    "discount": 0.03,
+    "finalprice": 2500000,
     "img": "images/mam-ngu-qua-tk255.jpg",
     "category": "fruit-basket"
   },
@@ -204,8 +224,9 @@
     "sku": "FB031200021",
     "slug": "hop-qua-trai-cay-tk183",
     "name": "Hộp Quà Trái Cây TK183",
-    "price": 500000,
-    "discount": 0.08,
+    "price": 850000,
+    "discount": 0.07,
+    "finalprice": 790000,
     "img": "images/hop-qua-trai-cay-tk183.jpg",
     "category": "fruit-basket"
   },
@@ -214,8 +235,9 @@
     "sku": "FB031200022",
     "slug": "gio-trai-cay-tk181",
     "name": "Giỏ Trái Cây TK181",
-    "price": 900000,
+    "price": 550000,
     "discount": 0.09,
+    "finalprice": 500000,
     "img": "images/gio-trai-cay-tk181.jpg",
     "category": "fruit-basket"
   },
@@ -224,8 +246,9 @@
     "sku": "FB031200023",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk216",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK216",
-    "price": 790000,
-    "discount": 0.1,
+    "price": 1500000,
+    "discount": 0.06,
+    "finalprice": 1400000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk216.jpg",
     "category": "fruit-basket"
   },
@@ -234,8 +257,9 @@
     "sku": "FB031200024",
     "slug": "gio-trai-cay-kem-hoa-tuoi-size-dai-tk217",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi Size Dài TK217",
-    "price": 500000,
-    "discount": 0.08,
+    "price": 3100000,
+    "discount": 0.03,
+    "finalprice": 3000000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-size-dai-tk217.jpg",
     "category": "fruit-basket"
   },
@@ -244,8 +268,9 @@
     "sku": "FB031200025",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk218",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK218",
-    "price": 900000,
-    "discount": 0.09,
+    "price": 1200000,
+    "discount": 0.08,
+    "finalprice": 1100000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk218.jpg",
     "category": "fruit-basket"
   },
@@ -254,8 +279,9 @@
     "sku": "FB031200026",
     "slug": "gio-trai-cay-tk219",
     "name": "Giỏ Trái Cây TK219",
-    "price": 900000,
-    "discount": 0.09,
+    "price": 700000,
+    "discount": 0.14,
+    "finalprice": 600000,
     "img": "images/gio-trai-cay-tk219.jpg",
     "category": "fruit-basket"
   },
@@ -264,8 +290,9 @@
     "sku": "FB031200027",
     "slug": "hop-qua-trai-cay-tk221",
     "name": "Hộp Quà Trái Cây TK221",
-    "price": 790000,
-    "discount": 0.1,
+    "price": 400000,
+    "discount": 0.125,
+    "finalprice": 350000,
     "img": "images/hop-qua-trai-cay-tk221.jpg",
     "category": "fruit-basket"
   },
@@ -274,8 +301,9 @@
     "sku": "FB031200028",
     "slug": "hop-qua-nho-sua-tk222",
     "name": "Hộp Quà Nho Sữa TK222",
-    "price": 500000,
-    "discount": 0.08,
+    "price": 400000,
+    "discount": 0.125,
+    "finalprice": 350000,
     "img": "images/hop-qua-nho-sua-tk222.jpg",
     "category": "fruit-basket"
   },
@@ -284,8 +312,9 @@
     "sku": "FB031200029",
     "slug": "thap-tao-dang-huong-tk223",
     "name": "Tháp Táo Dâng Hương TK223",
-    "price": 900000,
-    "discount": 0.09,
+    "price": 3200000,
+    "discount": 0.06,
+    "finalprice": 3000000,
     "img": "images/thap-tao-dang-huong-tk223.jpg",
     "category": "fruit-basket"
   },
@@ -294,8 +323,9 @@
     "sku": "FB031200030",
     "slug": "gio-trai-cay-kinh-vieng-tk224",
     "name": "Giỏ Trái Cây Kính Viếng TK224",
-    "price": 790000,
-    "discount": 0.1,
+    "price": 1100000,
+    "discount": 0.09,
+    "finalprice": 1000000,
     "img": "images/gio-trai-cay-kinh-vieng-tk224.jpg",
     "category": "fruit-basket"
   },
@@ -306,6 +336,7 @@
     "name": "Lê Hàn Quốc EverGood",
     "price": 220000,
     "discount": 0.15,
+    "finalprice": 190000,
     "img": "images/le-han-quoc-evergood.jpg",
     "category": "imported-fruits"
   },
@@ -316,6 +347,7 @@
     "name": "Táo Sunrise Mỹ",
     "price": 189000,
     "discount": 0.22,
+    "finalprice": 149000,
     "img": "images/tao-sunrise-my.jpg",
     "category": "imported-fruits"
   },
@@ -326,6 +358,7 @@
     "name": "Kiwi Vàng New Zealand",
     "price": 289000,
     "discount": 0,
+    "finalprice": 289000,
     "img": "images/kiwi-vang-new-zealand.jpg",
     "category": "imported-fruits"
   },
@@ -336,6 +369,7 @@
     "name": "Táo Dazzle",
     "price": 250000,
     "discount": 0.21,
+    "finalprice": 199000,
     "img": "images/tao-dazzle.jpg",
     "category": "imported-fruits"
   },
@@ -346,6 +380,7 @@
     "name": "Cherry Úc",
     "price": 450000,
     "discount": 0,
+    "finalprice": 450000,
     "img": "images/cherry-uc.jpg",
     "category": "imported-fruits"
   },
@@ -356,6 +391,7 @@
     "name": "Kiwi Vàng Đài Loan",
     "price": 279000,
     "discount": 0,
+    "finalprice": 279000,
     "img": "images/kiwi-vang-dai-loan.jpg",
     "category": "imported-fruits"
   },
@@ -366,6 +402,7 @@
     "name": "Cam Kiếng",
     "price": 149000,
     "discount": 0,
+    "finalprice": 149000,
     "img": "images/cam-kieng.jpg",
     "category": "imported-fruits"
   },
@@ -376,6 +413,7 @@
     "name": "Quýt 2ph",
     "price": 199000,
     "discount": 0,
+    "finalprice": 199000,
     "img": "images/quyt-2ph.jpg",
     "category": "imported-fruits"
   },
@@ -386,6 +424,7 @@
     "name": "Táo Envy",
     "price": 299000,
     "discount": 0,
+    "finalprice": 299000,
     "img": "images/tao-envy-my.jpg",
     "category": "imported-fruits"
   },
@@ -396,6 +435,7 @@
     "name": "Lê Nam Phi",
     "price": 139000,
     "discount": 0,
+    "finalprice": 139000,
     "img": "images/le-nam-phi.jpg",
     "category": "imported-fruits"
   },
@@ -406,6 +446,7 @@
     "name": "Lê Sữa",
     "price": 129000,
     "discount": 0,
+    "finalprice": 129000,
     "img": "images/le-sua.jpg",
     "category": "imported-fruits"
   },
@@ -416,6 +457,7 @@
     "name": "Dưa Lưới Aladin",
     "price": 129000,
     "discount": 0,
+    "finalprice": 129000,
     "img": "images/dua-luoi-aladin-1.jpg",
     "category": "imported-fruits"
   },
@@ -426,6 +468,7 @@
     "name": "Nho Xanh",
     "price": 369000,
     "discount": 0,
+    "finalprice": 369000,
     "img": "images/nho-xanh.jpg",
     "category": "imported-fruits"
   },
@@ -436,6 +479,7 @@
     "name": "Nho Đen",
     "price": 299000,
     "discount": 0,
+    "finalprice": 299000,
     "img": "images/nho-den.jpg",
     "category": "imported-fruits"
   },
@@ -446,6 +490,7 @@
     "name": "Nho Đỏ",
     "price": 299000,
     "discount": 0,
+    "finalprice": 299000,
     "img": "images/nho-do.jpg",
     "category": "imported-fruits"
   },
@@ -456,6 +501,7 @@
     "name": "Nho Sữa Đài Loan",
     "price": 350000,
     "discount": 0,
+    "finalprice": 350000,
     "img": "images/nho-sua-dai-loan.jpg",
     "category": "imported-fruits"
   },
@@ -466,6 +512,7 @@
     "name": "Nho Sữa Hàn Quốc",
     "price": 850000,
     "discount": 0,
+    "finalprice": 850000,
     "img": "images/nho-sua-han-quoc.jpg",
     "category": "imported-fruits"
   },
@@ -476,6 +523,7 @@
     "name": "Bó Hoa TK028",
     "price": 500000,
     "discount": 0.08,
+    "finalprice": 460000,
     "img": "images/flowers.jpg",
     "category": "flowers"
   },
@@ -486,6 +534,7 @@
     "name": "Bó Hoa TK026",
     "price": 900000,
     "discount": 0.09,
+    "finalprice": 819000,
     "img": "images/flowers.jpg",
     "category": "flowers"
   },
@@ -496,6 +545,7 @@
     "name": "Bó Hoa TK027",
     "price": 790000,
     "discount": 0.1,
+    "finalprice": 711000,
     "img": "images/flowers.jpg",
     "category": "flowers"
   },
@@ -504,8 +554,9 @@
     "sku": "FB031200051",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk225",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK225",
-    "price": 129000,
-    "discount": 0,
+    "price": 1200000,
+    "discount": 0.08,
+    "finalprice": 1100000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk225.jpg",
     "category": "fruit-basket"
   },
@@ -514,8 +565,9 @@
     "sku": "FB031200052",
     "slug": "gio-trai-cay-tk227",
     "name": "Giỏ Trái Cây TK227",
-    "price": 129000,
-    "discount": 0,
+    "price": 1000000,
+    "discount": 0.1,
+    "finalprice": 900000,
     "img": "images/gio-trai-cay-tk227.jpg",
     "category": "fruit-basket"
   },
@@ -526,6 +578,7 @@
     "name": "Hoa Quả Viếng VH01",
     "price": 1990000,
     "discount": 0,
+    "finalprice": 1990000,
     "img": "images/hoa-qua-vieng-vh1.jpg",
     "category": "fruit-basket"
   },
@@ -536,6 +589,7 @@
     "name": "Hoa Quả Viếng VH02",
     "price": 2900000,
     "discount": 0,
+    "finalprice": 2900000,
     "img": "images/hoa-qua-vieng-vh2.jpg",
     "category": "fruit-basket"
   },
@@ -546,6 +600,7 @@
     "name": "Hoa Quả Viếng VH03",
     "price": 1200000,
     "discount": 0,
+    "finalprice": 1200000,
     "img": "images/hoa-qua-vieng-vh3.jpg",
     "category": "fruit-basket"
   },
@@ -556,6 +611,7 @@
     "name": "Hoa Quả Viếng VH04",
     "price": 850000,
     "discount": 0,
+    "finalprice": 850000,
     "img": "images/hoa-qua-vieng-vh4.jpg",
     "category": "fruit-basket"
   },
@@ -566,6 +622,7 @@
     "name": "Hoa Quả Viếng VH05",
     "price": 1500000,
     "discount": 0,
+    "finalprice": 1500000,
     "img": "images/hoa-qua-vieng-vh5.jpg",
     "category": "fruit-basket"
   },
@@ -576,6 +633,7 @@
     "name": "Hoa Quả Viếng VH06",
     "price": 2500000,
     "discount": 0,
+    "finalprice": 2500000,
     "img": "images/hoa-qua-vieng-vh6.jpg",
     "category": "fruit-basket"
   },
@@ -586,6 +644,7 @@
     "name": "Hoa Quả Viếng VH07",
     "price": 999000,
     "discount": 0,
+    "finalprice": 999000,
     "img": "images/hoa-qua-vieng-vh7.jpg",
     "category": "fruit-basket"
   },
@@ -596,6 +655,7 @@
     "name": "Hoa Quả Viếng VH08",
     "price": 850000,
     "discount": 0,
+    "finalprice": 850000,
     "img": "images/hoa-qua-vieng-vh8.jpg",
     "category": "fruit-basket"
   },
@@ -606,6 +666,7 @@
     "name": "Hoa Quả Viếng VH09",
     "price": 4500000,
     "discount": 0,
+    "finalprice": 4500000,
     "img": "images/hoa-qua-vieng-vh9.jpg",
     "category": "fruit-basket"
   },
@@ -616,6 +677,7 @@
     "name": "Hoa Quả Viếng VH10",
     "price": 1500000,
     "discount": 0,
+    "finalprice": 1500000,
     "img": "images/hoa-qua-vieng-vh10.jpg",
     "category": "fruit-basket"
   }

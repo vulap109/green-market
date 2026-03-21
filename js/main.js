@@ -243,6 +243,10 @@ function redirectToCart(){
     window.location.href = "/cart.html";
 }
 
+function handleAddToCartAndOrder(productSlug) {
+            window.location.href = "product.html?slug=" + encodeURIComponent(productSlug);
+        }
+
 function loadComponent(id, file) {
     fetch(file)
         .then(res => res.text())

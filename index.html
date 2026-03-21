@@ -30,11 +30,6 @@
             window.location.href = "all-products.html?q=" + categoryName;
         }
 
-        // Hàm xử lý khi nhấn "Chọn Mua"
-        function handleAddToCartAndOrder(productSlug) {
-            window.location.href = "product.html?slug=" + encodeURIComponent(productSlug);
-        }
-
         // Order Form Modal
         function openOrderForm(productName) {
             document.getElementById("orderModal").classList.remove("hidden");
@@ -61,7 +56,7 @@
                 closeOrderForm();
                 Swal.fire({
                     title: "Gửi thành công!",
-                    html: `Cảm ơn <b>${name}</b>.<br>Nhân viên Giỏ Quà Tươi sẽ liên hệ qua SĐT <b>${phone}</b> trong ít phút tới để tư vấn!`,
+                    html: `Cảm ơn <b>${name}</b>.<br>Nhân viên Green Market sẽ liên hệ qua SĐT <b>${phone}</b> trong ít phút tới để tư vấn!`,
                     icon: "success",
                     confirmButtonColor: "#006b38",
                 });
@@ -119,81 +114,26 @@
         <section class="relative w-full h-[400px] md:h-[300px] lg:h-[550px] overflow-hidden bg-[#f4f7f2]">
             <div class="carousel" id="heroCarousel">
                 <div class="carousel-inner" id="carouselInner">
-                    <a href="all-products.html?q=gio-qua-trai-cay" class="carousel-item" title="GREEN MARKET">
+                    <button onclick="openOrderForm('Giỏ Quà Kính Viếng')" class="carousel-item" title="GREEN MARKET">
                         <picture>
                             <source media="(min-width: 768px)" srcset="./images/cover-kinh-vieng-large.jpg">
                             <img src="./images/cover-kinh-vieng-mb.jpg" alt="Cover 1" class="w-full h-full object-cover">
                         </picture>
-                        <!-- <div class="absolute inset-0 bg-black/30 flex items-center">
-                            <div class="max-w-7xl mx-auto px-16 w-full flex justify-end">
-                                <div class="max-w-lg text-right">
-                                    <h2
-                                        class="stackyard text-[ca9e54] text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-2 drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
-                                        Hương Trắng Buồn</span>
-                                    </h2>
-                                    <p class="text-white text-lg md:text-2xl font-semibold italic mb-8 drop-shadow-sm">
-                                        Tiễn Biệt
-                                    </p>
-                                    <button onclick="openOrderForm()"
-                                        class="inline-block bg-[#c48e58] hover:bg-black text-white px-10 py-4 rounded-xl font-extrabold text-sm uppercase tracking-widest transition-all shadow-2xl hover:-translate-y-1 border border-white/20">
-                                        Khám Phá Ngay
-                                    </button>
-                                </div>
-                            </div>
-                        </div> -->
-                    </a>
+                    </button>
 
-                    <a href="all-products.html?q=gio-qua-trai-cay" class="carousel-item" title="GREEN MARKET">
+                    <button onclick="openOrderForm('Giỏ Quà Trao Yêu Thương')" class="carousel-item" title="GREEN MARKET">
                         <picture>
                             <source media="(min-width: 768px)" srcset="./images/cover-trao-yeu-thuong-large.jpg">
                             <img src="./images/cover-trao-yeu-thuong-mb.jpg" alt="Cover 1" class="w-full h-full object-cover">
                         </picture>
-                        <!-- <div class="absolute inset-0 bg-black/30 flex items-center">
-                            <div class="max-w-7xl mx-auto px-16 w-full flex justify-end">
-                                <div class="max-w-lg text-right">
-                                    <h2
-                                        class="serif text-white text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-2 drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
-                                        TƯƠI MỚI <br /><span class="italic text-[#8cb369]">MỖI NGÀY</span>
-                                    </h2>
-                                    <p class="text-white text-lg md:text-2xl font-semibold italic mb-8 drop-shadow-sm">
-                                        Trái cây nhập khẩu chuẩn Global GAP
-                                    </p>
-                                    <button onclick="openOrderForm()"
-                                        class="inline-block bg-[#c48e58] hover:bg-black text-white px-10 py-4 rounded-xl font-extrabold text-sm uppercase tracking-widest transition-all shadow-2xl hover:-translate-y-1 border border-white/20">
-                                        Khám Phá Ngay
-                                    </button>
-                                </div>
-                            </div>
-                        </div> -->
-                    </a>
+                    </button>
 
-                    <a href="all-products.html?q=gio-qua-trai-cay" class="carousel-item" title="GREEN MARKET">
+                    <button onclick="openOrderForm('Giỏ Quà Tươi Ngon')" class="carousel-item" title="GREEN MARKET">
                         <picture>
                             <source media="(min-width: 768px)" srcset="./images/cover-tuoi-ngon-large.jpg">
                             <img src="./images/cover-tuoi-ngon-mb.jpg" alt="Cover 1" class="w-full h-full object-cover">
                         </picture>
-                        <!-- <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=1920&q=80"
-                            class="img-cover" alt="Banner 3" />
-                        <div class="absolute inset-0 bg-black/50 flex items-center">
-                            <div class="max-w-7xl mx-auto px-16 w-full flex justify-end">
-                                <div class="max-w-lg text-right">
-                                    <h2
-                                        class="serif text-white text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-2 drop-shadow-md">
-                                        QUÀ TẶNG <br /><span class="italic text-[#c48e58]">SANG
-                                            TRỌNG</span>
-                                    </h2>
-                                    <p class="text-white text-lg md:text-2xl font-semibold italic mb-8 drop-shadow-sm">
-                                        Giải pháp quà tặng doanh nghiệp đẳng
-                                        cấp
-                                    </p>
-                                    <button onclick="openOrderForm()"
-                                        class="inline-block bg-[#006b38] hover:bg-black text-white px-10 py-4 rounded-xl font-extrabold text-sm uppercase tracking-widest transition-all shadow-2xl hover:-translate-y-1 border border-white/20">
-                                        Nhận Tư Vấn
-                                    </button>
-                                </div>
-                            </div>
-                        </div> -->
-                    </a>
+                    </button>
                 </div>
 
                 <div class="carousel-control control-prev" onclick="prevSlide()">
@@ -593,7 +533,7 @@
         }
         function resetInterval() {
             clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 50000);
+            slideInterval = setInterval(nextSlide, 5000);
         }
 
         function initHomeProductSections() {
@@ -611,7 +551,7 @@
             loadProducts("cream-cake", limit, null, "home-cream-cake");
         }
 
-        slideInterval = setInterval(nextSlide, 50000);
+        slideInterval = setInterval(nextSlide, 5000);
         initHomeProductSections();
     </script>
 </body>
