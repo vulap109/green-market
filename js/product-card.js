@@ -17,7 +17,8 @@ function productCard(p) {
             <a href="product.html?slug=${encodeURIComponent(productSlug)}" class="relative aspect-[4/3] bg-gray-50 overflow-hidden">
                 <img src="${p.img}"
                     class="img-cover group-hover:scale-105 transition-all duration-500">
-                <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-black px-2 py-1 rounded">${p.discount}</span>
+                <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-medium px-2 py-1 rounded">${p.discount}</span>
+                <img id="icon-flash-sale" src="./images/icon_flash_sale.png" class="absolute top-0 right-2 img-conver" width="80px">
             </a>
             <div class="py-5 px-2 sm:px-5 flex-1 flex flex-col text-center">
                 <a href="product.html?slug=${encodeURIComponent(productSlug)}" class="text-sm font-bold text-gray-800 line-clamp-2 mb-2 leading-tight hover:text-primary transition cursor-pointer">${p.name}</a>
