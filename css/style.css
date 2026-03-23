@@ -81,22 +81,44 @@ body {
 .carousel {
     position: relative;
     width: 100%;
-    height: 100%;
     overflow: hidden;
+    touch-action: pan-y;
+    cursor: grab;
+}
+
+.carousel.is-dragging {
+    cursor: grabbing;
 }
 
 .carousel-inner {
     display: flex;
-    width: 300%;
-    height: 100%;
+    width: 100%;
+    align-items: flex-start;
     transition: transform 0.5s ease-in-out;
 }
 
+.carousel-inner.is-dragging {
+    transition: none;
+}
+
 .carousel-item {
-    width: 33.333%;
-    height: 100%;
+    width: 100%;
+    flex: 0 0 100%;
     position: relative;
-    flex-shrink: 0;
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    line-height: 0;
+    cursor: inherit;
+}
+
+.carousel-item picture,
+.carousel-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
 }
 
 .carousel-indicators {

@@ -111,27 +111,27 @@
     <div id="header"></div>
 
     <div id="homePage">
-        <section class="relative w-full h-[400px] md:h-[300px] lg:h-[550px] overflow-hidden bg-[#f4f7f2]">
+        <section class="relative w-full overflow-hidden bg-[#f4f7f2]">
             <div class="carousel" id="heroCarousel">
                 <div class="carousel-inner" id="carouselInner">
                     <button onclick="openOrderForm('Giỏ Quà Kính Viếng')" class="carousel-item" title="GREEN MARKET">
                         <picture>
                             <source media="(min-width: 768px)" srcset="./images/cover-kinh-vieng-large.jpg">
-                            <img src="./images/cover-kinh-vieng-mb.jpg" alt="Cover 1" class="w-full h-full object-cover">
+                            <img src="./images/cover-kinh-vieng-mb.jpg" alt="Cover 1">
                         </picture>
                     </button>
 
                     <button onclick="openOrderForm('Giỏ Quà Trao Yêu Thương')" class="carousel-item" title="GREEN MARKET">
                         <picture>
                             <source media="(min-width: 768px)" srcset="./images/cover-trao-yeu-thuong-large.jpg">
-                            <img src="./images/cover-trao-yeu-thuong-mb.jpg" alt="Cover 1" class="w-full h-full object-cover">
+                            <img src="./images/cover-trao-yeu-thuong-mb.jpg" alt="Cover 1">
                         </picture>
                     </button>
 
                     <button onclick="openOrderForm('Giỏ Quà Tươi Ngon')" class="carousel-item" title="GREEN MARKET">
                         <picture>
                             <source media="(min-width: 768px)" srcset="./images/cover-tuoi-ngon-large.jpg">
-                            <img src="./images/cover-tuoi-ngon-mb.jpg" alt="Cover 1" class="w-full h-full object-cover">
+                            <img src="./images/cover-tuoi-ngon-mb.jpg" alt="Cover 1">
                         </picture>
                     </button>
                 </div>
@@ -512,11 +512,34 @@
         let currentSlide = 0;
         const totalSlides = 3;
         const carouselInner = document.getElementById("carouselInner");
+        const heroCarousel = document.getElementById("heroCarousel");
         const indicators = document.querySelectorAll(".carousel-indicator");
         let slideInterval;
+        let swipeStartX = 0;
+        let swipeStartY = 0;
+        let swipeEndX = 0;
+        let swipeEndY = 0;
+        let isSwiping = false;
+        let isHorizontalSwipe = false;
+        let hasSwipeDirection = false;
+        let swipeInputType = null;
+        let suppressCarouselClick = false;
+        const swipeThreshold = 50;
+        const swipeIntentThreshold = 12;
+        function setCarouselPosition(offsetX = 0) {
+            if (offsetX === 0) {
+                carouselInner.style.transform = `translateX(${-currentSlide * 100}%)`;
+                return;
+            }
+
+            const operator = offsetX > 0 ? "+" : "-";
+            const distance = Math.abs(offsetX);
+            carouselInner.style.transform = `translateX(calc(${-currentSlide * 100}% ${operator} ${distance}px))`;
+        }
+
         function goToSlide(index) {
             currentSlide = index;
-            carouselInner.style.transform = `translateX(${-currentSlide * 33.333}%)`;
+            setCarouselPosition();
             indicators.forEach((ind, i) => {
                 if (i === currentSlide) ind.classList.add("active");
                 else ind.classList.remove("active");
@@ -535,6 +558,137 @@
             clearInterval(slideInterval);
             slideInterval = setInterval(nextSlide, 5000);
         }
+
+        function startCarouselSwipe(clientX, clientY, inputType) {
+            clearInterval(slideInterval);
+            isSwiping = true;
+            isHorizontalSwipe = false;
+            hasSwipeDirection = false;
+            swipeInputType = inputType;
+            swipeStartX = clientX;
+            swipeStartY = clientY;
+            swipeEndX = clientX;
+            swipeEndY = clientY;
+            heroCarousel.classList.add("is-dragging");
+        }
+
+        function updateCarouselSwipe(clientX, clientY) {
+            if (!isSwiping) return;
+
+            swipeEndX = clientX;
+            swipeEndY = clientY;
+        }
+
+        function syncCarouselSwipePosition() {
+            const deltaX = swipeEndX - swipeStartX;
+            const deltaY = swipeEndY - swipeStartY;
+
+            if (!hasSwipeDirection && (Math.abs(deltaX) > swipeIntentThreshold || Math.abs(deltaY) > swipeIntentThreshold)) {
+                hasSwipeDirection = true;
+                isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
+            }
+
+            if (!isHorizontalSwipe) return;
+
+            carouselInner.classList.add("is-dragging");
+            setCarouselPosition(deltaX);
+        }
+
+        function handleCarouselSwipeMove(event) {
+            if (!event.touches.length) return;
+
+            const touch = event.touches[0];
+            updateCarouselSwipe(touch.clientX, touch.clientY);
+            syncCarouselSwipePosition();
+
+            if (isHorizontalSwipe) {
+                event.preventDefault();
+            }
+        }
+
+        function finishCarouselSwipe() {
+            if (!isSwiping) return;
+
+            const deltaX = swipeEndX - swipeStartX;
+            const deltaY = swipeEndY - swipeStartY;
+            isSwiping = false;
+            hasSwipeDirection = false;
+            const shouldSlide = isHorizontalSwipe && Math.abs(deltaX) >= swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY);
+            isHorizontalSwipe = false;
+            swipeInputType = null;
+            heroCarousel.classList.remove("is-dragging");
+            carouselInner.classList.remove("is-dragging");
+
+            if (shouldSlide) {
+                suppressCarouselClick = true;
+
+                if (deltaX < 0) nextSlide();
+                else prevSlide();
+
+                setTimeout(() => {
+                    suppressCarouselClick = false;
+                }, 300);
+
+                return;
+            }
+
+            setCarouselPosition();
+            resetInterval();
+        }
+
+        function cancelCarouselSwipe() {
+            isSwiping = false;
+            isHorizontalSwipe = false;
+            hasSwipeDirection = false;
+            swipeInputType = null;
+            heroCarousel.classList.remove("is-dragging");
+            carouselInner.classList.remove("is-dragging");
+            setCarouselPosition();
+            resetInterval();
+            suppressCarouselClick = false;
+        }
+
+        heroCarousel.addEventListener("touchstart", (event) => {
+            if (!event.touches.length) return;
+
+            const touch = event.touches[0];
+            startCarouselSwipe(touch.clientX, touch.clientY, "touch");
+        }, { passive: true });
+        heroCarousel.addEventListener("touchmove", handleCarouselSwipeMove, { passive: false });
+        heroCarousel.addEventListener("touchend", finishCarouselSwipe);
+        heroCarousel.addEventListener("touchcancel", cancelCarouselSwipe);
+        heroCarousel.addEventListener("mousedown", (event) => {
+            if (event.button !== 0) return;
+
+            startCarouselSwipe(event.clientX, event.clientY, "mouse");
+        });
+        window.addEventListener("mousemove", (event) => {
+            if (!isSwiping || swipeInputType !== "mouse") return;
+
+            updateCarouselSwipe(event.clientX, event.clientY);
+            syncCarouselSwipePosition();
+
+            if (isHorizontalSwipe) {
+                event.preventDefault();
+            }
+        });
+        window.addEventListener("mouseup", (event) => {
+            if (!isSwiping || swipeInputType !== "mouse") return;
+
+            updateCarouselSwipe(event.clientX, event.clientY);
+            finishCarouselSwipe();
+        });
+        window.addEventListener("blur", cancelCarouselSwipe);
+        heroCarousel.addEventListener("dragstart", (event) => {
+            event.preventDefault();
+        });
+        carouselInner.addEventListener("click", (event) => {
+            if (!suppressCarouselClick) return;
+
+            event.preventDefault();
+            event.stopPropagation();
+            suppressCarouselClick = false;
+        }, true);
 
         function initHomeProductSections() {
             const limit = 8;
