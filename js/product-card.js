@@ -15,9 +15,12 @@ function productCard(p) {
     const flashSaleIcon = p.discount >= 11
         ? '<img id="icon-flash-sale" src="./images/icon_flash_sale.png" class="absolute top-0 right-2 img-conver" width="80px">'
         : "";
-    const discountSpan = p.discount > 0
-        ? `<span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-medium px-2 py-1 rounded">${discountPercent}</span>`
-        : "";
+    let discountSpan = "";
+    let priceSpan = "";
+    if (p.discount > 0){
+        discountSpan = `<span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-medium px-2 py-1 rounded">${discountPercent}</span>`;
+        priceSpan = `<span class="text-gray-400 line-through text-xs font-medium">${p.price.toLocaleString()} ₫</span>`;
+    }
 
     return `
         <div class="product-card bg-white border border-gray-100 rounded-xl overflow-hidden transition-all flex flex-col group relative shadow-sm hover:shadow-xl">
@@ -32,7 +35,7 @@ function productCard(p) {
                 <div class="mt-auto">
                     <div class="flex flex-col sm:flex-row justify-center items-center gap-2">
                         <span class="text-red-600 font-black text-base">${p.finalprice.toLocaleString()} ₫</span>
-                        <span class="text-gray-400 line-through text-xs font-medium">${p.price.toLocaleString()} ₫</span>
+                        ${priceSpan}
                     </div>
                     <button onclick="handleAddToCartAndOrder('${productSlug}')"
                         class="w-full mt-4 bg-white border border-primary text-primary py-2.5 rounded-lg text-[11px] font-black uppercase tracking-wider hover:bg-red-500 hover:text-white transition-all flex items-center justify-center gap-2">

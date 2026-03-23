@@ -168,6 +168,14 @@
                 .replace(/^-+|-+$/g, "");
         }
 
+        function getCartItemSize(cartItem) {
+            return String(cartItem?.size || "");
+        }
+
+        function getCartItemDomKey(cartItem) {
+            return `${String(cartItem?.id || "")}::${getCartItemSize(cartItem)}`;
+        }
+
         function getUnitPrice(product, cartItem) {
             if (cartItem && cartItem.priceSnapshot !== undefined) {
                 return Number(cartItem.priceSnapshot) || 0;
@@ -224,19 +232,22 @@
                 const product = cartProducts.find(function (item) {
                     return String(item.id) === String(cartItem.id) || String(item.Id) === String(cartItem.id);
                 });
+                const size = getCartItemSize(cartItem);
+                const cartItemKey = getCartItemDomKey(cartItem);
                 const unitPrice = getUnitPrice(product, cartItem);
                 const quantity = Number(cartItem.qty) || 0;
                 const totalPrice = unitPrice * quantity;
                 const name = product ? product.name : `San pham #${cartItem.id}`;
                 const sku = product ? product.sku : "N/A";
+                const sizeLabel = cartItem.size ? cartItem.size : "";
                 const image = product ? (product.img || "/images/sp1.jpg") : "/images/sp1.jpg";
                 const productLink = product
                     ? `/product.html?slug=${encodeURIComponent(buildProductSlug(product))}`
                     : "#";
 
                 return `
-                    <div class="cart-item flex p-4 border-b border-gray-100 last:border-b-0 relative" data-id="${escapeHtml(cartItem.id)}">
-                        <button onclick="removeItem('${String(cartItem.id).replace(/'/g, "\\'")}')"
+                    <div class="cart-item flex p-4 border-b border-gray-100 last:border-b-0 relative" data-key="${escapeHtml(cartItemKey)}">
+                        <button onclick="removeItem('${String(cartItem.id).replace(/'/g, "\\'")}', '${size.replace(/'/g, "\\'")}')"
                             class="absolute top-2 left-2 w-5 h-5 bg-gray-400 text-white rounded-full flex items-center justify-center text-[10px] hover:bg-red-500 transition-colors z-10"
                             aria-label="Xóa sản phẩm">
                             <i class="fa-solid fa-xmark"></i>
@@ -254,6 +265,7 @@
                                         ${escapeHtml(name)}
                                     </a>
                                     <p class="text-xs text-gray-500 mt-1">${escapeHtml(sku)}</p>
+                                    ${sizeLabel ? `<p class="text-xs text-primary font-medium mt-1">Kich thuoc: ${escapeHtml(sizeLabel)}</p>` : ""}
                                     <p class="text-xs font-medium text-gray-500 mt-1">${formatMoney(unitPrice)}</p>
                                 </div>
                                 <div class="text-right flex-shrink-0">
@@ -261,11 +273,11 @@
 
                                     <div
                                         class="flex items-center mt-3 border border-gray-200 rounded overflow-hidden w-[110px] ml-auto">
-                                        <button onclick="changeCartQty('${String(cartItem.id).replace(/'/g, "\\'")}', -1)"
+                                        <button onclick="changeCartQty('${String(cartItem.id).replace(/'/g, "\\'")}', -1, '${size.replace(/'/g, "\\'")}')"
                                             class="w-16 h-8 bg-gray-50 hover:bg-gray-100 flex items-center justify-center text-gray-600 font-bold transition-colors">-</button>
                                         <input type="text" value="${quantity}" readonly
                                             class="w-full h-8 text-center text-sm font-semibold focus:outline-none qty-input bg-white">
-                                        <button onclick="changeCartQty('${String(cartItem.id).replace(/'/g, "\\'")}', 1)"
+                                        <button onclick="changeCartQty('${String(cartItem.id).replace(/'/g, "\\'")}', 1, '${size.replace(/'/g, "\\'")}')"
                                             class="w-16 h-8 bg-gray-50 hover:bg-gray-100 flex items-center justify-center text-gray-600 font-bold transition-colors">+</button>
                                     </div>
                                 </div>
@@ -279,9 +291,9 @@
             syncHeaderBadge();
         }
 
-        function changeCartQty(id, change) {
+        function changeCartQty(id, change, size = "") {
             const cartItem = getCart().find(function (item) {
-                return String(item.id) === String(id);
+                return String(item.id) === String(id) && getCartItemSize(item) === String(size || "");
             });
 
             if (!cartItem) return;
@@ -289,10 +301,10 @@
             const nextQty = (Number(cartItem.qty) || 0) + Number(change);
             if (nextQty < 1) return;
 
-            updateCartQty(id, nextQty);
+            updateCartQty(id, nextQty, size);
         }
 
-        function removeItem(id) {
+        function removeItem(id, size = "") {
             Swal.fire({
                 title: "Bỏ sản phẩm?",
                 text: "Bạn có chắc muốn bỏ sản phẩm này khỏi giỏ hàng?",
@@ -305,7 +317,7 @@
             }).then(function (result) {
                 if (!result.isConfirmed) return;
 
-                removeFromCart(id);
+                removeFromCart(id, size);
 
                 Swal.fire({
                     text: "Đã xoá sản phẩm",

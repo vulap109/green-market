@@ -5,9 +5,14 @@ const CART_KEY = "cart_v1";
   {
     id: "123",         // product id (string or number)
     qty: 2,            // quantity
-    priceSnapshot: 100000 // optional
+    priceSnapshot: 100000, // optional
+    size: "12cm"           // optional
   }
 */
+
+function getCartItemSize(item) {
+  return String(item?.size || "");
+}
 
 function getCart() {
   try {
@@ -26,28 +31,34 @@ function saveCart(cart) {
 }
 
 function addToCart(item) {
-  // item = { id, qty = 1, priceSnapshot? }
+  // item = { id, qty = 1, priceSnapshot?, size? }
   const cart = getCart();
   const id = String(item.id);
   const qtyToAdd = Number(item.qty) || 1;
+  const size = String(item.size || "");
 
-  const exist = cart.find(i => String(i.id) === id);
+  const exist = cart.find(i => String(i.id) === id && getCartItemSize(i) === size);
   if (exist) {
     exist.qty = Number(exist.qty) + qtyToAdd;
+    if (item.priceSnapshot !== undefined) {
+      exist.priceSnapshot = item.priceSnapshot;
+    }
   } else {
     cart.push({
       id,
       qty: qtyToAdd,
-      ...(item.priceSnapshot !== undefined ? { priceSnapshot: item.priceSnapshot } : {})
+      ...(item.priceSnapshot !== undefined ? { priceSnapshot: item.priceSnapshot } : {}),
+      ...(size ? { size } : {})
     });
   }
   saveCart(cart);
 }
 
 // cập nhật số lượng (nếu qty <= 0 thì xóa)
-function updateCartQty(id, qty) {
+function updateCartQty(id, qty, size = "") {
   const cart = getCart();
-  const idx = cart.findIndex(i => String(i.id) === String(id));
+  const normalizedSize = String(size || "");
+  const idx = cart.findIndex(i => String(i.id) === String(id) && getCartItemSize(i) === normalizedSize);
   if (idx === -1) return;
   qty = Number(qty);
   if (qty > 0) {
@@ -56,8 +67,9 @@ function updateCartQty(id, qty) {
   saveCart(cart);
 }
 
-function removeFromCart(id) {
-  const cart = getCart().filter(i => String(i.id) !== String(id));
+function removeFromCart(id, size = "") {
+  const normalizedSize = String(size || "");
+  const cart = getCart().filter(i => !(String(i.id) === String(id) && getCartItemSize(i) === normalizedSize));
   saveCart(cart);
 }
 

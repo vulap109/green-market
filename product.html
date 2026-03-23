@@ -22,6 +22,13 @@
 <body class="relative flex flex-col min-h-screen">
     <script>
         let currentProduct = null;
+        const CREAM_CAKE_SIZES = [
+            { value: "12cm", label: "12cm", price: 129000 },
+            { value: "14cm", label: "14cm", price: 210000 },
+            { value: "16cm", label: "16cm", price: 250000 },
+            { value: "18cm", label: "18cm", price: 320000 },
+            { value: "20cm", label: "20cm", price: 350000 }
+        ];
 
         function appNotify(msg) {
             Swal.fire({
@@ -58,11 +65,16 @@
             }
 
             const qty = getSelectedQty();
+            const selectedCakeSize = getSelectedCakeSize();
+            const selectedPrice = selectedCakeSize ? selectedCakeSize.price : Number(currentProduct.finalprice || 0);
 
             addToCart({
                 id: currentProduct.id,
                 qty: qty,
-                priceSnapshot: currentProduct.finalprice
+                priceSnapshot: selectedPrice,
+                ...(selectedCakeSize ? {
+                    size: selectedCakeSize.label
+                } : {})
             });
 
             appNotify("đã thêm " + qty + " sản phẩm vào giỏ hàng!");
@@ -84,6 +96,99 @@
             const input = document.getElementById("productQty");
             const val = Number(input.value) || 1;
             input.value = val + 1;
+        }
+
+        function getSelectedCakeSize() {
+            const section = document.getElementById("cakeSizeSection");
+            if (!section || section.classList.contains("hidden")) {
+                return null;
+            }
+
+            const selectedSize = document.querySelector('input[name="cake-size"]:checked');
+            if (!selectedSize) {
+                return null;
+            }
+
+            return {
+                value: selectedSize.value,
+                label: selectedSize.getAttribute("data-label") || selectedSize.value,
+                price: Number(selectedSize.getAttribute("data-price")) || 0
+            };
+        }
+
+        function formatProductMoney(amount) {
+            return Number(amount || 0).toLocaleString("vi-VN") + " đ";
+        }
+
+        function updateDisplayedPrice(product) {
+            const priceElement = document.getElementById("productPrice");
+            const oldPriceElement = document.getElementById("productOldPrice");
+            if (!priceElement || !oldPriceElement || !product) return;
+
+            if (product.category === "cream-cake") {
+                const selectedCakeSize = getSelectedCakeSize() || CREAM_CAKE_SIZES[0];
+                priceElement.innerText = formatProductMoney(selectedCakeSize.price);
+                oldPriceElement.innerText = "";
+                oldPriceElement.classList.add("hidden");
+                return;
+            }
+
+            const currentPrice = Number(product.finalprice || product.price || 0);
+            const oldPrice = Number(product.price || 0);
+
+            priceElement.innerText = formatProductMoney(currentPrice);
+            if (oldPrice > currentPrice) {
+                oldPriceElement.innerText = formatProductMoney(oldPrice);
+                oldPriceElement.classList.remove("hidden");
+            } else {
+                oldPriceElement.innerText = "";
+                oldPriceElement.classList.add("hidden");
+            }
+        }
+
+        function handleCakeSizeChange() {
+            if (!currentProduct || currentProduct.category !== "cream-cake") return;
+            updateDisplayedPrice(currentProduct);
+        }
+
+        function formatProductMoney(amount) {
+            return Number(amount || 0).toLocaleString("vi-VN") + " \u20AB";
+        }
+
+        function renderCakeOptions(product) {
+            const section = document.getElementById("cakeSizeSection");
+            if (!section) return;
+
+            if (!product || product.category !== "cream-cake") {
+                section.innerHTML = "";
+                section.classList.add("hidden");
+                return;
+            }
+
+            section.classList.remove("hidden");
+            section.innerHTML = `
+                <p class="text-sm font-bold text-gray-700 mb-3">Kich thuoc:</p>
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                    ${CREAM_CAKE_SIZES.map(function (size, index) {
+                        return `
+                            <label class="cursor-pointer">
+                                <input
+                                    type="radio"
+                                    name="cake-size"
+                                    value="${size.value}"
+                                    data-label="${size.label}"
+                                    data-price="${size.price}"
+                                    onchange="handleCakeSizeChange()"
+                                    class="peer sr-only"
+                                    ${index === 0 ? "checked" : ""}>
+                                <span class="flex h-11 items-center justify-center rounded-lg border border-gray-300 bg-white text-sm font-semibold text-gray-700 transition-all peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white hover:border-primary">
+                                    ${size.label}
+                                </span>
+                            </label>
+                        `;
+                    }).join("")}
+                </div>
+            `;
         }
     </script>
 
@@ -135,6 +240,9 @@
                         <i class="fa-solid fa-fire text-orange-500"></i> SẢN PHẨM FLASH SALE
                     </div>
                 </div>
+
+                <!-- option-cake -->
+                <div id="cakeSizeSection" class="mb-6 hidden"></div>
 
                 <div class="mb-6">
                     <p class="text-sm font-bold text-gray-700 mb-2">Số lượng:</p>
@@ -223,6 +331,8 @@
             document.getElementById("productPrice").innerText = Number(product.price).toLocaleString("vi-VN") + " đ";
             document.getElementById("productOldPrice").innerText = Number(product.finalprice).toLocaleString("vi-VN") + " đ";
             document.title = product.name + " | Gio Qua Tuoi";
+            renderCakeOptions(product);
+            updateDisplayedPrice(product);
         }
 
         function loadProduct() {
