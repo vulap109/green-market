@@ -284,3 +284,8 @@ document.addEventListener("visibilitychange", function () {
 
     triggerContactRing();
 });
+
+
+function formatProductMoney(amount) {
+    return Number(amount || 0).toLocaleString("vi-VN") + " \u20AB";
+}

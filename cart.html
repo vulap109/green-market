@@ -168,10 +168,6 @@
                 .replace(/^-+|-+$/g, "");
         }
 
-        function getCartItemSize(cartItem) {
-            return String(cartItem?.size || "");
-        }
-
         function getCartItemDomKey(cartItem) {
             return `${String(cartItem?.id || "")}::${getCartItemSize(cartItem)}`;
         }
@@ -239,7 +235,6 @@
                 const totalPrice = unitPrice * quantity;
                 const name = product ? product.name : `San pham #${cartItem.id}`;
                 const sku = product ? product.sku : "N/A";
-                const sizeLabel = cartItem.size ? cartItem.size : "";
                 const image = product ? (product.img || "/images/sp1.jpg") : "/images/sp1.jpg";
                 const productLink = product
                     ? `/product.html?slug=${encodeURIComponent(buildProductSlug(product))}`
@@ -265,7 +260,7 @@
                                         ${escapeHtml(name)}
                                     </a>
                                     <p class="text-xs text-gray-500 mt-1">${escapeHtml(sku)}</p>
-                                    ${sizeLabel ? `<p class="text-xs text-primary font-medium mt-1">Kich thuoc: ${escapeHtml(sizeLabel)}</p>` : ""}
+                                    ${size ? `<p class="text-xs text-primary font-medium mt-1">Kich thuoc: ${escapeHtml(size)}</p>` : ""}
                                     <p class="text-xs font-medium text-gray-500 mt-1">${formatMoney(unitPrice)}</p>
                                 </div>
                                 <div class="text-right flex-shrink-0">
