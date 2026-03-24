@@ -22,13 +22,30 @@
 <body class="relative flex flex-col min-h-screen">
     <script>
         let currentProduct = null;
-        const CREAM_CAKE_SIZES = [
-            { value: "12cm", label: "12cm", price: 129000 },
-            { value: "14cm", label: "14cm", price: 210000 },
-            { value: "16cm", label: "16cm", price: 250000 },
-            { value: "18cm", label: "18cm", price: 320000 },
-            { value: "20cm", label: "20cm", price: 350000 }
-        ];
+        const CREAM_CAKE_SIZES = {
+            ll: [
+                { value: "12cm", label: "12cm", price: 129000 },
+                { value: "14cm", label: "14cm", price: 210000 },
+                { value: "16cm", label: "16cm", price: 250000 },
+                { value: "18cm", label: "18cm", price: 320000 },
+                { value: "20cm", label: "20cm", price: 350000 }
+            ],
+            ht: [
+                { value: "14cm", label: "14cm", price: 310000 },
+                { value: "16cm", label: "16cm", price: 350000 },
+                { value: "18cm", label: "18cm", price: 420000 },
+                { value: "20cm", label: "20cm", price: 450000 }
+            ]
+        };
+
+        function getCreamCakeSizeOptions(product) {
+            if (!product || product.category !== "cream-cake") {
+                return [];
+            }
+
+            const subcategory = String(product.subcategory || "").toLowerCase();
+            return CREAM_CAKE_SIZES[subcategory] || CREAM_CAKE_SIZES.ll;
+        }
 
         function appNotify(msg) {
             Swal.fire({
@@ -120,8 +137,10 @@
             if (!priceElement || !ogrPriceElement || !product) return;
 
             if (product.category === "cream-cake") {
-                const selectedCakeSize = getSelectedCakeSize() || CREAM_CAKE_SIZES[0];
-                priceElement.innerText = formatProductMoney(selectedCakeSize.price);
+                const sizeOptions = getCreamCakeSizeOptions(product);
+                const selectedCakeSize = getSelectedCakeSize() || sizeOptions[0];
+                const selectedPrice = selectedCakeSize ? selectedCakeSize.price : Number(product.finalprice || 0);
+                priceElement.innerText = formatProductMoney(selectedPrice);
                 ogrPriceElement.innerText = "";
                 ogrPriceElement.classList.add("hidden");
                 return;
@@ -149,7 +168,9 @@
             const section = document.getElementById("cakeSizeSection");
             if (!section) return;
 
-            if (!product || product.category !== "cream-cake") {
+            const sizeOptions = getCreamCakeSizeOptions(product);
+
+            if (!product || product.category !== "cream-cake" || !sizeOptions.length) {
                 section.innerHTML = "";
                 section.classList.add("hidden");
                 return;
@@ -159,7 +180,7 @@
             section.innerHTML = `
                 <p class="text-sm font-bold text-gray-700 mb-3">Kich thuoc:</p>
                 <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
-                    ${CREAM_CAKE_SIZES.map(function (size, index) {
+                    ${sizeOptions.map(function (size, index) {
                 return `
                             <label class="cursor-pointer">
                                 <input
@@ -171,7 +192,7 @@
                                     onchange="handleCakeSizeChange()"
                                     class="peer sr-only"
                                     ${index === 0 ? "checked" : ""}>
-                                <span class="flex h-11 items-center justify-center rounded-lg border border-gray-300 bg-white text-sm font-semibold text-gray-700 transition-all peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white hover:border-primary">
+                                <span class="flex h-11 items-center justify-center rounded-lg border border-gray-300 bg-white text-sm font-semibold text-gray-700 transition-all peer-checked:border-orange-600">
                                     ${size.label}
                                 </span>
                             </label>
