@@ -24,6 +24,10 @@
     font-display: swap;
 }
 
+html {
+    scrollbar-gutter: stable;
+}
+
 body {
     font-family: "Montserrat", sans-serif;
     color: #333;
@@ -47,15 +51,15 @@ body {
 }
 
 .bg-primary {
-    background-color: #006b38;
+    background-color: #006b38 !important;
 }
 
 .text-primary {
-    color: #006b38;
+    color: #006b38 !important;
 }
 
 .border-primary {
-    border-color: #006b38;
+    border-color: #006b38 !important;
 }
 
 .product-card:hover {
