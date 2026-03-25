@@ -339,6 +339,19 @@
                     tone mau va gia tri tuong duong.</p>
             </div>
         </div>
+
+        <section id="similarProductsSection" class="mt-8 hidden">
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
+                <div class="flex items-center justify-between gap-4 border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800">Sản phẩm tương tự</h3>
+                    </div>
+                    <a href="/all-products.html" class="text-xs font-bold text-primary hover:underline">Xem tất cả</a>
+                </div>
+
+                <div id="similarProductsList" class="grid grid-cols-2 lg:grid-cols-5 gap-6 mt-6"></div>
+            </div>
+        </section>
     </main>
 
     <div id="footer"></div>
@@ -346,7 +359,35 @@
 
     <script src="/js/cart.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/product-card.js"></script>
     <script>
+        function renderSimilarProducts(product, products) {
+            const section = document.getElementById("similarProductsSection");
+            if (!section || typeof renderProducts !== "function" || !product || !Array.isArray(products)) {
+                return;
+            }
+
+            const similarProducts = products
+                .filter(function (item) {
+                    return item.category === product.category && item.id !== product.id;
+                })
+                .slice(0, 5)
+                .map(function (item) {
+                    return {
+                        ...item,
+                        discount: getProductDiscount(item)
+                    };
+                });
+
+            if (!similarProducts.length) {
+                section.classList.add("hidden");
+                return;
+            }
+
+            renderProducts(similarProducts, "similarProductsList");
+            section.classList.remove("hidden");
+        }
+
         function renderProduct(product) {
             currentProduct = product;
 
@@ -395,6 +436,7 @@
                     }
 
                     renderProduct(product);
+                    renderSimilarProducts(product, products);
                 })
                 .catch(function (error) {
                     console.error("loadProduct error:", error);

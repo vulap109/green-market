@@ -85,8 +85,7 @@ function loadProducts(category = null, limit = null, ids = null, containerId = "
 
             //Calculate discount
             products.forEach(p => {
-                const percent = p.price ? ((p.price - p.finalprice) / p.price) * 100 : 0;
-                p.discount = Math.floor(percent * 2) / 2;
+                p.discount = getProductDiscount(p);
             });
 
             renderProducts(products, containerId);
@@ -105,4 +104,16 @@ function loadProducts(category = null, limit = null, ids = null, containerId = "
             return pageInfo;
         })
         .catch(err => console.error("loadProducts Err:" + err));
+}
+
+function getProductDiscount(product) {
+    const originalPrice = Number(product.price || 0);
+    const finalPrice = Number(product.finalprice || 0);
+
+    if (!originalPrice || finalPrice >= originalPrice) {
+        return 0;
+    }
+
+    const percent = ((originalPrice - finalPrice) / originalPrice) * 100;
+    return Math.floor(percent * 2) / 2;
 }
