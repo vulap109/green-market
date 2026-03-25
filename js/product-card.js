@@ -51,15 +51,29 @@ function renderProducts(products, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
+    if (!Array.isArray(products) || !products.length) {
+        container.innerHTML = `
+            <div class="col-span-full rounded-2xl border border-dashed border-gray-200 bg-white px-6 py-12 text-center text-sm text-gray-500">
+                Khong tim thay san pham phu hop.
+            </div>
+        `;
+        return;
+    }
+
     container.innerHTML = products
         .map(productCard)
         .join("");
 }
 
 function loadProducts(category = null, limit = null, ids = null, containerId = "productList", options = {}) {
-    return fetch("data/products.json")
-        .then(res => res.json())
+    const productsPromise = typeof getProductsData === "function"
+        ? getProductsData()
+        : fetch("/data/products.json").then(res => res.json());
+
+    return productsPromise
         .then(products => {
+            products = Array.isArray(products) ? products.slice() : [];
+
             if (Array.isArray(ids) && ids.length > 0) {
                 products = ids
                     .map(id => products.find(p => String(p.id) === String(id)))
@@ -71,24 +85,39 @@ function loadProducts(category = null, limit = null, ids = null, containerId = "
                 products = products.filter(p => p.category === category);
             }
 
+            if (options.keyword) {
+                if (typeof filterProductsByKeyword === "function") {
+                    products = filterProductsByKeyword(products, options.keyword);
+                } else {
+                    const fallbackKeyword = String(options.keyword || "").toLowerCase().trim();
+                    products = products.filter(function (product) {
+                        return String(product.name || "").toLowerCase().includes(fallbackKeyword);
+                    });
+                }
+            }
+
             const hasLimit = Number(limit) > 0;
-            const pageSize = hasLimit ? Number(limit) : products.length;
             const totalProducts = products.length;
+            const pageSize = hasLimit ? Number(limit) : totalProducts;
             const totalPages = totalProducts === 0 ? 0 : (hasLimit ? Math.ceil(totalProducts / pageSize) : 1);
             const requestedPage = Number(options.page) || 1;
             const currentPage = totalPages === 0 ? 1 : Math.min(Math.max(requestedPage, 1), totalPages);
+            let pagedProducts = products.slice();
 
             if (hasLimit) {
                 const startIndex = (currentPage - 1) * pageSize;
-                products = products.slice(startIndex, startIndex + pageSize);
+                pagedProducts = products.slice(startIndex, startIndex + pageSize);
             }
 
             //Calculate discount
-            products.forEach(p => {
-                p.discount = getProductDiscount(p);
+            pagedProducts = pagedProducts.map(function (product) {
+                return {
+                    ...product,
+                    discount: getProductDiscount(product)
+                };
             });
 
-            renderProducts(products, containerId);
+            renderProducts(pagedProducts, containerId);
 
             const pageInfo = {
                 currentPage,
@@ -103,7 +132,23 @@ function loadProducts(category = null, limit = null, ids = null, containerId = "
 
             return pageInfo;
         })
-        .catch(err => console.error("loadProducts Err:" + err));
+        .catch(err => {
+            console.error("loadProducts Err:" + err);
+            renderProducts([], containerId);
+
+            const pageInfo = {
+                currentPage: 1,
+                totalPages: 0,
+                totalProducts: 0,
+                pageSize: 0
+            };
+
+            if (typeof options.onPageInfo === "function") {
+                options.onPageInfo(pageInfo);
+            }
+
+            return pageInfo;
+        });
 }
 
 function getProductDiscount(product) {

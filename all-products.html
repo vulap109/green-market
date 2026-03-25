@@ -167,7 +167,7 @@
             <div class="flex-1">
                 <div class="flex justify-between items-center my-6">
                     <h1 id="H1_Title" class="text-black font-bold text-lg">Tat Ca San Pham</h1>
-                    <p class="text-xs text-black">Hien thi danh sach san pham</p>
+                    <p id="productListSummary" class="text-xs text-black">Hien thi danh sach san pham</p>
                     <select class="bg-white border border-gray-200 text-xs font-bold px-4 py-2 rounded-lg outline-none cursor-pointer">
                         <option>Mới nhất</option>
                         <option>Theo mức độ phổ biến</option>
@@ -194,8 +194,30 @@
         const allProductsState = {
             category: "",
             ids: null,
-            limit: 9
+            limit: 9,
+            keyword: ""
         };
+
+        function updateProductListSummary(pageInfo) {
+            const summaryElement = document.getElementById("productListSummary");
+            if (!summaryElement) return;
+
+            const totalProducts = Number(pageInfo && pageInfo.totalProducts) || 0;
+
+            if (allProductsState.keyword) {
+                summaryElement.innerText = totalProducts > 0
+                    ? "Tim thay " + totalProducts + " san pham phu hop"
+                    : "Khong tim thay san pham phu hop";
+                return;
+            }
+
+            if (allProductsState.category || (Array.isArray(allProductsState.ids) && allProductsState.ids.length)) {
+                summaryElement.innerText = "Hien thi " + totalProducts + " san pham";
+                return;
+            }
+
+            summaryElement.innerText = "Hien thi danh sach san pham";
+        }
 
         function renderProductPaging(pageInfo) {
             const pagingContainer = document.getElementById("productPaging");
@@ -204,6 +226,7 @@
             const { currentPage, totalPages } = pageInfo;
             if (totalPages === 0) {
                 pagingContainer.innerHTML = "";
+                updateProductListSummary(pageInfo);
                 return;
             }
 
@@ -249,6 +272,7 @@
             }
 
             pagingContainer.innerHTML = pagingHtml;
+            updateProductListSummary(pageInfo);
         }
 
         function loadCurrentProductPage(page = 1) {
@@ -259,6 +283,7 @@
                 "productList",
                 {
                     page,
+                    keyword: allProductsState.keyword,
                     onPageInfo: renderProductPaging
                 }
             );
@@ -279,11 +304,13 @@
         function onPageLoad() {
             const params = new URLSearchParams(window.location.search);
             const query = params.get("q") ? params.get("q").toLowerCase() : null;
+            const keyword = params.get("keyword") ? params.get("keyword").trim() : "";
             let title = "";
 
             allProductsState.limit = 9;
             allProductsState.category = "";
             allProductsState.ids = null;
+            allProductsState.keyword = keyword;
 
             switch (query) {
                 case "ban-chay-nhat":
@@ -316,9 +343,14 @@
                     break;
             }
 
+            if (keyword) {
+                title = 'Ket qua tim kiem: "' + keyword + '"';
+            }
+
             if (title) {
                 document.getElementById("lnk_all_product").innerText = title;
                 document.getElementById("H1_Title").innerText = title;
+                document.title = title + " | Green Market";
             }
 
             loadCurrentProductPage(1);

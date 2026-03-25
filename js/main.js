@@ -4,6 +4,8 @@ let activeHeaderMenuTrigger = null;
 let contactRingIntervalId = null;
 let contactRingTimeoutId = null;
 let contactRingRestartTimeoutId = null;
+let productsDataPromise = null;
+let hasBoundHeaderSearchGlobalEvents = false;
 
 function getHeaderMenuElements() {
     return {
@@ -187,6 +189,259 @@ function initHeaderMenu() {
     document.addEventListener('keydown', handleHeaderCategoryKeydown);
     window.removeEventListener('resize', handleHeaderMenuResize);
     window.addEventListener('resize', handleHeaderMenuResize);
+}
+
+function normalizeSearchText(value) {
+    return String(value || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/\u0111/g, 'd')
+        .replace(/[^a-z0-9\s-]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function filterProductsByKeyword(products, keyword, limit = null) {
+    const sourceProducts = Array.isArray(products) ? products : [];
+    const normalizedKeyword = normalizeSearchText(keyword);
+
+    let matches = normalizedKeyword
+        ? sourceProducts.filter(function (product) {
+            return normalizeSearchText(product && product.name).includes(normalizedKeyword);
+        })
+        : sourceProducts.slice();
+
+    const maxItems = Number(limit);
+    if (maxItems > 0) {
+        matches = matches.slice(0, maxItems);
+    }
+
+    return matches;
+}
+
+function getProductsData() {
+    if (!productsDataPromise) {
+        productsDataPromise = fetch('/data/products.json')
+            .then(function (res) {
+                if (!res.ok) {
+                    throw new Error('Can not load products.json');
+                }
+
+                return res.json();
+            })
+            .then(function (products) {
+                return Array.isArray(products) ? products : [];
+            })
+            .catch(function (error) {
+                productsDataPromise = null;
+                throw error;
+            });
+    }
+
+    return productsDataPromise;
+}
+
+function escapeHtml(value) {
+    return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function resolveAssetPath(path) {
+    const normalizedPath = String(path || '').trim();
+
+    if (!normalizedPath) {
+        return '';
+    }
+
+    if (/^https?:\/\//i.test(normalizedPath)) {
+        return normalizedPath;
+    }
+
+    return normalizedPath.startsWith('/') ? normalizedPath : `/${normalizedPath}`;
+}
+
+function buildProductSearchUrl(keyword) {
+    const trimmedKeyword = String(keyword || '').trim();
+    const params = new URLSearchParams();
+
+    if (trimmedKeyword) {
+        params.set('keyword', trimmedKeyword);
+    }
+
+    const queryString = params.toString();
+    return `/all-products.html${queryString ? `?${queryString}` : ''}`;
+}
+
+function getHeaderSearchElements() {
+    return {
+        wrapper: document.getElementById('header-product-search'),
+        form: document.getElementById('header-product-search-form'),
+        input: document.getElementById('header-product-search-input'),
+        dropdown: document.getElementById('header-product-search-dropdown'),
+        results: document.getElementById('header-product-search-results'),
+        empty: document.getElementById('header-product-search-empty'),
+        viewAll: document.getElementById('header-product-search-view-all')
+    };
+}
+
+function setHeaderSearchDropdownState(isOpen) {
+    const { dropdown, input } = getHeaderSearchElements();
+    if (!dropdown) {
+        return;
+    }
+
+    dropdown.classList.toggle('hidden', !isOpen);
+
+    if (input) {
+        input.setAttribute('aria-expanded', String(isOpen));
+    }
+}
+
+function closeHeaderSearchResults() {
+    setHeaderSearchDropdownState(false);
+}
+
+function renderHeaderSearchResults(keyword) {
+    const elements = getHeaderSearchElements();
+    if (!elements.input || !elements.results || !elements.empty || !elements.viewAll) {
+        return;
+    }
+
+    const trimmedKeyword = String(keyword || '').trim();
+    elements.empty.textContent = 'Khong tim thay san pham phu hop.';
+    elements.viewAll.href = buildProductSearchUrl(trimmedKeyword);
+
+    if (!trimmedKeyword) {
+        elements.results.innerHTML = '';
+        elements.empty.classList.add('hidden');
+        elements.viewAll.classList.add('hidden');
+        closeHeaderSearchResults();
+        return;
+    }
+
+    getProductsData()
+        .then(function (products) {
+            if (elements.input.value.trim() !== trimmedKeyword) {
+                return;
+            }
+
+            const matches = filterProductsByKeyword(products, trimmedKeyword, 4);
+            elements.viewAll.classList.remove('hidden');
+
+            if (!matches.length) {
+                elements.results.innerHTML = '';
+                elements.empty.classList.remove('hidden');
+                setHeaderSearchDropdownState(true);
+                return;
+            }
+
+            elements.empty.classList.add('hidden');
+            elements.results.innerHTML = matches.map(function (product) {
+                const productName = escapeHtml(product.name || 'San pham');
+                const productImage = escapeHtml(resolveAssetPath(product.img));
+                const productPrice = formatProductMoney(product.finalprice || product.price || 0);
+
+                return `
+                    <a href="/product.html?id=${encodeURIComponent(product.id)}"
+                        class="flex items-center gap-3 px-4 py-3 transition hover:bg-gray-50">
+                        <span class="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-gray-100 bg-gray-50">
+                            <img src="${productImage}" alt="${productName}" class="h-full w-full object-cover">
+                        </span>
+                        <span class="min-w-0 flex-1">
+                            <span class="block truncate text-sm font-semibold text-gray-800">${productName}</span>
+                            <span class="mt-1 block text-xs font-bold text-primary">${productPrice}</span>
+                        </span>
+                    </a>
+                `;
+            }).join('');
+
+            setHeaderSearchDropdownState(true);
+        })
+        .catch(function (error) {
+            console.error('renderHeaderSearchResults error:', error);
+
+            if (elements.input.value.trim() !== trimmedKeyword) {
+                return;
+            }
+
+            elements.results.innerHTML = '';
+            elements.empty.textContent = 'Khong tai duoc du lieu san pham.';
+            elements.empty.classList.remove('hidden');
+            elements.viewAll.classList.remove('hidden');
+            setHeaderSearchDropdownState(true);
+        });
+}
+
+function submitHeaderProductSearch() {
+    const { input } = getHeaderSearchElements();
+    if (!input) {
+        return;
+    }
+
+    window.location.href = buildProductSearchUrl(input.value);
+}
+
+function handleHeaderSearchDocumentClick(event) {
+    const { wrapper } = getHeaderSearchElements();
+    if (!wrapper || wrapper.contains(event.target)) {
+        return;
+    }
+
+    closeHeaderSearchResults();
+}
+
+function handleHeaderSearchGlobalKeydown(event) {
+    if (event.key !== 'Escape') {
+        return;
+    }
+
+    closeHeaderSearchResults();
+}
+
+function bindHeaderSearchGlobalEvents() {
+    if (hasBoundHeaderSearchGlobalEvents) {
+        return;
+    }
+
+    document.addEventListener('click', handleHeaderSearchDocumentClick);
+    document.addEventListener('keydown', handleHeaderSearchGlobalKeydown);
+    hasBoundHeaderSearchGlobalEvents = true;
+}
+
+function initHeaderSearch() {
+    const elements = getHeaderSearchElements();
+    if (!elements.form || !elements.input) {
+        return;
+    }
+
+    bindHeaderSearchGlobalEvents();
+    elements.input.value = new URLSearchParams(window.location.search).get('keyword') || '';
+
+    elements.form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        submitHeaderProductSearch();
+    });
+
+    elements.input.addEventListener('input', function (event) {
+        renderHeaderSearchResults(event.target.value);
+    });
+
+    elements.input.addEventListener('focus', function () {
+        if (elements.input.value.trim()) {
+            renderHeaderSearchResults(elements.input.value);
+        }
+    });
+
+    if (elements.viewAll) {
+        elements.viewAll.addEventListener('click', function () {
+            closeHeaderSearchResults();
+        });
+    }
 }
 
 function ensureContactRingDecorations(button) {
@@ -389,6 +644,7 @@ function loadComponent(id, file) {
             document.getElementById(id).innerHTML = data;
             if (id === "header") {
                 initHeaderMenu();
+                initHeaderSearch();
                 window.dispatchEvent(new CustomEvent("header:loaded"));
             }
             if (id === "contact-pop") {
