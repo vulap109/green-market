@@ -50,28 +50,6 @@
 </head>
 
 <body class="bg-gray-50 relative">
-    <script>
-        function appNotify(msg) {
-            Swal.fire({
-                text: msg,
-                icon: "success",
-                timer: 1500,
-                showConfirmButton: false,
-                toast: true,
-                position: "top-end"
-            });
-        }
-
-        function filterByPrice() {
-            let minPrice = document.getElementById("minPrice").value;
-            let maxPrice = document.getElementById("maxPrice").value;
-            if (minPrice || maxPrice) {
-                appNotify("Dang loc san pham theo gia...");
-            } else {
-                appNotify("Vui long nhap khoang gia can loc.");
-            }
-        }
-    </script>
 
     <div id="header"></div>
 
@@ -95,79 +73,65 @@
             <div class="w-full md:w-64 pt-4 flex-shrink-0">
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 sticky top-32">
                     <h3 class="text-sm uppercase tracking-widest border-b border-gray-100 pb-4 mb-4 text-gray-900">
-                        Danh muc san pham
+                        Bộ lọc
                     </h3>
-                    <ul class="space-y-3 text-xs font-bold text-gray-600">
-                        <li onclick="appNotify('Da chon: Tat ca')" class="flex items-center gap-3 cursor-pointer text-primary transition">
-                            <input type="checkbox" checked class="custom-checkbox" readonly> Tat ca san pham
-                        </li>
-                        <li onclick="appNotify('Da chon: Theo gia')" class="flex justify-between items-center cursor-pointer hover:text-primary transition">
-                            <span class="flex items-center gap-3"><input type="checkbox" class="custom-checkbox"> Theo gia</span>
-                            <i class="fa-solid fa-chevron-down text-[10px]"></i>
-                        </li>
-                        <li onclick="appNotify('Da chon: Qua tang trai cay')" class="flex justify-between items-center cursor-pointer hover:text-primary transition">
-                            <span class="flex items-center gap-3"><input type="checkbox" class="custom-checkbox"> Qua tang trai cay</span>
-                            <i class="fa-solid fa-chevron-down text-[10px]"></i>
-                        </li>
-                        <li onclick="appNotify('Da chon: Gio qua tet')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
-                            <input type="checkbox" class="custom-checkbox"> Gio qua tet
-                        </li>
-                        <li onclick="appNotify('Da chon: Gio hoa qua Vinmart')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
-                            <input type="checkbox" class="custom-checkbox"> Gio hoa qua Vinmart
-                        </li>
-                        <li onclick="appNotify('Da chon: Gio hoa qua Klever Fruit')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
-                            <input type="checkbox" class="custom-checkbox"> Gio hoa qua Klever Fruit
-                        </li>
-                        <li onclick="appNotify('Da chon: Chua phan loai')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
-                            <input type="checkbox" class="custom-checkbox"> Chua phan loai
-                        </li>
-                    </ul>
+                    <ul id="categoryFilterList" class="space-y-3 text-xs font-bold text-gray-600"></ul>
 
                     <h3 class="font-black text-sm uppercase tracking-widest border-b border-gray-100 pb-4 mt-8 mb-4 text-gray-900">
-                        Khoang gia
+                        Khoảng giá
                     </h3>
-                    <ul class="space-y-3 text-xs font-bold text-gray-600 mb-6">
-                        <li onclick="appNotify('Loc gia: 0 - 500k')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
-                            <input type="checkbox" class="custom-checkbox"> 0 - 500k
+                    <ul id="priceFilterList" class="space-y-3 text-xs font-bold text-gray-600 mb-6">
+                        <li>
+                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="" checked />
+                                <span>Tất cả mức giá</span>
+                            </label>
                         </li>
-                        <li onclick="appNotify('Loc gia: 500k - 1tr')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
-                            <input type="checkbox" class="custom-checkbox"> 500k - 1tr
+                        <li>
+                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="0-500k" />
+                                <span>0 - 500k</span>
+                            </label>
                         </li>
-                        <li onclick="appNotify('Loc gia: 1tr - 1tr5')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
-                            <input type="checkbox" class="custom-checkbox"> 1tr - 1tr5
+                        <li>
+                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="500k-1m" />
+                                <span>500k - 1tr</span>
+                            </label>
                         </li>
-                        <li onclick="appNotify('Loc gia: 1tr5 - 2tr')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
-                            <input type="checkbox" class="custom-checkbox"> 1tr5 - 2tr
+                        <li>
+                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="1m-1_5m" />
+                                <span>1trieu - 1tr5</span>
+                            </label>
                         </li>
-                        <li onclick="appNotify('Loc gia: 2tr - 3tr')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
-                            <input type="checkbox" class="custom-checkbox"> 2tr - 3tr
+                        <li>
+                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="1_5m-2m" />
+                                <span>1tr5 - 2tr</span>
+                            </label>
                         </li>
-                        <li onclick="appNotify('Loc gia: 3tr tro len')" class="flex items-center gap-3 cursor-pointer hover:text-primary transition">
-                            <input type="checkbox" class="custom-checkbox"> 3tr tro len
+                        <li>
+                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="2m-3m" />
+                                <span>2tr - 3tr</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="3m-plus" />
+                                <span>3tr trở lên</span>
+                            </label>
                         </li>
                     </ul>
 
-                    <!-- <div class="border-t border-gray-100 pt-4">
-                        <p class="text-[10px] text-gray-500 font-bold mb-2">Hoac nhap khoang gia:</p>
-                        <div class="flex items-center gap-2 mb-3">
-                            <input type="number" id="minPrice" placeholder="Tu..."
-                                class="w-full bg-gray-50 border border-gray-200 rounded p-2 text-xs focus:outline-none focus:border-primary">
-                            <span class="text-gray-400 font-bold">-</span>
-                            <input type="number" id="maxPrice" placeholder="Den..."
-                                class="w-full bg-gray-50 border border-gray-200 rounded p-2 text-xs focus:outline-none focus:border-primary">
-                        </div>
-                        <button onclick="filterByPrice()"
-                            class="w-full bg-primary text-white py-2 rounded text-[10px] font-black uppercase tracking-wider hover:bg-black transition-all">
-                            Ap dung loc
-                        </button>
-                    </div> -->
                 </div>
             </div>
 
             <div class="flex-1">
                 <div class="flex justify-between items-center my-6">
-                    <h1 id="H1_Title" class="text-black font-bold text-lg">Tat Ca San Pham</h1>
-                    <p id="productListSummary" class="text-xs text-black">Hien thi danh sach san pham</p>
+                    <h1 id="H1_Title" class="text-black font-bold text-lg">Tất Cả Sản Phẩm</h1>
+                    <p id="productListSummary" class="text-xs text-black">Hiển thị danh sách sản phẩm</p>
                     <select class="bg-white border border-gray-200 text-xs font-bold px-4 py-2 rounded-lg outline-none cursor-pointer">
                         <option>Mới nhất</option>
                         <option>Theo mức độ phổ biến</option>
@@ -193,6 +157,8 @@
     <script>
         const allProductsState = {
             category: "",
+            subcategory: "",
+            priceRange: "",
             ids: null,
             limit: 9,
             keyword: ""
@@ -207,13 +173,127 @@
                 mobile: "./images/cake/banner-banh-kem-mb.jpg"
             }
         };
+        const subcategoryFilterByCategory = {
+            "fruit-basket": [
+                { value: "funeral", label: "Giỏ trái cây viếng" },
+                { value: "fresh", label: "Giỏ trái cây tuoi" },
+                { value: "box", label: "Hộp quà trái cây" }
+            ],
+            "cream-cake": [
+                { value: "ll", label: "Bánh kem LL" },
+                { value: "lq", label: "Bánh kem LQ" },
+                { value: "qd", label: "Bánh kem QD" },
+                { value: "ht", label: "Bánh kem HT" }
+            ]
+        };
+
+        function getCategoryFilterItems() {
+            return [{ value: "", label: "Tất cả sản phẩm" }]
+                .concat(subcategoryFilterByCategory[allProductsState.category] || []);
+        }
+
+        function syncExclusiveCheckboxGroup(containerId, selectedValue, datasetKey) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const inputs = container.querySelectorAll('input[type="checkbox"]');
+            inputs.forEach(function (input) {
+                const inputValue = input.dataset[datasetKey] || "";
+                const isActive = inputValue === selectedValue;
+                input.checked = isActive;
+
+                const label = input.closest("label");
+                if (!label) return;
+
+                label.classList.toggle("text-primary", isActive);
+                label.classList.toggle("hover:text-primary", !isActive);
+            });
+        }
+
+        function renderCategoryFilters() {
+            const filterContainer = document.getElementById("categoryFilterList");
+            if (!filterContainer) return;
+
+            filterContainer.innerHTML = getCategoryFilterItems().map(function (filterItem) {
+                return `
+                    <li>
+                        <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                            <input
+                                type="checkbox"
+                                class="custom-checkbox"
+                                data-category-filter="true"
+                                data-subcategory="${filterItem.value}"
+                                />
+                            <span>${filterItem.label}</span>
+                        </label>
+                    </li>
+                `;
+            }).join("");
+
+            syncExclusiveCheckboxGroup("categoryFilterList", allProductsState.subcategory || "", "subcategory");
+        }
+
+        function handleCategoryFilterChange(event) {
+            const input = event.target;
+            if (!(input instanceof HTMLInputElement) || input.dataset.categoryFilter !== "true") {
+                return;
+            }
+
+            const nextSubcategory = input.dataset.subcategory || "";
+            if (allProductsState.subcategory === nextSubcategory) {
+                input.checked = true;
+                return;
+            }
+
+            allProductsState.subcategory = nextSubcategory;
+            syncExclusiveCheckboxGroup("categoryFilterList", allProductsState.subcategory, "subcategory");
+            loadCurrentProductPage(1);
+        }
+
+        function initCategoryFilters() {
+            const filterContainer = document.getElementById("categoryFilterList");
+            if (!filterContainer || filterContainer.dataset.initialized === "true") {
+                return;
+            }
+
+            filterContainer.dataset.initialized = "true";
+            filterContainer.addEventListener("change", handleCategoryFilterChange);
+        }
+
+        function handlePriceFilterChange(event) {
+            const input = event.target;
+            if (!(input instanceof HTMLInputElement) || input.dataset.priceFilter !== "true") {
+                return;
+            }
+
+            const nextPriceRange = input.dataset.priceRange || "";
+            if (allProductsState.priceRange === nextPriceRange) {
+                input.checked = true;
+                return;
+            }
+
+            allProductsState.priceRange = nextPriceRange;
+            syncExclusiveCheckboxGroup("priceFilterList", allProductsState.priceRange, "priceRange");
+            loadCurrentProductPage(1);
+        }
+
+        function initPriceFilters() {
+            const filterContainer = document.getElementById("priceFilterList");
+            if (!filterContainer || filterContainer.dataset.initialized === "true") {
+                return;
+            }
+
+            filterContainer.dataset.initialized = "true";
+            filterContainer.addEventListener("change", handlePriceFilterChange);
+            syncExclusiveCheckboxGroup("priceFilterList", allProductsState.priceRange || "", "priceRange");
+        }
 
         function updateCategoryBanner(title = "Tat ca san pham") {
             const desktopBanner = document.getElementById("categoryBannerDesktop");
             const mobileBanner = document.getElementById("categoryBannerMobile");
             if (!desktopBanner || !mobileBanner) return;
 
-            const bannerConfig = bannerImageByCategory[allProductsState.category] || bannerImageByCategory["cream-cake"];
+            const bannerConfig = bannerImageByCategory[allProductsState.category] || bannerImageByCategory[""];
             desktopBanner.srcset = bannerConfig.desktop;
             mobileBanner.src = bannerConfig.mobile || bannerConfig.desktop;
             mobileBanner.alt = "Banner " + title;
@@ -227,17 +307,22 @@
 
             if (allProductsState.keyword) {
                 summaryElement.innerText = totalProducts > 0
-                    ? "Tim thay " + totalProducts + " san pham phu hop"
-                    : "Khong tim thay san pham phu hop";
+                    ? "Tìm thấy " + totalProducts + " sản phẩm phù hợp"
+                    : "Không tìm thấy sản phẩm phù hợp";
                 return;
             }
 
-            if (allProductsState.category || (Array.isArray(allProductsState.ids) && allProductsState.ids.length)) {
-                summaryElement.innerText = "Hien thi " + totalProducts + " san pham";
+            if (
+                allProductsState.category ||
+                allProductsState.subcategory ||
+                allProductsState.priceRange ||
+                (Array.isArray(allProductsState.ids) && allProductsState.ids.length)
+            ) {
+                summaryElement.innerText = "Hiển thị " + allProductsState.limit + ' của ' + totalProducts + " sản phẩm";
                 return;
             }
 
-            summaryElement.innerText = "Hien thi danh sach san pham";
+            summaryElement.innerText = "Hiển thị danh sách sản phẩm";
         }
 
         function renderProductPaging(pageInfo) {
@@ -304,6 +389,8 @@
                 "productList",
                 {
                     page,
+                    subcategory: allProductsState.subcategory,
+                    priceRange: allProductsState.priceRange,
                     keyword: allProductsState.keyword,
                     onPageInfo: renderProductPaging
                 }
@@ -330,6 +417,8 @@
 
             allProductsState.limit = 9;
             allProductsState.category = "";
+            allProductsState.subcategory = "";
+            allProductsState.priceRange = "";
             allProductsState.ids = null;
             allProductsState.keyword = keyword;
 
@@ -365,7 +454,7 @@
             }
 
             if (keyword) {
-                title = "Ket qua tim kiem";
+                title = "Kết quả tìm kiếm";
             }
 
             if (title) {
@@ -374,6 +463,9 @@
                 document.title = title + " | Green Market";
             }
 
+            initCategoryFilters();
+            initPriceFilters();
+            renderCategoryFilters();
             updateCategoryBanner(title || "Tat ca san pham");
             loadCurrentProductPage(1);
         }

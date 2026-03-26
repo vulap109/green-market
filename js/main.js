@@ -7,7 +7,7 @@ let contactRingRestartTimeoutId = null;
 let productsDataPromise = null;
 let headerSearchDebounceId = null;
 
-const HEADER_SEARCH_DEBOUNCE_MS = 300;
+const HEADER_SEARCH_DEBOUNCE_MS = 500;
 
 function getHeaderMenuElements() {
     return {

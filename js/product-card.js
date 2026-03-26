@@ -54,7 +54,7 @@ function renderProducts(products, containerId) {
     if (!Array.isArray(products) || !products.length) {
         container.innerHTML = `
             <div class="col-span-full rounded-2xl border border-dashed border-gray-200 bg-white px-6 py-12 text-center text-sm text-gray-500">
-                Khong tim thay san pham phu hop.
+                Không tìm thấy sản phẩm phù hợp.
             </div>
         `;
         return;
@@ -65,6 +65,32 @@ function renderProducts(products, containerId) {
         .join("");
 }
 
+function matchesProductPriceRange(product, priceRange) {
+    const normalizedRange = String(priceRange || "").trim();
+    if (!normalizedRange) {
+        return true;
+    }
+
+    const currentPrice = Number(product.finalprice || product.price || 0);
+
+    switch (normalizedRange) {
+        case "0-500k":
+            return currentPrice <= 500000;
+        case "500k-1m":
+            return currentPrice > 500000 && currentPrice <= 1000000;
+        case "1m-1_5m":
+            return currentPrice > 1000000 && currentPrice <= 1500000;
+        case "1_5m-2m":
+            return currentPrice > 1500000 && currentPrice <= 2000000;
+        case "2m-3m":
+            return currentPrice > 2000000 && currentPrice <= 3000000;
+        case "3m-plus":
+            return currentPrice > 3000000;
+        default:
+            return true;
+    }
+}
+
 function loadProducts(category = null, limit = null, ids = null, containerId = "productList", options = {}) {
     const productsPromise = typeof getAllProductsData === "function"
         ? getAllProductsData()
@@ -73,6 +99,8 @@ function loadProducts(category = null, limit = null, ids = null, containerId = "
     return productsPromise
         .then(products => {
             products = Array.isArray(products) ? products.slice() : [];
+            const requestedSubcategory = String(options.subcategory || "").trim();
+            const requestedPriceRange = String(options.priceRange || "").trim();
 
             if (Array.isArray(ids) && ids.length > 0) {
                 products = ids
@@ -83,6 +111,18 @@ function loadProducts(category = null, limit = null, ids = null, containerId = "
             //fillter by category
             if (category) {
                 products = products.filter(p => p.category === category);
+            }
+
+            if (requestedSubcategory) {
+                products = products.filter(function (product) {
+                    return String(product.subcategory || "").trim() === requestedSubcategory;
+                });
+            }
+
+            if (requestedPriceRange) {
+                products = products.filter(function (product) {
+                    return matchesProductPriceRange(product, requestedPriceRange);
+                });
             }
 
             if (options.keyword) {

@@ -9,7 +9,7 @@
     "finalprice": 500000,
     "img": "images/gio-trai-cay-tk181.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "finalprice": 790000,
     "img": "images/hop-qua-trai-cay-tk183.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "box"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "finalprice": 900000,
     "img": "images/gio-trai-cay-tk227.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "finalprice": 3000000,
     "img": "images/gio-trai-cay-cat-tuong-tk233.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "finalprice": 1000000,
     "img": "images/gio-trai-cay-kinh-vieng-tk248.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 6,
@@ -69,7 +69,7 @@
     "finalprice": 1400000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk235.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@
     "finalprice": 3000000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-size-dai-tk217.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 8,
@@ -93,7 +93,7 @@
     "finalprice": 850000,
     "img": "images/hoa-qua-vieng-vh8.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 9,
@@ -105,7 +105,7 @@
     "finalprice": 1100000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk218.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 10,
@@ -117,7 +117,7 @@
     "finalprice": 2500000,
     "img": "images/mam-ngu-qua-tk255.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 11,
@@ -129,7 +129,7 @@
     "finalprice": 6000000,
     "img": "images/gio-trai-cay-thuong-hang-tika-230.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 12,
@@ -141,7 +141,7 @@
     "finalprice": 1700000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk249.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 13,
@@ -153,7 +153,7 @@
     "finalprice": 350000,
     "img": "images/hop-qua-nho-sua-tk222.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "box"
   },
   {
     "id": 14,
@@ -165,7 +165,7 @@
     "finalprice": 1990000,
     "img": "images/hoa-qua-vieng-vh1.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 15,
@@ -177,7 +177,7 @@
     "finalprice": 850000,
     "img": "images/hoa-qua-vieng-vh4.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 16,
@@ -189,7 +189,7 @@
     "finalprice": 1100000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk119.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 17,
@@ -201,7 +201,7 @@
     "finalprice": 900000,
     "img": "images/gio-tao-envy-tk82.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 18,
@@ -213,7 +213,7 @@
     "finalprice": 1650000,
     "img": "images/gio-trai-cay-tk251.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 19,
@@ -225,7 +225,7 @@
     "finalprice": 1000000,
     "img": "images/gio-trai-cay-kinh-vieng-tk224.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 20,
@@ -237,7 +237,7 @@
     "finalprice": 1200000,
     "img": "images/hoa-qua-vieng-vh3.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 21,
@@ -249,7 +249,7 @@
     "finalprice": 2500000,
     "img": "images/hoa-qua-vieng-vh6.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 22,
@@ -261,7 +261,7 @@
     "finalprice": 1400000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk216.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 23,
@@ -273,7 +273,7 @@
     "finalprice": 900000,
     "img": "images/hop-qua-cherry-tk252.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "box"
   },
   {
     "id": 24,
@@ -285,7 +285,7 @@
     "finalprice": 1000000,
     "img": "images/gio-trai-cay-tk240.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 25,
@@ -297,7 +297,7 @@
     "finalprice": 1200000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk241.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 26,
@@ -309,7 +309,7 @@
     "finalprice": 1800000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk238.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 27,
@@ -321,7 +321,7 @@
     "finalprice": 2100000,
     "img": "images/gio-trai-cay-cao-cap-tk236.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 28,
@@ -333,7 +333,7 @@
     "finalprice": 999000,
     "img": "images/hoa-qua-vieng-vh7.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 29,
@@ -345,7 +345,7 @@
     "finalprice": 1100000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk225.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 30,
@@ -357,7 +357,7 @@
     "finalprice": 2000000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk250.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 31,
@@ -609,7 +609,7 @@
     "finalprice": 2200000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk254.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 52,
@@ -621,7 +621,7 @@
     "finalprice": 800000,
     "img": "images/gio-trai-cay-kem-hoa-tuoi-tk239.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 53,
@@ -633,7 +633,7 @@
     "finalprice": 1900000,
     "img": "images/thap-cam-dang-huong-tk172.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 54,
@@ -645,7 +645,7 @@
     "finalprice": 1500000,
     "img": "images/mam-le-tk01.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 55,
@@ -657,7 +657,7 @@
     "finalprice": 2900000,
     "img": "images/hoa-qua-vieng-vh2.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 56,
@@ -669,7 +669,7 @@
     "finalprice": 1500000,
     "img": "images/hoa-qua-vieng-vh10.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 57,
@@ -681,7 +681,7 @@
     "finalprice": 3000000,
     "img": "images/thap-tao-dang-huong-tk223.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 58,
@@ -693,7 +693,7 @@
     "finalprice": 4500000,
     "img": "images/hoa-qua-vieng-vh9.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 59,
@@ -705,7 +705,7 @@
     "finalprice": 350000,
     "img": "images/hop-qua-trai-cay-tk221.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "box"
   },
   {
     "id": 60,
@@ -717,7 +717,7 @@
     "finalprice": 1300000,
     "img": "images/gio-cherry-kem-hoa-tuoi-tk247.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 61,
@@ -729,7 +729,7 @@
     "finalprice": 1500000,
     "img": "images/hoa-qua-vieng-vh5.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "funeral"
   },
   {
     "id": 62,
@@ -741,7 +741,7 @@
     "finalprice": 600000,
     "img": "images/gio-trai-cay-tk219.jpg",
     "category": "fruit-basket",
-    "subcategory": "fruit-basket"
+    "subcategory": "fresh"
   },
   {
     "id": 63,
