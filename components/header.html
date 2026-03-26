@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-    <div class="max-w-7xl mx-auto px-4 py-3 sm:h-24 sm:py-0 flex flex-wrap lg:flex-nowrap justify-between items-center gap-4">
+    <div class="max-w-7xl mx-auto px-4 py-3 md:h-24 sm:py-0 flex flex-wrap md:flex-nowrap justify-between items-center gap-4">
         <div id="mobile-header-menu-wrap" class="relative z-30 flex items-center gap-3">
             <button id="header-menu-mobile-toggle" type="button" onclick="toggleHeaderMenu('mobile')"
                 class="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm transition hover:border-primary hover:text-primary"
@@ -91,12 +91,12 @@
                 </nav>
             </div>
         </div>
-        <div id="header-product-search" class="order-3 w-full lg:order-none lg:flex-1 lg:max-w-2xl">
+        <div id="header-product-search" class="order-3 w-full md:order-none md:flex-1 lg:max-w-xl">
             <form id="header-product-search-form" class="relative">
                 <div class="flex items-center gap-3 rounded-2xl border border-gray-200 bg-gray-50/90 px-4 py-2 shadow-sm transition focus-within:border-primary focus-within:bg-white focus-within:shadow-md">
                     <i class="fa-solid fa-magnifying-glass text-sm text-gray-400"></i>
                     <input id="header-product-search-input" type="search" placeholder="Tim san pham theo ten..."
-                        class="w-full bg-transparent text-sm text-gray-700 outline-none placeholder:text-gray-400"
+                        class="min-w-0 flex-1 bg-transparent text-base text-gray-700 outline-none placeholder:text-gray-400 sm:text-sm"
                         autocomplete="off" aria-label="Tim san pham" aria-expanded="false"
                         aria-controls="header-product-search-dropdown">
                 </div>

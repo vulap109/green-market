@@ -66,8 +66,8 @@ function renderProducts(products, containerId) {
 }
 
 function loadProducts(category = null, limit = null, ids = null, containerId = "productList", options = {}) {
-    const productsPromise = typeof getProductsData === "function"
-        ? getProductsData()
+    const productsPromise = typeof getAllProductsData === "function"
+        ? getAllProductsData()
         : fetch("/data/products.json").then(res => res.json());
 
     return productsPromise
@@ -102,22 +102,18 @@ function loadProducts(category = null, limit = null, ids = null, containerId = "
             const totalPages = totalProducts === 0 ? 0 : (hasLimit ? Math.ceil(totalProducts / pageSize) : 1);
             const requestedPage = Number(options.page) || 1;
             const currentPage = totalPages === 0 ? 1 : Math.min(Math.max(requestedPage, 1), totalPages);
-            let pagedProducts = products.slice();
 
             if (hasLimit) {
                 const startIndex = (currentPage - 1) * pageSize;
-                pagedProducts = products.slice(startIndex, startIndex + pageSize);
+                products = products.slice(startIndex, startIndex + pageSize);
             }
 
             //Calculate discount
-            pagedProducts = pagedProducts.map(function (product) {
-                return {
-                    ...product,
-                    discount: getProductDiscount(product)
-                };
+            products.forEach(p => {
+                p.discount = getProductDiscount(p);
             });
 
-            renderProducts(pagedProducts, containerId);
+            renderProducts(products, containerId);
 
             const pageInfo = {
                 currentPage,

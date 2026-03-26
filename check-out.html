@@ -180,19 +180,6 @@
             return Number(amount || 0).toLocaleString("vi-VN") + " đ";
         }
 
-        function escapeHtml(value) {
-            return String(value ?? "").replace(/[&<>"']/g, function (char) {
-                const entities = {
-                    "&": "&amp;",
-                    "<": "&lt;",
-                    ">": "&gt;",
-                    '"': "&quot;",
-                    "'": "&#39;"
-                };
-                return entities[char];
-            });
-        }
-
         function setCheckoutDisabled(isDisabled) {
             checkoutSubmitBtn.disabled = isDisabled;
             checkoutSubmitBtn.classList.toggle("opacity-50", isDisabled);

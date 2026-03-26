@@ -5,7 +5,6 @@ let contactRingIntervalId = null;
 let contactRingTimeoutId = null;
 let contactRingRestartTimeoutId = null;
 let productsDataPromise = null;
-let hasBoundHeaderSearchGlobalEvents = false;
 
 function getHeaderMenuElements() {
     return {
@@ -220,7 +219,7 @@ function filterProductsByKeyword(products, keyword, limit = null) {
     return matches;
 }
 
-function getProductsData() {
+function getAllProductsData() {
     if (!productsDataPromise) {
         productsDataPromise = fetch('/data/products.json')
             .then(function (res) {
@@ -243,7 +242,7 @@ function getProductsData() {
 }
 
 function escapeHtml(value) {
-    return String(value || '')
+    return String(value ?? '')
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
@@ -313,7 +312,7 @@ function renderHeaderSearchResults(keyword) {
     }
 
     const trimmedKeyword = String(keyword || '').trim();
-    elements.empty.textContent = 'Khong tim thay san pham phu hop.';
+    // elements.empty.textContent = 'Khong tim thay san pham phu hop.';
     elements.viewAll.href = buildProductSearchUrl(trimmedKeyword);
 
     if (!trimmedKeyword) {
@@ -324,7 +323,7 @@ function renderHeaderSearchResults(keyword) {
         return;
     }
 
-    getProductsData()
+    getAllProductsData()
         .then(function (products) {
             if (elements.input.value.trim() !== trimmedKeyword) {
                 return;
@@ -370,7 +369,7 @@ function renderHeaderSearchResults(keyword) {
             }
 
             elements.results.innerHTML = '';
-            elements.empty.textContent = 'Khong tai duoc du lieu san pham.';
+            // elements.empty.textContent = 'Khong tai duoc du lieu san pham.';
             elements.empty.classList.remove('hidden');
             elements.viewAll.classList.remove('hidden');
             setHeaderSearchDropdownState(true);
@@ -403,23 +402,12 @@ function handleHeaderSearchGlobalKeydown(event) {
     closeHeaderSearchResults();
 }
 
-function bindHeaderSearchGlobalEvents() {
-    if (hasBoundHeaderSearchGlobalEvents) {
-        return;
-    }
-
-    document.addEventListener('click', handleHeaderSearchDocumentClick);
-    document.addEventListener('keydown', handleHeaderSearchGlobalKeydown);
-    hasBoundHeaderSearchGlobalEvents = true;
-}
-
 function initHeaderSearch() {
     const elements = getHeaderSearchElements();
     if (!elements.form || !elements.input) {
         return;
     }
 
-    bindHeaderSearchGlobalEvents();
     elements.input.value = new URLSearchParams(window.location.search).get('keyword') || '';
 
     elements.form.addEventListener('submit', function (event) {
@@ -639,9 +627,21 @@ function handleAddToCartAndOrder(productSlug) {
 
 function loadComponent(id, file) {
     fetch(file)
-        .then(res => res.text())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`Can not load component: ${file}`);
+            }
+
+            return res.text();
+        })
         .then(data => {
-            document.getElementById(id).innerHTML = data;
+            const container = document.getElementById(id);
+            if (!container) {
+                console.warn(`loadComponent target not found: #${id}`);
+                return;
+            }
+
+            container.innerHTML = data;
             if (id === "header") {
                 initHeaderMenu();
                 initHeaderSearch();
@@ -650,6 +650,9 @@ function loadComponent(id, file) {
             if (id === "contact-pop") {
                 initContactRing();
             }
+        })
+        .catch(error => {
+            console.error("loadComponent error:", error);
         });
 }
 
@@ -676,6 +679,8 @@ document.addEventListener("visibilitychange", function () {
     triggerContactRing();
 });
 
+document.addEventListener('click', handleHeaderSearchDocumentClick);
+document.addEventListener('keydown', handleHeaderSearchGlobalKeydown);
 
 function formatProductMoney(amount) {
     return Number(amount || 0).toLocaleString("vi-VN") + " \u20AB";
