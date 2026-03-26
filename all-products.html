@@ -49,7 +49,7 @@
     </style>
 </head>
 
-<body class="bg-white relative">
+<body class="bg-gray-50 relative">
     <script>
         function appNotify(msg) {
             Swal.fire({
@@ -83,12 +83,12 @@
         </div>
     </div>
 
-    <div class="bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <img src="./images/cake/banner-banh-kem.jpg" alt="Banner tat ca san pham"
-                class="block w-full h-auto object-contain object-center mx-auto rounded-xl">
-        </div>
-    </div>
+    <section class="relative w-full overflow-hidden max-w-7xl mx-auto px-4">
+        <picture class="block">
+            <source id="categoryBannerDesktop" media="(min-width: 768px)" srcset="./images/banner-tat-ca-san-pham.jpg">
+            <img id="categoryBannerMobile" src="./images/banner-tat-ca-san-pham-mb.jpg" alt="Banner tat ca san pham" class="block w-full h-auto rounded-xl">
+        </picture>
+    </section>
 
     <div id="allProductsPage" class="bg-gray-50 min-h-screen pb-20">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-8">
@@ -197,6 +197,27 @@
             limit: 9,
             keyword: ""
         };
+        const bannerImageByCategory = {
+            "": {
+                desktop: "./images/banner-tat-ca-san-pham.jpg",
+                mobile: "./images/banner-tat-ca-san-pham-mb.jpg"
+            },
+            "cream-cake": {
+                desktop: "./images/cake/banner-banh-kem.jpg",
+                mobile: "./images/cake/banner-banh-kem-mb.jpg"
+            }
+        };
+
+        function updateCategoryBanner(title = "Tat ca san pham") {
+            const desktopBanner = document.getElementById("categoryBannerDesktop");
+            const mobileBanner = document.getElementById("categoryBannerMobile");
+            if (!desktopBanner || !mobileBanner) return;
+
+            const bannerConfig = bannerImageByCategory[allProductsState.category] || bannerImageByCategory["cream-cake"];
+            desktopBanner.srcset = bannerConfig.desktop;
+            mobileBanner.src = bannerConfig.mobile || bannerConfig.desktop;
+            mobileBanner.alt = "Banner " + title;
+        }
 
         function updateProductListSummary(pageInfo) {
             const summaryElement = document.getElementById("productListSummary");
@@ -344,7 +365,7 @@
             }
 
             if (keyword) {
-                title = "Ket qua tim kiem | Green Market";
+                title = "Ket qua tim kiem";
             }
 
             if (title) {
@@ -353,6 +374,7 @@
                 document.title = title + " | Green Market";
             }
 
+            updateCategoryBanner(title || "Tat ca san pham");
             loadCurrentProductPage(1);
         }
 
