@@ -5,6 +5,9 @@ let contactRingIntervalId = null;
 let contactRingTimeoutId = null;
 let contactRingRestartTimeoutId = null;
 let productsDataPromise = null;
+let headerSearchDebounceId = null;
+
+const HEADER_SEARCH_DEBOUNCE_MS = 300;
 
 function getHeaderMenuElements() {
     return {
@@ -288,6 +291,25 @@ function getHeaderSearchElements() {
     };
 }
 
+function clearHeaderSearchDebounce() {
+    if (!headerSearchDebounceId) {
+        return;
+    }
+
+    window.clearTimeout(headerSearchDebounceId);
+    headerSearchDebounceId = null;
+}
+
+function resetHeaderSearchResults(elements) {
+    if (!elements.results || !elements.empty || !elements.viewAll) {
+        return;
+    }
+
+    elements.results.innerHTML = '';
+    elements.empty.classList.add('hidden');
+    elements.viewAll.classList.add('hidden');
+}
+
 function setHeaderSearchDropdownState(isOpen) {
     const { dropdown, input } = getHeaderSearchElements();
     if (!dropdown) {
@@ -302,7 +324,36 @@ function setHeaderSearchDropdownState(isOpen) {
 }
 
 function closeHeaderSearchResults() {
+    clearHeaderSearchDebounce();
     setHeaderSearchDropdownState(false);
+}
+
+function scheduleHeaderSearchResults(keyword, options = {}) {
+    const elements = getHeaderSearchElements();
+    if (!elements.input || !elements.results || !elements.empty || !elements.viewAll) {
+        return;
+    }
+
+    const trimmedKeyword = String(keyword || '').trim();
+    const shouldRenderImmediately = Boolean(options.immediate);
+
+    clearHeaderSearchDebounce();
+
+    if (!trimmedKeyword) {
+        resetHeaderSearchResults(elements);
+        setHeaderSearchDropdownState(false);
+        return;
+    }
+
+    if (shouldRenderImmediately) {
+        renderHeaderSearchResults(trimmedKeyword);
+        return;
+    }
+
+    headerSearchDebounceId = window.setTimeout(function () {
+        headerSearchDebounceId = null;
+        renderHeaderSearchResults(trimmedKeyword);
+    }, HEADER_SEARCH_DEBOUNCE_MS);
 }
 
 function renderHeaderSearchResults(keyword) {
@@ -312,16 +363,14 @@ function renderHeaderSearchResults(keyword) {
     }
 
     const trimmedKeyword = String(keyword || '').trim();
-    // elements.empty.textContent = 'Khong tim thay san pham phu hop.';
-    elements.viewAll.href = buildProductSearchUrl(trimmedKeyword);
 
     if (!trimmedKeyword) {
-        elements.results.innerHTML = '';
-        elements.empty.classList.add('hidden');
-        elements.viewAll.classList.add('hidden');
+        resetHeaderSearchResults(elements);
         closeHeaderSearchResults();
         return;
     }
+
+    elements.viewAll.href = buildProductSearchUrl(trimmedKeyword);
 
     getAllProductsData()
         .then(function (products) {
@@ -369,7 +418,6 @@ function renderHeaderSearchResults(keyword) {
             }
 
             elements.results.innerHTML = '';
-            // elements.empty.textContent = 'Khong tai duoc du lieu san pham.';
             elements.empty.classList.remove('hidden');
             elements.viewAll.classList.remove('hidden');
             setHeaderSearchDropdownState(true);
@@ -416,12 +464,12 @@ function initHeaderSearch() {
     });
 
     elements.input.addEventListener('input', function (event) {
-        renderHeaderSearchResults(event.target.value);
+        scheduleHeaderSearchResults(event.target.value);
     });
 
     elements.input.addEventListener('focus', function () {
         if (elements.input.value.trim()) {
-            renderHeaderSearchResults(elements.input.value);
+            scheduleHeaderSearchResults(elements.input.value, { immediate: true });
         }
     });
 
