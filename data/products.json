@@ -386,12 +386,12 @@
   {
     "id": 33,
     "sku": "FB031200033",
-    "slug": "kiwi-vang-new-zealand",
-    "name": "Kiwi Vàng New Zealand",
-    "price": 289000,
+    "slug": "dau-joy-joy",
+    "name": "Dâu Hàn Joy Joy",
+    "price": 230000,
     "discount": 0,
-    "finalprice": 289000,
-    "img": "images/kiwi-vang-new-zealand.jpg",
+    "finalprice": 230000,
+    "img": "images/dau-joy-joy.jpg",
     "category": "imported-fruits",
     "subcategory": "imported-fruits"
   },
@@ -566,14 +566,14 @@
   {
     "id": 48,
     "sku": "FB031200048",
-    "slug": "bo-hoa-tk028",
-    "name": "Bó Hoa TK028",
-    "price": 500000,
-    "discount": 0.08,
-    "finalprice": 460000,
-    "img": "images/flowers.jpg",
-    "category": "flowers",
-    "subcategory": "flowers"
+    "slug": "kiwi-vang-new-zealand",
+    "name": "Kiwi Vàng New Zealand",
+    "price": 289000,
+    "discount": 0,
+    "finalprice": 289000,
+    "img": "images/kiwi-vang-new-zealand.jpg",
+    "category": "imported-fruits",
+    "subcategory": "imported-fruits"
   },
   {
     "id": 49,
