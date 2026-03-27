@@ -33,7 +33,7 @@ function productCard(p) {
             <div class="py-5 px-2 sm:px-5 flex-1 flex flex-col text-center">
                 <a href="product.html?slug=${encodeURIComponent(productSlug)}" class="text-sm font-bold text-gray-800 line-clamp-2 mb-2 leading-tight hover:text-primary transition cursor-pointer">${p.name}</a>
                 <div class="mt-auto">
-                    <div class="flex flex-col sm:flex-row justify-center items-center gap-2">
+                    <div class="flex flex-wrap justify-center items-center gap-2">
                         <span class="text-red-600 font-black text-base">${p.finalprice.toLocaleString()} ₫</span>
                         ${priceSpan}
                     </div>

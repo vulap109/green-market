@@ -75,7 +75,7 @@
             overflow: hidden;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
             .mobile-filter-panel {
                 display: block;
                 opacity: 1;
@@ -105,81 +105,91 @@
     <section class="relative w-full overflow-hidden max-w-7xl mx-auto px-4">
         <picture class="block">
             <source id="categoryBannerDesktop" media="(min-width: 768px)" srcset="./images/banner-tat-ca-san-pham.jpg">
-            <img id="categoryBannerMobile" src="./images/banner-tat-ca-san-pham-mb.jpg" alt="Banner tat ca san pham" class="block w-full h-auto rounded-xl">
+            <img id="categoryBannerMobile" src="./images/banner-tat-ca-san-pham-mb.jpg" alt="Banner tat ca san pham"
+                class="block w-full h-auto rounded-xl">
         </picture>
     </section>
 
     <div id="allProductsPage" class="bg-gray-50 min-h-screen pb-20">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-8">
-            <div class="w-full md:w-64 pt-4 flex-shrink-0">
-                <div class="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm md:sticky md:top-32">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row lg:gap-8">
+            <div class="w-full pt-4 flex-shrink-0 lg:w-64">
+                <div class="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm lg:sticky lg:top-32">
                     <button id="mobileFilterToggle" type="button"
-                        class="flex w-full items-center justify-between border-b border-gray-100 px-6 py-2 text-sm font-black uppercase tracking-widest text-gray-900 transition hover:text-primary md:cursor-default"
+                        class="flex w-full items-center justify-between border-b border-gray-100 px-6 py-2 text-sm font-semibold uppercase tracking-widest text-gray-900 transition hover:text-primary lg:cursor-default"
                         aria-label="Bo loc san pham" aria-controls="mobileFilterPanel" aria-expanded="false">
-                        <span>bo loc</span>
-                        <i id="mobileFilterToggleIcon" class="fa-solid fa-chevron-down text-xs md:hidden"></i>
+                        <span>bộ lọc</span>
+                        <i id="mobileFilterToggleIcon" class="fa-solid fa-chevron-down text-xs lg:hidden"></i>
                     </button>
                     <div id="mobileFilterPanel" class="mobile-filter-panel">
                         <div class="mobile-filter-panel__inner px-6">
-                        <ul id="categoryFilterList" class="space-y-3 pt-2 text-xs font-bold text-gray-600"></ul>
+                            <ul id="categoryFilterList" class="space-y-3 pt-2 text-xs font-bold text-gray-600"></ul>
 
-                    <h3 class="font-black text-sm uppercase tracking-widest border-b border-gray-100 pb-2 pt-4 text-gray-900">
-                        Khoảng giá
-                    </h3>
-                    <ul id="priceFilterList" class="space-y-3 pt-2 text-xs font-bold text-gray-600 mb-6">
-                        <li>
-                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
-                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="" checked />
-                                <span>Tất cả mức giá</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
-                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="0-500k" />
-                                <span>0 - 500k</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
-                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="500k-1m" />
-                                <span>500k - 1tr</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
-                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="1m-1_5m" />
-                                <span>1trieu - 1tr5</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
-                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="1_5m-2m" />
-                                <span>1tr5 - 2tr</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
-                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="2m-3m" />
-                                <span>2tr - 3tr</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
-                                <input type="checkbox" class="custom-checkbox" data-price-filter="true" data-price-range="3m-plus" />
-                                <span>3tr trở lên</span>
-                            </label>
-                        </li>
-                    </ul>
+                            <h3
+                                class="font-semibold text-sm uppercase tracking-widest border-b border-gray-100 pb-2 pt-4 text-gray-900">
+                                Khoảng giá
+                            </h3>
+                            <ul id="priceFilterList" class="space-y-3 pt-2 text-xs font-bold text-gray-600 mb-6">
+                                <li>
+                                    <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                        <input type="checkbox" class="custom-checkbox" data-price-filter="true"
+                                            data-price-range="" checked />
+                                        <span>Tất cả mức giá</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                        <input type="checkbox" class="custom-checkbox" data-price-filter="true"
+                                            data-price-range="0-500k" />
+                                        <span>0 - 500k</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                        <input type="checkbox" class="custom-checkbox" data-price-filter="true"
+                                            data-price-range="500k-1m" />
+                                        <span>500k - 1tr</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                        <input type="checkbox" class="custom-checkbox" data-price-filter="true"
+                                            data-price-range="1m-1_5m" />
+                                        <span>1trieu - 1tr5</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                        <input type="checkbox" class="custom-checkbox" data-price-filter="true"
+                                            data-price-range="1_5m-2m" />
+                                        <span>1tr5 - 2tr</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                        <input type="checkbox" class="custom-checkbox" data-price-filter="true"
+                                            data-price-range="2m-3m" />
+                                        <span>2tr - 3tr</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="flex items-center gap-3 cursor-pointer transition hover:text-primary">
+                                        <input type="checkbox" class="custom-checkbox" data-price-filter="true"
+                                            data-price-range="3m-plus" />
+                                        <span>3tr trở lên</span>
+                                    </label>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="flex-1">
-                <div class="flex justify-between items-center my-6">
-                    <h1 id="H1_Title" class="text-black font-bold text-lg">Tất Cả Sản Phẩm</h1>
-                    <p id="productListSummary" class="text-xs text-black">Hiển thị danh sách sản phẩm</p>
-                    <select class="bg-white border border-gray-200 text-xs font-bold px-4 py-2 rounded-lg outline-none cursor-pointer">
+            <div class="flex-1 min-w-0">
+                <div class="my-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <h1 id="H1_Title" class="text-black font-semibold text-lg">Tất Cả Sản Phẩm</h1>
+                    <!-- <p id="productListSummary" class="text-xs text-black">Hiển thị danh sách sản phẩm</p> -->
+                    <select
+                        class="w-full cursor-pointer rounded-lg border border-gray-200 bg-white px-4 py-2 text-xs font-medium outline-none sm:w-auto">
                         <option>Mới nhất</option>
                         <option>Theo mức độ phổ biến</option>
                         <option>Theo diem danh gia</option>
@@ -188,7 +198,7 @@
                     </select>
                 </div>
 
-                <div id="productList" class="grid grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                <div id="productList" class="grid grid-cols-2 gap-4 sm:gap-6 xl:grid-cols-3"></div>
 
                 <div id="productPaging" class="flex justify-center mt-12 gap-3 pb-10"></div>
             </div>
@@ -213,6 +223,7 @@
         const mobileFilterState = {
             isOpen: false
         };
+        const desktopFilterBreakpoint = 1024;
         const bannerImageByCategory = {
             "": {
                 desktop: "./images/banner-tat-ca-san-pham.jpg",
@@ -346,7 +357,7 @@
                 return;
             }
 
-            const isDesktop = window.innerWidth >= 768;
+            const isDesktop = window.innerWidth >= desktopFilterBreakpoint;
             if (isDesktop) {
                 mobileFilterState.isOpen = false;
             }
@@ -368,7 +379,7 @@
 
             toggleButton.dataset.initialized = "true";
             toggleButton.addEventListener("click", function () {
-                if (window.innerWidth >= 768) {
+                if (window.innerWidth >= desktopFilterBreakpoint) {
                     return;
                 }
 
@@ -391,31 +402,31 @@
             mobileBanner.alt = "Banner " + title;
         }
 
-        function updateProductListSummary(pageInfo) {
-            const summaryElement = document.getElementById("productListSummary");
-            if (!summaryElement) return;
+        // function updateProductListSummary(pageInfo) {
+        //     const summaryElement = document.getElementById("productListSummary");
+        //     if (!summaryElement) return;
 
-            const totalProducts = Number(pageInfo && pageInfo.totalProducts) || 0;
+        //     const totalProducts = Number(pageInfo && pageInfo.totalProducts) || 0;
 
-            if (allProductsState.keyword) {
-                summaryElement.innerText = totalProducts > 0
-                    ? "Tìm thấy " + totalProducts + " sản phẩm phù hợp"
-                    : "Không tìm thấy sản phẩm phù hợp";
-                return;
-            }
+        //     if (allProductsState.keyword) {
+        //         summaryElement.innerText = totalProducts > 0
+        //             ? "Tìm thấy " + totalProducts + " sản phẩm phù hợp"
+        //             : "Không tìm thấy sản phẩm phù hợp";
+        //         return;
+        //     }
 
-            if (
-                allProductsState.category ||
-                allProductsState.subcategory ||
-                allProductsState.priceRange ||
-                (Array.isArray(allProductsState.ids) && allProductsState.ids.length)
-            ) {
-                summaryElement.innerText = "Hiển thị " + allProductsState.limit + ' của ' + totalProducts + " sản phẩm";
-                return;
-            }
+        //     if (
+        //         allProductsState.category ||
+        //         allProductsState.subcategory ||
+        //         allProductsState.priceRange ||
+        //         (Array.isArray(allProductsState.ids) && allProductsState.ids.length)
+        //     ) {
+        //         summaryElement.innerText = "Hiển thị " + allProductsState.limit + ' của ' + totalProducts + " sản phẩm";
+        //         return;
+        //     }
 
-            summaryElement.innerText = "Hiển thị danh sách sản phẩm";
-        }
+        //     summaryElement.innerText = "Hiển thị danh sách sản phẩm";
+        // }
 
         function renderProductPaging(pageInfo) {
             const pagingContainer = document.getElementById("productPaging");
@@ -424,7 +435,7 @@
             const { currentPage, totalPages } = pageInfo;
             if (totalPages === 0) {
                 pagingContainer.innerHTML = "";
-                updateProductListSummary(pageInfo);
+                // updateProductListSummary(pageInfo);
                 return;
             }
 
@@ -470,7 +481,7 @@
             }
 
             pagingContainer.innerHTML = pagingHtml;
-            updateProductListSummary(pageInfo);
+            // updateProductListSummary(pageInfo);
         }
 
         function loadCurrentProductPage(page = 1) {
