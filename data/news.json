@@ -1,15 +1,47 @@
 [
   {
     "id": 1,
+    "slug": "gio-trai-cay-tu-200k-den-500k",
+    "title": "Giỏ Trái Cây Từ 200K Đến 500K – Quà Tặng Ý Nghĩa, Sang Trọng Và Thiết Thực",
+    "author": "Thúy Ngân",
+    "date": "2026-03-19",
+    "dateLabel": "19 Tháng 03, 2026",
+    "thumbnail": "/images/news-200-500-thumb.jpg",
+    "thumbnailAlt": "Giỏ trái cây từ 200K đến 500K",
+    "hero": "/images/news-200-500-2.jpg",
+    "heroAlt": "Mẫu giỏ trái cây từ 200K đến 500K",
+    "description": "Chỉ với ngân sách từ 200K đến 500K, bạn vẫn có thể chọn những giỏ trái cây đẹp, chất lượng và phù hợp cho sinh nhật, thăm hỏi, khai trương hay biếu tặng đối tác.",
+    "contentFile": "/data/news/gio-trai-cay-tu-200k-den-500k.html",
+    "featured": true
+  },
+  {
+    "id": 2,
     "slug": "qua-8-3-duoi-1-trieu-tinh-te",
     "title": "Quà 8/3 Dưới 1 Triệu Tinh Tế – 15 Gợi Ý Sang Trọng, Ý Nghĩa & Dễ Ghi Điểm",
-    "author": "ECOM - Ngọc Phúc",
+    "author": "Thúy Ngân",
     "date": "2026-03-05",
     "dateLabel": "05 Tháng 03, 2026",
-    "img": "https://theme.hstatic.net/1000141988/1001377521/14/slide_1_img.jpg?v=428",
-    "imgAlt": "Giỏ quà 8/3 dưới 1 triệu tinh tế",
+    "thumbnail": "/images/news-8-3-thumb.jpg",
+    "thumbnailAlt": "Giỏ quà 8/3 dưới 1 triệu tinh tế",
+    "hero": "/images/news-8-3-2.jpg",
+    "heroAlt": "Giỏ quà 8/3 dưới 1 triệu tinh tế",
     "description": "Quà 8/3 dưới 1 triệu có thật sự tinh tế? Ngày 8/3 không nằm ở giá trị món quà, mà nằm ở sự quan tâm và cách bạn lựa chọn.",
     "contentFile": "/data/news/qua-8-3-duoi-1-trieu-tinh-te.html",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "slug": "banh-kem-chi-tu-129k-gia-mem-bat-ngo",
+    "title": "Bánh Kem Chỉ Từ 129K – Ngon Xịn, Giá Mềm Bất Ngờ!",
+    "author": "Thúy Ngân",
+    "date": "2026-03-22",
+    "dateLabel": "22 Tháng 03, 2026",
+    "thumbnail": "/images/news-banh-kem-thumb.jpg",
+    "thumbnailAlt": "Bánh kem giá tốt từ 129K",
+    "hero": "/images/news-banh-kem-2.jpg",
+    "heroAlt": "Mẫu bánh kem 129K tại Green Market",
+    "description": "Bánh kem chỉ từ 129K nhưng vẫn được làm trong ngày, trang trí xinh xắn và giao nhanh 1–2H nội thành.",
+    "contentFile": "/data/news/banh-kem-chi-tu-129k-gia-mem-bat-ngo.html",
     "featured": true
   }
 ]

@@ -103,11 +103,14 @@ function renderNewsShell(article) {
         return;
     }
 
+    const heroImagePath = resolveNewsAssetPath(article.hero || article.thumbnail);
+    const heroImageAlt = article.heroAlt || article.thumbnailAlt || article.title || "Ảnh bài viết";
+
     elements.title.textContent = article.title || "Tin tức";
     elements.author.textContent = `bởi: ${article.author || "Green Market"}`;
     elements.date.textContent = article.dateLabel || article.date || "";
-    elements.heroImage.src = resolveNewsAssetPath(article.img);
-    elements.heroImage.alt = article.imgAlt || article.title || "Ảnh bài viết";
+    elements.heroImage.src = heroImagePath;
+    elements.heroImage.alt = heroImageAlt;
     elements.breadcrumbTitle.textContent = article.title || "Tin tức";
     document.title = `${article.title || "Tin tức"} | Green Market`;
 }
