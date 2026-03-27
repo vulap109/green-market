@@ -326,17 +326,20 @@
         <div class="mt-8 bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
             <h3 class="text-lg font-bold text-gray-800 mb-4 border-b border-primary inline-block pb-2">Mo ta san pham
             </h3>
-            <div class="text-sm text-gray-600 leading-relaxed space-y-4 mt-4">
-                <p>San pham duoc chon loc ky, phu hop lam qua tang cho sinh nhat, khai truong, tham hoi va nhieu dip dac
-                    biet.</p>
-                <p><strong>Diem noi bat:</strong></p>
-                <ul class="list-disc pl-5 space-y-1">
-                    <li>Nguyen lieu tuoi moi va duoc chuan bi ky truoc khi giao.</li>
-                    <li>Hinh thuc dong goi sang trong, phu hop bieu tang.</li>
-                    <li>Ho tro banner, thiep va hoa don theo nhu cau.</li>
-                </ul>
-                <p class="italic text-xs mt-4">* Luu y: San pham thuc te co the thay doi nhe theo mua nhung van giu dung
-                    tone mau va gia tri tuong duong.</p>
+            <div class="mt-4">
+                <div id="productDescriptionWrapper"
+                    class="relative overflow-hidden transition-all duration-300 ease-in-out">
+                    <div id="productDescriptionContent" class="text-sm text-gray-600 leading-relaxed space-y-4"></div>
+                    <div id="productDescriptionFade"
+                        class="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white to-transparent hidden">
+                    </div>
+                </div>
+                <button id="productDescriptionToggle" type="button" onclick="toggleProductDescription()"
+                    class="mt-4 hidden items-center gap-2 rounded-lg border border-primary px-4 py-2 text-sm font-semibold text-primary transition hover:bg-green-50"
+                    aria-expanded="false">
+                    <span id="productDescriptionToggleLabel">Xem them</span>
+                    <i id="productDescriptionToggleIcon" class="fa-solid fa-angle-down text-xs"></i>
+                </button>
             </div>
         </div>
 
@@ -361,6 +364,101 @@
     <script src="/js/main.js"></script>
     <script src="/js/product-card.js"></script>
     <script>
+        const PRODUCT_DESCRIPTION_DATA_URL = "data/product-descriptions.json";
+        const PRODUCT_DESCRIPTION_COLLAPSED_HEIGHT = 260;
+        let productDescriptionsPromise = null;
+        let isProductDescriptionExpanded = false;
+
+        function getProductDescriptionData() {
+            if (!productDescriptionsPromise) {
+                productDescriptionsPromise = fetch(PRODUCT_DESCRIPTION_DATA_URL)
+                    .then(function (res) {
+                        if (!res.ok) {
+                            throw new Error("Can not load product-descriptions.json");
+                        }
+
+                        return res.json();
+                    })
+                    .then(function (descriptions) {
+                        return Array.isArray(descriptions) ? descriptions : [];
+                    })
+                    .catch(function (error) {
+                        console.error("getProductDescriptionData error:", error);
+                        productDescriptionsPromise = null;
+                        return [];
+                    });
+            }
+
+            return productDescriptionsPromise;
+        }
+
+        function applyProductDescriptionState() {
+            const wrapper = document.getElementById("productDescriptionWrapper");
+            const content = document.getElementById("productDescriptionContent");
+            const fade = document.getElementById("productDescriptionFade");
+            const toggle = document.getElementById("productDescriptionToggle");
+            const toggleLabel = document.getElementById("productDescriptionToggleLabel");
+            const toggleIcon = document.getElementById("productDescriptionToggleIcon");
+
+            if (!wrapper || !content || !fade || !toggle || !toggleLabel || !toggleIcon) {
+                return;
+            }
+
+            const contentHeight = content.scrollHeight;
+            const shouldCollapse = contentHeight > PRODUCT_DESCRIPTION_COLLAPSED_HEIGHT + 24;
+
+            if (!shouldCollapse) {
+                wrapper.style.maxHeight = "none";
+                fade.classList.add("hidden");
+                toggle.classList.add("hidden");
+                toggle.classList.remove("inline-flex");
+                toggle.setAttribute("aria-expanded", "false");
+                isProductDescriptionExpanded = false;
+                return;
+            }
+
+            toggle.classList.remove("hidden");
+            toggle.classList.add("inline-flex");
+            toggleLabel.textContent = isProductDescriptionExpanded ? "Thu gon" : "Xem them";
+            toggleIcon.classList.toggle("fa-angle-down", !isProductDescriptionExpanded);
+            toggleIcon.classList.toggle("fa-angle-up", isProductDescriptionExpanded);
+            toggle.setAttribute("aria-expanded", String(isProductDescriptionExpanded));
+            wrapper.style.maxHeight = isProductDescriptionExpanded
+                ? `${contentHeight}px`
+                : `${PRODUCT_DESCRIPTION_COLLAPSED_HEIGHT}px`;
+            fade.classList.toggle("hidden", isProductDescriptionExpanded);
+        }
+
+        function refreshProductDescriptionState() {
+            window.requestAnimationFrame(applyProductDescriptionState);
+        }
+
+        function toggleProductDescription() {
+            isProductDescriptionExpanded = !isProductDescriptionExpanded;
+            applyProductDescriptionState();
+        }
+
+        function renderProductDescription(product, descriptions) {
+            const descriptionContainer = document.getElementById("productDescriptionContent");
+            if (!descriptionContainer || !product) {
+                return;
+            }
+
+            const descriptionItems = Array.isArray(descriptions) ? descriptions : [];
+            const matchedDescription = descriptionItems.find(function (item) {
+                return item && item.category === product.category;
+            });
+            const fallbackDescription = descriptionItems[0] || null;
+            const selectedDescription = matchedDescription || fallbackDescription;
+            const descriptionHtml = selectedDescription && selectedDescription.descriptionhtml
+                ? selectedDescription.descriptionhtml
+                : "";
+
+            isProductDescriptionExpanded = false;
+            descriptionContainer.innerHTML = descriptionHtml;
+            refreshProductDescriptionState();
+        }
+
         function renderSimilarProducts(product, products) {
             const section = document.getElementById("similarProductsSection");
             if (!section || typeof renderProducts !== "function" || !product || !Array.isArray(products)) {
@@ -411,11 +509,24 @@
                 return;
             }
 
-            fetch("data/products.json")
-                .then(function (res) {
-                    return res.json();
-                })
-                .then(function (products) {
+            const productsPromise = typeof getAllProductsData === "function"
+                ? getAllProductsData()
+                : fetch("data/products.json")
+                    .then(function (res) {
+                        if (!res.ok) {
+                            throw new Error("Can not load products.json");
+                        }
+
+                        return res.json();
+                    })
+                    .then(function (products) {
+                        return Array.isArray(products) ? products : [];
+                    });
+
+            Promise.all([productsPromise, getProductDescriptionData()])
+                .then(function (result) {
+                    const products = result[0];
+                    const descriptions = result[1];
                     const product = products.find(function (item) {
                         if (productSlug) {
                             return item.slug === productSlug;
@@ -436,6 +547,7 @@
                     }
 
                     renderProduct(product);
+                    renderProductDescription(product, descriptions);
                     renderSimilarProducts(product, products);
                 })
                 .catch(function (error) {
@@ -449,6 +561,7 @@
         }
 
         loadProduct();
+        window.addEventListener("resize", refreshProductDescriptionState);
     </script>
 </body>
 
