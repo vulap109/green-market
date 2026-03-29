@@ -27,7 +27,7 @@
     "heroAlt": "Giỏ quà 8/3 dưới 1 triệu tinh tế",
     "description": "Quà 8/3 dưới 1 triệu có thật sự tinh tế? Ngày 8/3 không nằm ở giá trị món quà, mà nằm ở sự quan tâm và cách bạn lựa chọn.",
     "contentFile": "/data/news/qua-8-3-duoi-1-trieu-tinh-te.html",
-    "featured": true
+    "featured": false
   },
   {
     "id": 3,
@@ -42,6 +42,21 @@
     "heroAlt": "Mẫu bánh kem 129K tại Green Market",
     "description": "Bánh kem chỉ từ 129K nhưng vẫn được làm trong ngày, trang trí xinh xắn và giao nhanh 1–2H nội thành.",
     "contentFile": "/data/news/banh-kem-chi-tu-129k-gia-mem-bat-ngo.html",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "slug": "mua-banh-kem-tang-tot-nghiep-xu-huong-qua-tang-y-nghia",
+    "title": "Mua Bánh Kem Tặng Tốt Nghiệp – Xu Hướng Quà Tặng Ý Nghĩa",
+    "author": "Thúy Ngân",
+    "date": "2026-03-29",
+    "dateLabel": "29 Tháng 03, 2026",
+    "thumbnail": "/images/news-banh-kem-tot-nghiep-thumb.jpg",
+    "thumbnailAlt": "Bánh kem tặng tốt nghiệp tại Green Market",
+    "hero": "/images/news-banh-kem-tot-nghiep-2.jpg",
+    "heroAlt": "Mẫu bánh kem chúc mừng tốt nghiệp tại Green Market",
+    "description": "Bánh kem tặng tốt nghiệp là món quà tinh tế, dễ tạo dấu ấn trong ngày ra trường và có thể kết hợp cùng giỏ trái cây hoặc set quà để buổi chúc mừng thêm trọn vẹn.",
+    "contentFile": "/data/news/mua-banh-kem-tang-tot-nghiep-xu-huong-qua-tang-y-nghia.html",
     "featured": true
   }
 ]
