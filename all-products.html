@@ -416,6 +416,14 @@
             const activeButtonClass = "bg-primary text-white shadow-md";
             const inactiveButtonClass = "bg-white border border-gray-200 text-gray-600 hover:text-primary hover:border-primary hover:bg-gray-50";
             const disabledButtonClass = "bg-gray-100 text-gray-300 cursor-not-allowed";
+            const maxVisiblePages = 5;
+            const middleOffset = Math.floor(maxVisiblePages / 2);
+            let startPage = Math.max(1, currentPage - middleOffset);
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+            if (endPage - startPage + 1 < maxVisiblePages) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
             let pagingHtml = "";
 
             if (totalPages > 1) {
@@ -430,7 +438,15 @@
                 `;
             }
 
-            for (let page = 1; page <= totalPages; page++) {
+            if (startPage > 1) {
+                pagingHtml += `
+                    <span class="${baseButtonClass} bg-transparent text-gray-400 cursor-default">
+                        ...
+                    </span>
+                `;
+            }
+
+            for (let page = startPage; page <= endPage; page++) {
                 const isActive = page === currentPage;
                 pagingHtml += `
                     <button
@@ -438,6 +454,14 @@
                         class="${baseButtonClass} ${isActive ? activeButtonClass : inactiveButtonClass}">
                         ${page}
                     </button>
+                `;
+            }
+
+            if (endPage < totalPages) {
+                pagingHtml += `
+                    <span class="${baseButtonClass} bg-transparent text-gray-400 cursor-default">
+                        ...
+                    </span>
                 `;
             }
 
