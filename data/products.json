@@ -1889,8 +1889,8 @@
     "slug": "hop-qua-trai-cay-tn21",
     "name": "Hộp Quà Trái Cây TN21",
     "price": 699000,
-    "discount": 699000,
-    "finalprice": 0,
+    "discount": 0,
+    "finalprice": 699000,
     "img": "images/fruit-basket/hop-qua-trai-cay-tn21.jpg",
     "category": "fruit-basket",
     "subcategory": "box"
