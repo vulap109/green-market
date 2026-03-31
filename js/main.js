@@ -733,3 +733,7 @@ document.addEventListener('keydown', handleHeaderSearchGlobalKeydown);
 function formatProductMoney(amount) {
     return Number(amount || 0).toLocaleString("vi-VN") + " \u20AB";
 }
+
+function getPaymentMethodLabel(method) {
+    return method === "cod" ? "Thanh toán khi nhận hàng" : "Chuyển khoản ngân hàng trực tiếp";
+}

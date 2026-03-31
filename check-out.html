@@ -175,10 +175,7 @@
         const EMAILJS_PUBLIC_KEY = "pRg2xzuGVPHOs4IN-";
         const EMAILJS_SERVICE_ID = "service_fresh_fruit";
         const EMAILJS_TEMPLATE_ID = "template_h7m22u2";
-
-        function formatMoney(amount) {
-            return Number(amount || 0).toLocaleString("vi-VN") + " đ";
-        }
+        const ORDER_SUCCESS_STORAGE_KEY = "green_market_last_success_order_v1";
 
         function setCheckoutDisabled(isDisabled) {
             checkoutSubmitBtn.disabled = isDisabled;
@@ -206,6 +203,8 @@
                     id: cartItem.id,
                     name: product ? product.name : `Sản phẩm #${cartItem.id}`,
                     sku: product ? (product.sku || "N/A") : "N/A",
+                    size: cartItem.size ? String(cartItem.size) : "",
+                    image: product ? (product.img || "/images/sp1.jpg") : "/images/sp1.jpg",
                     qty: qty,
                     unitPrice: unitPrice,
                     lineTotal: unitPrice * qty
@@ -213,10 +212,40 @@
             });
         }
 
+        function generateOrderCode() {
+            const now = new Date();
+            const datePart = [
+                now.getFullYear(),
+                String(now.getMonth() + 1).padStart(2, "0"),
+                String(now.getDate()).padStart(2, "0")
+            ].join("");
+            const timePart = [
+                String(now.getHours()).padStart(2, "0"),
+                String(now.getMinutes()).padStart(2, "0"),
+                String(now.getSeconds()).padStart(2, "0")
+            ].join("");
+            const randomPart = String(Math.floor(Math.random() * 900) + 100);
+
+            return `GM${datePart}${timePart}${randomPart}`;
+        }
+
+        function saveSuccessfulOrder(order) {
+            localStorage.setItem(ORDER_SUCCESS_STORAGE_KEY, JSON.stringify(order));
+        }
+
+        function buildOrderSuccessUrl(orderCode) {
+            return `/order-success.html?code=${encodeURIComponent(orderCode)}`;
+        }
+
         function buildOrderPayload() {
             const items = getOrderItems();
+            const subtotal = items.reduce(function (sum, item) {
+                return sum + item.lineTotal;
+            }, 0);
 
             return {
+                code: generateOrderCode(),
+                createdAt: new Date().toISOString(),
                 fullname: document.getElementById("fullname").value.trim(),
                 phone: document.getElementById("phone").value.trim(),
                 email: document.getElementById("email").value.trim(),
@@ -227,14 +256,10 @@
                 notes: document.getElementById("notes").value.trim(),
                 paymentMethod: document.querySelector('input[name="payment_method"]:checked')?.value || "bank",
                 items: items,
-                total: items.reduce(function (sum, item) {
-                    return sum + item.lineTotal;
-                }, 0)
+                subtotal: subtotal,
+                shippingFee: 0,
+                total: subtotal
             };
-        }
-
-        function getPaymentMethodLabel(method) {
-            return method === "cod" ? "Thanh toan khi nhan hang" : "Chuyen khoan ngan hang truc tiep";
         }
 
         // function buildOrderEmailBody(order) {
@@ -260,19 +285,21 @@
         //             `${index + 1}. ${item.name}`,
         //             `   SKU: ${item.sku}`,
         //             `   So luong: ${item.qty}`,
-        //             `   Don gia: ${formatMoney(item.unitPrice)}`,
-        //             `   Thanh tien: ${formatMoney(item.lineTotal)}`
+        //             `   Don gia: ${formatProductMoney(item.unitPrice)}`,
+        //             `   Thanh tien: ${formatProductMoney(item.lineTotal)}`
         //         );
         //     });
 
-        //     lines.push("", "Tong thanh toan: " + formatMoney(order.total));
+        //     lines.push("", "Tong thanh toan: " + formatProductMoney(order.total));
 
         //     return lines.join("\n");
         // }
 
         function sendOrderEmail(order) {
             const templateParams = {
-                subject: `Đơn hàng mới - ${order.fullname} - ${order.phone}`,
+                subject: `Đơn hàng mới ${order.code} - ${order.fullname} - ${order.phone}`,
+                order_code: order.code,
+                order_created_at: new Date(order.createdAt).toLocaleString("vi-VN"),
                 customer_name: order.fullname,
                 customer_phone: order.phone,
                 customer_email: order.email || "Khong co",
@@ -285,15 +312,16 @@
                 item_count: order.items.reduce(function (sum, item) {
                     return sum + item.qty;
                 }, 0),
-                order_total: formatMoney(order.total),
+                order_total: formatProductMoney(order.total),
                 order_items: order.items.map(function (item, index) {
                     return [
                         `${index + 1}. ${item.name}`,
                         `SKU: ${item.sku}`,
+                        item.size ? `Phân loại: ${item.size}` : "",
                         `Số lượng: ${item.qty}`,
-                        `Đơn giá: ${formatMoney(item.unitPrice)}`,
-                        `Thành tiền: ${formatMoney(item.lineTotal)}`
-                    ].join("\n");
+                        `Đơn giá: ${formatProductMoney(item.unitPrice)}`,
+                        `Thành tiền: ${formatProductMoney(item.lineTotal)}`
+                    ].filter(Boolean).join("\n");
                 }).join("\n")
             };
 
@@ -318,8 +346,8 @@
                         </a>
                     </div>
                 `;
-                checkoutSubtotal.textContent = formatMoney(0);
-                checkoutTotal.textContent = formatMoney(0);
+                checkoutSubtotal.textContent = formatProductMoney(0);
+                checkoutTotal.textContent = formatProductMoney(0);
                 setCheckoutDisabled(true);
                 return;
             }
@@ -345,14 +373,14 @@
                             </div>
                             <span class="text-sm font-medium text-gray-800 line-clamp-2">${escapeHtml(name)}</span>
                         </div>
-                        <span class="text-sm font-semibold text-gray-900 whitespace-nowrap">${formatMoney(lineTotal)}</span>
+                        <span class="text-sm font-semibold text-gray-900 whitespace-nowrap">${formatProductMoney(lineTotal)}</span>
                     </div>
                 `;
             }).join("");
 
             const total = getCartTotal(checkoutProducts);
-            checkoutSubtotal.textContent = formatMoney(total);
-            checkoutTotal.textContent = formatMoney(total);
+            checkoutSubtotal.textContent = formatProductMoney(total);
+            checkoutTotal.textContent = formatProductMoney(total);
             setCheckoutDisabled(false);
         }
 
@@ -518,27 +546,21 @@
 
             sendOrderEmail(orderPayload)
                 .then(function () {
+                    saveSuccessfulOrder(orderPayload);
                     clearCart();
                     document.getElementById("checkoutForm").reset();
                     districtSelect.innerHTML = '<option value="" disabled selected hidden></option>';
                     wardSelect.innerHTML = '<option value="" disabled selected hidden></option>';
                     districtSelect.disabled = true;
                     wardSelect.disabled = true;
-
-                    Swal.fire({
-                        title: "Đặt hàng thành công!",
-                        text: "Thông tin đơn hàng đã được gửi về Shop.",
-                        icon: "success",
-                        confirmButtonColor: "#006b38"
-                    }).then(function () {
-                        window.location.href = "/";
-                    });
+                    Swal.close();
+                    window.location.href = buildOrderSuccessUrl(orderPayload.code);
                 })
                 .catch(function (error) {
                     console.error("EmailJS send error:", error);
                     Swal.fire({
-                        title: "Gui email that bai!",
-                        text: "Khong gui duoc don hang qua EmailJS. Vui long kiem tra service/template hoac thu lai.",
+                        title: "Đặt hàng thất bại!",
+                        text: "Quý khách vui lòng thử lại sau ít phút hoặc liên hệ qua hotline để được hỗ trợ.",
                         icon: "error",
                         confirmButtonColor: "#ef4444"
                     });
