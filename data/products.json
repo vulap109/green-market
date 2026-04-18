@@ -2,6 +2,978 @@
   {
     "id": 1,
     "sku": "FB03120001",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn1",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN1",
+    "price": 1500000,
+    "discount": 0,
+    "finalprice": 1500000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn1.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 2,
+    "sku": "FB03120002",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn2",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN2",
+    "price": 1400000,
+    "discount": 0,
+    "finalprice": 1400000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn2.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 3,
+    "sku": "FB03120003",
+    "slug": "gio-trai-cay-yn3",
+    "name": "Giỏ Trái Cây YN3",
+    "price": 850000,
+    "discount": 0,
+    "finalprice": 850000,
+    "img": "images/fruit-basket/gio-trai-cay-yn3.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 4,
+    "sku": "FB03120004",
+    "slug": "gio-trai-cay-yn4",
+    "name": "Giỏ Trái Cây YN4",
+    "price": 750000,
+    "discount": 0,
+    "finalprice": 750000,
+    "img": "images/fruit-basket/gio-trai-cay-yn4.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 5,
+    "sku": "FB03120005",
+    "slug": "gio-trai-cay-yn5",
+    "name": "Giỏ Trái Cây YN5",
+    "price": 500000,
+    "discount": 0,
+    "finalprice": 500000,
+    "img": "images/fruit-basket/gio-trai-cay-yn5.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 6,
+    "sku": "FB03120006",
+    "slug": "gio-trai-cay-yn6",
+    "name": "Giỏ Trái Cây YN6",
+    "price": 1300000,
+    "discount": 0,
+    "finalprice": 1300000,
+    "img": "images/fruit-basket/gio-trai-cay-yn6.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 7,
+    "sku": "FB03120007",
+    "slug": "gio-trai-cay-yn7",
+    "name": "Giỏ Trái Cây YN7",
+    "price": 750000,
+    "discount": 0,
+    "finalprice": 750000,
+    "img": "images/fruit-basket/gio-trai-cay-yn7.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 8,
+    "sku": "FB03120008",
+    "slug": "gio-trai-cay-yn8",
+    "name": "Giỏ Trái Cây YN8",
+    "price": 1300000,
+    "discount": 0,
+    "finalprice": 1300000,
+    "img": "images/fruit-basket/gio-trai-cay-yn8.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 9,
+    "sku": "FB03120009",
+    "slug": "hop-qua-trai-cay-yn9",
+    "name": "Hộp Quà Trái Cây YN9",
+    "price": 1050000,
+    "discount": 0,
+    "finalprice": 1050000,
+    "img": "images/fruit-basket/hop-qua-trai-cay-yn9.jpg",
+    "category": "fruit-basket",
+    "subcategory": "box"
+  },
+  {
+    "id": 10,
+    "sku": "FB031200010",
+    "slug": "hop-qua-trai-cay-yn10",
+    "name": "Hộp Quà Trái Cây YN10",
+    "price": 450000,
+    "discount": 0,
+    "finalprice": 450000,
+    "img": "images/fruit-basket/hop-qua-trai-cay-yn10.jpg",
+    "category": "fruit-basket",
+    "subcategory": "box"
+  },
+  {
+    "id": 11,
+    "sku": "FB031200011",
+    "slug": "hop-qua-trai-cay-yn11",
+    "name": "Hộp Quà Trái Cây YN11",
+    "price": 750000,
+    "discount": 0,
+    "finalprice": 750000,
+    "img": "images/fruit-basket/hop-qua-trai-cay-yn11.jpg",
+    "category": "fruit-basket",
+    "subcategory": "box"
+  },
+  {
+    "id": 12,
+    "sku": "FB031200012",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn12",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN12",
+    "price": 799000,
+    "discount": 0,
+    "finalprice": 799000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn12.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 13,
+    "sku": "FB031200013",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn13",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN13",
+    "price": 899000,
+    "discount": 0,
+    "finalprice": 899000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn13.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 14,
+    "sku": "FB031200014",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn14",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN14",
+    "price": 1900000,
+    "discount": 0,
+    "finalprice": 1900000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn14.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 15,
+    "sku": "FB031200015",
+    "slug": "gio-trai-cay-yn15",
+    "name": "Giỏ Trái Cây YN15",
+    "price": 1200000,
+    "discount": 0,
+    "finalprice": 1200000,
+    "img": "images/fruit-basket/gio-trai-cay-yn15.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 16,
+    "sku": "FB031200016",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn16",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN16",
+    "price": 1300000,
+    "discount": 0,
+    "finalprice": 1300000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn16.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 17,
+    "sku": "FB031200017",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn17",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN17",
+    "price": 1700000,
+    "discount": 0,
+    "finalprice": 1700000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn17.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 18,
+    "sku": "FB031200018",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn18",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN18",
+    "price": 1650000,
+    "discount": 0,
+    "finalprice": 1650000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn18.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 19,
+    "sku": "FB031200019",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn19",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN19",
+    "price": 2500000,
+    "discount": 0,
+    "finalprice": 2500000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn19.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 20,
+    "sku": "FB031200020",
+    "slug": "gio-trai-cay-yn20",
+    "name": "Giỏ Trái Cây YN20",
+    "price": 2300000,
+    "discount": 0,
+    "finalprice": 2300000,
+    "img": "images/fruit-basket/gio-trai-cay-yn20.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 21,
+    "sku": "FB031200021",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn21",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN21",
+    "price": 1600000,
+    "discount": 0,
+    "finalprice": 1600000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn21.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 22,
+    "sku": "FB031200022",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn22",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN22",
+    "price": 1500000,
+    "discount": 0,
+    "finalprice": 1500000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn22.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 23,
+    "sku": "FB031200023",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn23",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN23",
+    "price": 2650000,
+    "discount": 0,
+    "finalprice": 2650000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn23.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 24,
+    "sku": "FB031200024",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn24",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN24",
+    "price": 1200000,
+    "discount": 0,
+    "finalprice": 1200000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn24.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 25,
+    "sku": "FB031200025",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn25",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN25",
+    "price": 2200000,
+    "discount": 0,
+    "finalprice": 2200000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn25.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 26,
+    "sku": "FB031200026",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn26",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN26",
+    "price": 1200000,
+    "discount": 0,
+    "finalprice": 1200000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn26.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 27,
+    "sku": "FB031200027",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn27",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN27",
+    "price": 1650000,
+    "discount": 0,
+    "finalprice": 1650000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn27.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 28,
+    "sku": "FB031200028",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn28",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN28",
+    "price": 2500000,
+    "discount": 0,
+    "finalprice": 2500000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn28.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 29,
+    "sku": "FB031200029",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn29",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN29",
+    "price": 1650000,
+    "discount": 0,
+    "finalprice": 1650000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn29.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 30,
+    "sku": "FB031200030",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn30",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN30",
+    "price": 1899000,
+    "discount": 0,
+    "finalprice": 1899000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn30.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 31,
+    "sku": "FB031200031",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn31",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN31",
+    "price": 1200000,
+    "discount": 0,
+    "finalprice": 1200000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn31.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 32,
+    "sku": "FB031200032",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn32",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN32",
+    "price": 1300000,
+    "discount": 0,
+    "finalprice": 1300000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn32.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 33,
+    "sku": "FB031200033",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn33",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN33",
+    "price": 1350000,
+    "discount": 0,
+    "finalprice": 1350000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn33.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 34,
+    "sku": "FB031200034",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn34",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN34",
+    "price": 900000,
+    "discount": 0,
+    "finalprice": 900000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn34.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 35,
+    "sku": "FB031200035",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn35",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN35",
+    "price": 1200000,
+    "discount": 0,
+    "finalprice": 1200000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn35.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 36,
+    "sku": "FB031200036",
+    "slug": "hop-qua-trai-cay-yn36",
+    "name": "Hộp Quà Trái Cây YN36",
+    "price": 1100000,
+    "discount": 0,
+    "finalprice": 1100000,
+    "img": "images/fruit-basket/hop-qua-trai-cay-yn36.jpg",
+    "category": "fruit-basket",
+    "subcategory": "box"
+  },
+  {
+    "id": 37,
+    "sku": "FB031200037",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn37",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN37",
+    "price": 1200000,
+    "discount": 0,
+    "finalprice": 1200000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn37.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 38,
+    "sku": "FB031200038",
+    "slug": "hop-qua-trai-cay-yn38",
+    "name": "Hộp Quà Trái Cây YN38",
+    "price": 600000,
+    "discount": 0,
+    "finalprice": 600000,
+    "img": "images/fruit-basket/hop-qua-trai-cay-yn38.jpg",
+    "category": "fruit-basket",
+    "subcategory": "box"
+  },
+  {
+    "id": 39,
+    "sku": "FB031200039",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn39",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN39",
+    "price": 1200000,
+    "discount": 0,
+    "finalprice": 1200000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn39.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 40,
+    "sku": "FB031200040",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn40",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN40",
+    "price": 1300000,
+    "discount": 0,
+    "finalprice": 1300000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn40.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 41,
+    "sku": "FB031200041",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn41",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN41",
+    "price": 1350000,
+    "discount": 0,
+    "finalprice": 1350000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn41.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 42,
+    "sku": "FB031200042",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn42",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN42",
+    "price": 1900000,
+    "discount": 0,
+    "finalprice": 1900000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn42.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 43,
+    "sku": "FB031200043",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn43",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN43",
+    "price": 1200000,
+    "discount": 0,
+    "finalprice": 1200000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn43.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 44,
+    "sku": "FB031200044",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn44",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN44",
+    "price": 999000,
+    "discount": 0,
+    "finalprice": 999000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn44.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 45,
+    "sku": "FB031200045",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn45",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN45",
+    "price": 1350000,
+    "discount": 0,
+    "finalprice": 1350000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn45.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 46,
+    "sku": "FB031200046",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn46",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN46",
+    "price": 1200000,
+    "discount": 0,
+    "finalprice": 1200000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn46.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 47,
+    "sku": "FB031200047",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn47",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN47",
+    "price": 1600000,
+    "discount": 0,
+    "finalprice": 1600000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn47.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 48,
+    "sku": "FB031200048",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn48",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN48",
+    "price": 1600000,
+    "discount": 0,
+    "finalprice": 1600000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn48.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 49,
+    "sku": "FB031200049",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn49",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN49",
+    "price": 999000,
+    "discount": 0,
+    "finalprice": 999000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn49.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 50,
+    "sku": "FB031200050",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn50",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN50",
+    "price": 1600000,
+    "discount": 0,
+    "finalprice": 1600000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn50.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 51,
+    "sku": "FB031200051",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn51",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN51",
+    "price": 1300000,
+    "discount": 0,
+    "finalprice": 1300000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn51.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 52,
+    "sku": "FB031200052",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn52",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN52",
+    "price": 2600000,
+    "discount": 0,
+    "finalprice": 2600000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn52.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 53,
+    "sku": "FB031200053",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn53",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN53",
+    "price": 2200000,
+    "discount": 0,
+    "finalprice": 2200000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn53.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 54,
+    "sku": "FB031200054",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn54",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN54",
+    "price": 1350000,
+    "discount": 0,
+    "finalprice": 1350000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn54.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 55,
+    "sku": "FB031200055",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn55",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN55",
+    "price": 1200000,
+    "discount": 0,
+    "finalprice": 1200000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn55.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 56,
+    "sku": "FB031200056",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn56",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN56",
+    "price": 1100000,
+    "discount": 0,
+    "finalprice": 1100000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn56.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 57,
+    "sku": "FB031200057",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn57",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN57",
+    "price": 900000,
+    "discount": 0,
+    "finalprice": 900000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn57.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 58,
+    "sku": "FB031200058",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn58",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN58",
+    "price": 900000,
+    "discount": 0,
+    "finalprice": 900000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn58.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 59,
+    "sku": "FB031200059",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn59",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN59",
+    "price": 1350000,
+    "discount": 0,
+    "finalprice": 1350000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn59.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 60,
+    "sku": "FB031200060",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn60",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN60",
+    "price": 900000,
+    "discount": 0,
+    "finalprice": 900000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn60.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 61,
+    "sku": "FB031200061",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn61",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN61",
+    "price": 1300000,
+    "discount": 0,
+    "finalprice": 1300000,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn61.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 62,
+    "sku": "FB031200062",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn62",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN62",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn62.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 63,
+    "sku": "FB031200063",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn63",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN63",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn63.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 64,
+    "sku": "FB031200064",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn64",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN64",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn64.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 65,
+    "sku": "FB031200065",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn65",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN65",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn65.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 66,
+    "sku": "FB031200066",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn66",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN66",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn66.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 67,
+    "sku": "FB031200067",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn67",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN67",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn67.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 68,
+    "sku": "FB031200068",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn68",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN68",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn68.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 69,
+    "sku": "FB031200069",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn69",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN69",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn69.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 70,
+    "sku": "FB031200070",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn70",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN70",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn70.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 71,
+    "sku": "FB031200071",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn71",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN71",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn71.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 72,
+    "sku": "FB031200072",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn72",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN72",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn72.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 73,
+    "sku": "FB031200073",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn73",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN73",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn73.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 74,
+    "sku": "FB031200074",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn74",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN74",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn74.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 75,
+    "sku": "FB031200075",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn75",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN75",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn75.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 76,
+    "sku": "FB031200076",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn76",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN76",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn76.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 77,
+    "sku": "FB031200077",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn77",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN77",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn77.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 78,
+    "sku": "FB031200078",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn78",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN78",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn78.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 79,
+    "sku": "FB031200079",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn79",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN79",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn79.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 80,
+    "sku": "FB031200080",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn80",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN80",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn80.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 81,
+    "sku": "FB031200081",
+    "slug": "gio-trai-cay-kem-hoa-tuoi-yn81",
+    "name": "Giỏ Trái Cây Kèm Hoa Tươi YN81",
+    "price": 0,
+    "discount": 0,
+    "finalprice": 0,
+    "img": "images/fruit-basket/gio-trai-cay-kem-hoa-tuoi-yn81.jpg",
+    "category": "fruit-basket",
+    "subcategory": "fresh"
+  },
+  {
+    "id": 82,
+    "sku": "FB031200082",
     "slug": "gio-trai-cay-tk181",
     "name": "Giỏ Trái Cây TK181",
     "price": 550000,
@@ -12,8 +984,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 2,
-    "sku": "FB03120002",
+    "id": 83,
+    "sku": "FB031200083",
     "slug": "hop-qua-trai-cay-tk183",
     "name": "Hộp Quà Trái Cây TK183",
     "price": 850000,
@@ -24,8 +996,8 @@
     "subcategory": "box"
   },
   {
-    "id": 3,
-    "sku": "FB03120003",
+    "id": 84,
+    "sku": "FB031200084",
     "slug": "gio-trai-cay-tk227",
     "name": "Giỏ Trái Cây TK227",
     "price": 1000000,
@@ -36,8 +1008,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 4,
-    "sku": "FB03120004",
+    "id": 85,
+    "sku": "FB031200085",
     "slug": "gio-trai-cay-cat-tuong-tk233",
     "name": "Giỏ Trái Cây Cát Tường TK233",
     "price": 3200000,
@@ -48,8 +1020,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 5,
-    "sku": "FB03120005",
+    "id": 86,
+    "sku": "FB031200086",
     "slug": "gio-trai-cay-kinh-vieng-tk248",
     "name": "Giỏ Trái Cây Kính Viếng TK248",
     "price": 1100000,
@@ -60,8 +1032,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 6,
-    "sku": "FB03120006",
+    "id": 87,
+    "sku": "FB031200087",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk235",
     "name": "Giỏ Trái Cây TK235",
     "price": 1600000,
@@ -72,8 +1044,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 7,
-    "sku": "FB03120007",
+    "id": 88,
+    "sku": "FB031200088",
     "slug": "gio-trai-cay-kem-hoa-tuoi-size-dai-tk217",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi Size Dài TK217",
     "price": 3100000,
@@ -84,8 +1056,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 8,
-    "sku": "FB03120008",
+    "id": 89,
+    "sku": "FB031200089",
     "slug": "hoa-qua-vieng-vh8",
     "name": "Hoa Quả Viếng VH08",
     "price": 850000,
@@ -96,8 +1068,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 9,
-    "sku": "FB03120009",
+    "id": 90,
+    "sku": "FB031200090",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk218",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK218",
     "price": 1200000,
@@ -108,8 +1080,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 10,
-    "sku": "FB031200010",
+    "id": 91,
+    "sku": "FB031200091",
     "slug": "mam-ngu-qua-tk255",
     "name": "Mâm Ngũ Quả TK255",
     "price": 2600000,
@@ -120,8 +1092,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 11,
-    "sku": "FB031200011",
+    "id": 92,
+    "sku": "FB031200092",
     "slug": "gio-trai-cay-thuong-hang-tika-230",
     "name": "Giỏ Trái Cây Thượng Hạng TK230",
     "price": 6500000,
@@ -132,8 +1104,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 12,
-    "sku": "FB031200012",
+    "id": 93,
+    "sku": "FB031200093",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk249",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK249",
     "price": 1900000,
@@ -144,8 +1116,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 13,
-    "sku": "FB031200013",
+    "id": 94,
+    "sku": "FB031200094",
     "slug": "hop-qua-nho-sua-tk222",
     "name": "Hộp Quà Nho Sữa TK222",
     "price": 400000,
@@ -156,8 +1128,8 @@
     "subcategory": "box"
   },
   {
-    "id": 14,
-    "sku": "FB031200014",
+    "id": 95,
+    "sku": "FB031200095",
     "slug": "hoa-qua-vieng-vh1",
     "name": "Hoa Quả Viếng VH01",
     "price": 1990000,
@@ -168,8 +1140,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 15,
-    "sku": "FB031200015",
+    "id": 96,
+    "sku": "FB031200096",
     "slug": "hoa-qua-vieng-vh4",
     "name": "Hoa Quả Viếng VH04",
     "price": 850000,
@@ -180,8 +1152,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 16,
-    "sku": "FB031200016",
+    "id": 97,
+    "sku": "FB031200097",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk119",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK119",
     "price": 1200000,
@@ -192,8 +1164,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 17,
-    "sku": "FB031200017",
+    "id": 98,
+    "sku": "FB031200098",
     "slug": "gio-tao-envy-tk82",
     "name": "Giỏ Táo Envy TK82",
     "price": 950000,
@@ -204,8 +1176,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 18,
-    "sku": "FB031200018",
+    "id": 99,
+    "sku": "FB031200099",
     "slug": "gio-trai-cay-tk251",
     "name": "Giỏ Trái Cây TK251",
     "price": 1800000,
@@ -216,8 +1188,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 19,
-    "sku": "FB031200019",
+    "id": 100,
+    "sku": "FB0312000100",
     "slug": "gio-trai-cay-kinh-vieng-tk224",
     "name": "Giỏ Trái Cây Kính Viếng TK224",
     "price": 1100000,
@@ -228,8 +1200,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 20,
-    "sku": "FB031200020",
+    "id": 101,
+    "sku": "FB0312000101",
     "slug": "hoa-qua-vieng-vh3",
     "name": "Hoa Quả Viếng VH03",
     "price": 1200000,
@@ -240,8 +1212,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 21,
-    "sku": "FB031200021",
+    "id": 102,
+    "sku": "FB0312000102",
     "slug": "hoa-qua-vieng-vh6",
     "name": "Hoa Quả Viếng VH06",
     "price": 2500000,
@@ -252,8 +1224,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 22,
-    "sku": "FB031200022",
+    "id": 103,
+    "sku": "FB0312000103",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk216",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK216",
     "price": 1500000,
@@ -264,8 +1236,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 23,
-    "sku": "FB031200023",
+    "id": 104,
+    "sku": "FB0312000104",
     "slug": "hop-qua-cherry-tk252",
     "name": "Hộp Quà Cherry TK252",
     "price": 1000000,
@@ -276,8 +1248,8 @@
     "subcategory": "box"
   },
   {
-    "id": 24,
-    "sku": "FB031200024",
+    "id": 105,
+    "sku": "FB0312000105",
     "slug": "gio-trai-cay-tk240",
     "name": "Giỏ Trái Cây TK240",
     "price": 1100000,
@@ -288,8 +1260,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 25,
-    "sku": "FB031200025",
+    "id": 106,
+    "sku": "FB0312000106",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk241",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK241",
     "price": 1300000,
@@ -300,8 +1272,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 26,
-    "sku": "FB031200026",
+    "id": 107,
+    "sku": "FB0312000107",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk238",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK238",
     "price": 1900000,
@@ -312,8 +1284,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 27,
-    "sku": "FB031200027",
+    "id": 108,
+    "sku": "FB0312000108",
     "slug": "gio-trai-cay-cao-cap-tk236",
     "name": "Giỏ Trái Cây Cao Cấp TK236",
     "price": 2300000,
@@ -324,8 +1296,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 28,
-    "sku": "FB031200028",
+    "id": 109,
+    "sku": "FB0312000109",
     "slug": "hoa-qua-vieng-vh7",
     "name": "Hoa Quả Viếng VH07",
     "price": 999000,
@@ -336,8 +1308,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 29,
-    "sku": "FB031200029",
+    "id": 110,
+    "sku": "FB0312000110",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk225",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK225",
     "price": 1200000,
@@ -348,8 +1320,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 30,
-    "sku": "FB031200030",
+    "id": 111,
+    "sku": "FB0312000111",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk250",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK250",
     "price": 2200000,
@@ -360,8 +1332,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 31,
-    "sku": "FB031200031",
+    "id": 112,
+    "sku": "FB0312000112",
     "slug": "le-han-quoc-evergood",
     "name": "Lê Hàn Quốc EverGood",
     "price": 220000,
@@ -372,8 +1344,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 32,
-    "sku": "FB031200032",
+    "id": 113,
+    "sku": "FB0312000113",
     "slug": "tao-sunrise-my",
     "name": "Táo Sunrise Mỹ",
     "price": 189000,
@@ -384,8 +1356,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 33,
-    "sku": "FB031200033",
+    "id": 114,
+    "sku": "FB0312000114",
     "slug": "dau-joy-joy",
     "name": "Dâu Hàn Joy Joy",
     "price": 230000,
@@ -396,8 +1368,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 34,
-    "sku": "FB031200034",
+    "id": 115,
+    "sku": "FB0312000115",
     "slug": "tao-dazzle",
     "name": "Táo Dazzle",
     "price": 250000,
@@ -408,8 +1380,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 35,
-    "sku": "FB031200035",
+    "id": 116,
+    "sku": "FB0312000116",
     "slug": "cherry-uc",
     "name": "Cherry Úc",
     "price": 450000,
@@ -420,8 +1392,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 36,
-    "sku": "FB031200036",
+    "id": 117,
+    "sku": "FB0312000117",
     "slug": "kiwi-vang-dai-loan",
     "name": "Kiwi Vàng Đài Loan",
     "price": 279000,
@@ -432,8 +1404,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 37,
-    "sku": "FB031200037",
+    "id": 118,
+    "sku": "FB0312000118",
     "slug": "cam-kieng",
     "name": "Cam Kiếng",
     "price": 149000,
@@ -444,8 +1416,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 38,
-    "sku": "FB031200038",
+    "id": 119,
+    "sku": "FB0312000119",
     "slug": "quyt-2ph",
     "name": "Quýt 2ph",
     "price": 199000,
@@ -456,8 +1428,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 39,
-    "sku": "FB031200039",
+    "id": 120,
+    "sku": "FB0312000120",
     "slug": "tao-envy-my",
     "name": "Táo Envy",
     "price": 299000,
@@ -468,8 +1440,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 40,
-    "sku": "FB031200040",
+    "id": 121,
+    "sku": "FB0312000121",
     "slug": "le-nam-phi",
     "name": "Lê Nam Phi",
     "price": 139000,
@@ -480,8 +1452,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 41,
-    "sku": "FB031200041",
+    "id": 122,
+    "sku": "FB0312000122",
     "slug": "le-sua",
     "name": "Lê Sữa",
     "price": 129000,
@@ -492,8 +1464,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 42,
-    "sku": "FB031200042",
+    "id": 123,
+    "sku": "FB0312000123",
     "slug": "dua-luoi-aladin",
     "name": "Dưa Lưới Aladin",
     "price": 129000,
@@ -504,8 +1476,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 43,
-    "sku": "FB031200043",
+    "id": 124,
+    "sku": "FB0312000124",
     "slug": "nho-xanh",
     "name": "Nho Xanh",
     "price": 369000,
@@ -516,8 +1488,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 44,
-    "sku": "FB031200044",
+    "id": 125,
+    "sku": "FB0312000125",
     "slug": "nho-den",
     "name": "Nho Đen",
     "price": 299000,
@@ -528,8 +1500,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 45,
-    "sku": "FB031200045",
+    "id": 126,
+    "sku": "FB0312000126",
     "slug": "nho-do",
     "name": "Nho Đỏ",
     "price": 299000,
@@ -540,8 +1512,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 46,
-    "sku": "FB031200046",
+    "id": 127,
+    "sku": "FB0312000127",
     "slug": "nho-sua",
     "name": "Nho Sữa Đài Loan",
     "price": 350000,
@@ -552,8 +1524,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 47,
-    "sku": "FB031200047",
+    "id": 128,
+    "sku": "FB0312000128",
     "slug": "nho-sua-han-quoc",
     "name": "Nho Sữa Hàn Quốc",
     "price": 850000,
@@ -564,8 +1536,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 48,
-    "sku": "FB031200048",
+    "id": 129,
+    "sku": "FB0312000129",
     "slug": "kiwi-vang-new-zealand",
     "name": "Kiwi Vàng New Zealand",
     "price": 289000,
@@ -576,8 +1548,8 @@
     "subcategory": "imported-fruits"
   },
   {
-    "id": 49,
-    "sku": "FB031200049",
+    "id": 130,
+    "sku": "FB0312000130",
     "slug": "bo-hoa-tk026",
     "name": "Bó Hoa TK026",
     "price": 900000,
@@ -588,8 +1560,8 @@
     "subcategory": "flowers"
   },
   {
-    "id": 50,
-    "sku": "FB031200050",
+    "id": 131,
+    "sku": "FB0312000131",
     "slug": "bo-hoa-tk027",
     "name": "Bó Hoa TK027",
     "price": 790000,
@@ -600,8 +1572,8 @@
     "subcategory": "flowers"
   },
   {
-    "id": 51,
-    "sku": "FB031200051",
+    "id": 132,
+    "sku": "FB0312000132",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk254",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TK254",
     "price": 2400000,
@@ -612,8 +1584,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 52,
-    "sku": "FB031200052",
+    "id": 133,
+    "sku": "FB0312000133",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tk239",
     "name": "Giỏ Cherry Kèm Hoa Tươi TK239",
     "price": 850000,
@@ -624,8 +1596,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 53,
-    "sku": "FB031200053",
+    "id": 134,
+    "sku": "FB0312000134",
     "slug": "thap-cam-dang-huong-tk172",
     "name": "Thập Cẩm Dâng Hương TK172",
     "price": 2100000,
@@ -636,8 +1608,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 54,
-    "sku": "FB031200054",
+    "id": 135,
+    "sku": "FB0312000135",
     "slug": "mam-le-tk01",
     "name": "Mâm Lễ TK01",
     "price": 1600000,
@@ -648,8 +1620,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 55,
-    "sku": "FB031200055",
+    "id": 136,
+    "sku": "FB0312000136",
     "slug": "hoa-qua-vieng-vh2",
     "name": "Hoa Quả Viếng VH02",
     "price": 2900000,
@@ -660,8 +1632,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 56,
-    "sku": "FB031200056",
+    "id": 137,
+    "sku": "FB0312000137",
     "slug": "hoa-qua-vieng-vh10",
     "name": "Hoa Quả Viếng VH10",
     "price": 1500000,
@@ -672,8 +1644,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 57,
-    "sku": "FB031200057",
+    "id": 138,
+    "sku": "FB0312000138",
     "slug": "thap-tao-dang-huong-tk223",
     "name": "Tháp Táo Dâng Hương TK223",
     "price": 3200000,
@@ -684,8 +1656,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 58,
-    "sku": "FB031200058",
+    "id": 139,
+    "sku": "FB0312000139",
     "slug": "hoa-qua-vieng-vh9",
     "name": "Hoa Quả Viếng VH09",
     "price": 4500000,
@@ -696,8 +1668,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 59,
-    "sku": "FB031200059",
+    "id": 140,
+    "sku": "FB0312000140",
     "slug": "hop-qua-trai-cay-tk221",
     "name": "Hộp Quà Trái Cây TK221",
     "price": 400000,
@@ -708,8 +1680,8 @@
     "subcategory": "box"
   },
   {
-    "id": 60,
-    "sku": "FB031200060",
+    "id": 141,
+    "sku": "FB0312000141",
     "slug": "gio-cherry-kem-hoa-tuoi-tk247",
     "name": "Giỏ Cherry Kèm Hoa Tươi TK247",
     "price": 1400000,
@@ -720,8 +1692,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 61,
-    "sku": "FB031200061",
+    "id": 142,
+    "sku": "FB0312000142",
     "slug": "hoa-qua-vieng-vh5",
     "name": "Hoa Quả Viếng VH05",
     "price": 1500000,
@@ -732,8 +1704,8 @@
     "subcategory": "funeral"
   },
   {
-    "id": 62,
-    "sku": "FB031200062",
+    "id": 143,
+    "sku": "FB0312000143",
     "slug": "gio-trai-cay-tk219",
     "name": "Giỏ Trái Cây TK219",
     "price": 700000,
@@ -744,8 +1716,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 63,
-    "sku": "FB031200063",
+    "id": 144,
+    "sku": "FB0312000144",
     "slug": "banh-kem-ll20",
     "name": "Bánh Kem LL20",
     "price": 129000,
@@ -756,8 +1728,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 64,
-    "sku": "FB031200064",
+    "id": 145,
+    "sku": "FB0312000145",
     "slug": "banh-kem-ll17",
     "name": "Bánh Kem LL17",
     "price": 129000,
@@ -768,8 +1740,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 65,
-    "sku": "FB031200065",
+    "id": 146,
+    "sku": "FB0312000146",
     "slug": "banh-kem-ht04",
     "name": "Bánh Kem HT04",
     "price": 310000,
@@ -780,8 +1752,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 66,
-    "sku": "FB031200066",
+    "id": 147,
+    "sku": "FB0312000147",
     "slug": "banh-kem-lq03",
     "name": "Bánh Kem LQ03",
     "price": 330000,
@@ -792,8 +1764,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 67,
-    "sku": "FB031200067",
+    "id": 148,
+    "sku": "FB0312000148",
     "slug": "banh-kem-ht20",
     "name": "Bánh Kem HT20",
     "price": 310000,
@@ -804,8 +1776,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 68,
-    "sku": "FB031200068",
+    "id": 149,
+    "sku": "FB0312000149",
     "slug": "banh-kem-lq07",
     "name": "Bánh Kem LQ07",
     "price": 330000,
@@ -816,8 +1788,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 69,
-    "sku": "FB031200069",
+    "id": 150,
+    "sku": "FB0312000150",
     "slug": "banh-kem-ll04",
     "name": "Bánh Kem LL04",
     "price": 129000,
@@ -828,8 +1800,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 70,
-    "sku": "FB031200070",
+    "id": 151,
+    "sku": "FB0312000151",
     "slug": "banh-kem-ll21",
     "name": "Bánh Kem LL21",
     "price": 129000,
@@ -840,8 +1812,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 71,
-    "sku": "FB031200071",
+    "id": 152,
+    "sku": "FB0312000152",
     "slug": "banh-kem-ll02",
     "name": "Bánh Kem LL02",
     "price": 129000,
@@ -852,8 +1824,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 72,
-    "sku": "FB031200072",
+    "id": 153,
+    "sku": "FB0312000153",
     "slug": "banh-kem-lq14",
     "name": "Bánh Kem LQ14",
     "price": 330000,
@@ -864,8 +1836,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 73,
-    "sku": "FB031200073",
+    "id": 154,
+    "sku": "FB0312000154",
     "slug": "banh-kem-ht18",
     "name": "Bánh Kem HT18",
     "price": 310000,
@@ -876,8 +1848,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 74,
-    "sku": "FB031200074",
+    "id": 155,
+    "sku": "FB0312000155",
     "slug": "banh-kem-ht13",
     "name": "Bánh Kem HT13",
     "price": 310000,
@@ -888,8 +1860,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 75,
-    "sku": "FB031200075",
+    "id": 156,
+    "sku": "FB0312000156",
     "slug": "banh-kem-ll05",
     "name": "Bánh Kem LL05",
     "price": 129000,
@@ -900,8 +1872,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 76,
-    "sku": "FB031200076",
+    "id": 157,
+    "sku": "FB0312000157",
     "slug": "banh-kem-lq17",
     "name": "Bánh Kem LQ17",
     "price": 330000,
@@ -912,8 +1884,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 77,
-    "sku": "FB031200077",
+    "id": 158,
+    "sku": "FB0312000158",
     "slug": "banh-kem-ll09",
     "name": "Bánh Kem LL09",
     "price": 129000,
@@ -924,8 +1896,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 78,
-    "sku": "FB031200078",
+    "id": 159,
+    "sku": "FB0312000159",
     "slug": "banh-kem-ht02",
     "name": "Bánh Kem HT02",
     "price": 310000,
@@ -936,8 +1908,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 79,
-    "sku": "FB031200079",
+    "id": 160,
+    "sku": "FB0312000160",
     "slug": "banh-kem-lq10",
     "name": "Bánh Kem LQ10",
     "price": 330000,
@@ -948,8 +1920,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 80,
-    "sku": "FB031200080",
+    "id": 161,
+    "sku": "FB0312000161",
     "slug": "banh-kem-ll08",
     "name": "Bánh Kem LL08",
     "price": 129000,
@@ -960,8 +1932,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 81,
-    "sku": "FB031200081",
+    "id": 162,
+    "sku": "FB0312000162",
     "slug": "banh-kem-ht08",
     "name": "Bánh Kem HT08",
     "price": 310000,
@@ -972,8 +1944,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 82,
-    "sku": "FB031200082",
+    "id": 163,
+    "sku": "FB0312000163",
     "slug": "banh-kem-lq15",
     "name": "Bánh Kem LQ15",
     "price": 330000,
@@ -984,8 +1956,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 83,
-    "sku": "FB031200083",
+    "id": 164,
+    "sku": "FB0312000164",
     "slug": "banh-kem-lq11",
     "name": "Bánh Kem LQ11",
     "price": 330000,
@@ -996,8 +1968,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 84,
-    "sku": "FB031200084",
+    "id": 165,
+    "sku": "FB0312000165",
     "slug": "banh-kem-ht03",
     "name": "Bánh Kem HT03",
     "price": 310000,
@@ -1008,8 +1980,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 85,
-    "sku": "FB031200085",
+    "id": 166,
+    "sku": "FB0312000166",
     "slug": "banh-kem-ht05",
     "name": "Bánh Kem HT05",
     "price": 310000,
@@ -1020,8 +1992,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 86,
-    "sku": "FB031200086",
+    "id": 167,
+    "sku": "FB0312000167",
     "slug": "banh-kem-lq18",
     "name": "Bánh Kem LQ18",
     "price": 330000,
@@ -1032,8 +2004,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 87,
-    "sku": "FB031200087",
+    "id": 168,
+    "sku": "FB0312000168",
     "slug": "banh-kem-qd02",
     "name": "Bánh Kem QD02",
     "price": 350000,
@@ -1044,8 +2016,8 @@
     "subcategory": "qd"
   },
   {
-    "id": 88,
-    "sku": "FB031200088",
+    "id": 169,
+    "sku": "FB0312000169",
     "slug": "banh-kem-lq08",
     "name": "Bánh Kem LQ08",
     "price": 330000,
@@ -1056,8 +2028,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 89,
-    "sku": "FB031200089",
+    "id": 170,
+    "sku": "FB0312000170",
     "slug": "banh-kem-lq20",
     "name": "Bánh Kem LQ20",
     "price": 330000,
@@ -1068,8 +2040,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 90,
-    "sku": "FB031200090",
+    "id": 171,
+    "sku": "FB0312000171",
     "slug": "banh-kem-lq02",
     "name": "Bánh Kem LQ02",
     "price": 330000,
@@ -1080,8 +2052,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 91,
-    "sku": "FB031200091",
+    "id": 172,
+    "sku": "FB0312000172",
     "slug": "banh-kem-qd06",
     "name": "Bánh Kem QD06",
     "price": 350000,
@@ -1092,8 +2064,8 @@
     "subcategory": "qd"
   },
   {
-    "id": 92,
-    "sku": "FB031200092",
+    "id": 173,
+    "sku": "FB0312000173",
     "slug": "banh-kem-lq22",
     "name": "Bánh Kem LQ22",
     "price": 330000,
@@ -1104,8 +2076,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 93,
-    "sku": "FB031200093",
+    "id": 174,
+    "sku": "FB0312000174",
     "slug": "banh-kem-ll14",
     "name": "Bánh Kem LL14",
     "price": 129000,
@@ -1116,8 +2088,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 94,
-    "sku": "FB031200094",
+    "id": 175,
+    "sku": "FB0312000175",
     "slug": "banh-kem-ht12",
     "name": "Bánh Kem HT12",
     "price": 310000,
@@ -1128,8 +2100,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 95,
-    "sku": "FB031200095",
+    "id": 176,
+    "sku": "FB0312000176",
     "slug": "banh-kem-lq16",
     "name": "Bánh Kem LQ16",
     "price": 330000,
@@ -1140,8 +2112,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 96,
-    "sku": "FB031200096",
+    "id": 177,
+    "sku": "FB0312000177",
     "slug": "banh-kem-lq06",
     "name": "Bánh Kem LQ06",
     "price": 330000,
@@ -1152,8 +2124,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 97,
-    "sku": "FB031200097",
+    "id": 178,
+    "sku": "FB0312000178",
     "slug": "banh-kem-ht17",
     "name": "Bánh Kem HT17",
     "price": 310000,
@@ -1164,8 +2136,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 98,
-    "sku": "FB031200098",
+    "id": 179,
+    "sku": "FB0312000179",
     "slug": "banh-kem-lq13",
     "name": "Bánh Kem LQ13",
     "price": 330000,
@@ -1176,8 +2148,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 99,
-    "sku": "FB031200099",
+    "id": 180,
+    "sku": "FB0312000180",
     "slug": "banh-kem-ll19",
     "name": "Bánh Kem LL19",
     "price": 129000,
@@ -1188,8 +2160,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 100,
-    "sku": "FB0312000100",
+    "id": 181,
+    "sku": "FB0312000181",
     "slug": "banh-kem-qd05",
     "name": "Bánh Kem QD05",
     "price": 350000,
@@ -1200,8 +2172,8 @@
     "subcategory": "qd"
   },
   {
-    "id": 101,
-    "sku": "FB0312000101",
+    "id": 182,
+    "sku": "FB0312000182",
     "slug": "banh-kem-lq09",
     "name": "Bánh Kem LQ09",
     "price": 330000,
@@ -1212,8 +2184,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 102,
-    "sku": "FB0312000102",
+    "id": 183,
+    "sku": "FB0312000183",
     "slug": "banh-kem-lq12",
     "name": "Bánh Kem LQ12",
     "price": 330000,
@@ -1224,8 +2196,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 103,
-    "sku": "FB0312000103",
+    "id": 184,
+    "sku": "FB0312000184",
     "slug": "banh-kem-ll06",
     "name": "Bánh Kem LL06",
     "price": 129000,
@@ -1236,8 +2208,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 104,
-    "sku": "FB0312000104",
+    "id": 185,
+    "sku": "FB0312000185",
     "slug": "banh-kem-ll13",
     "name": "Bánh Kem LL13",
     "price": 129000,
@@ -1248,8 +2220,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 105,
-    "sku": "FB0312000105",
+    "id": 186,
+    "sku": "FB0312000186",
     "slug": "banh-kem-qd03",
     "name": "Bánh Kem QD03",
     "price": 350000,
@@ -1260,8 +2232,8 @@
     "subcategory": "qd"
   },
   {
-    "id": 106,
-    "sku": "FB0312000106",
+    "id": 187,
+    "sku": "FB0312000187",
     "slug": "banh-kem-ht15",
     "name": "Bánh Kem HT15",
     "price": 310000,
@@ -1272,8 +2244,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 107,
-    "sku": "FB0312000107",
+    "id": 188,
+    "sku": "FB0312000188",
     "slug": "banh-kem-ht11",
     "name": "Bánh Kem HT11",
     "price": 310000,
@@ -1284,8 +2256,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 108,
-    "sku": "FB0312000108",
+    "id": 189,
+    "sku": "FB0312000189",
     "slug": "banh-kem-ht16",
     "name": "Bánh Kem HT16",
     "price": 310000,
@@ -1296,8 +2268,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 109,
-    "sku": "FB0312000109",
+    "id": 190,
+    "sku": "FB0312000190",
     "slug": "banh-kem-ll11",
     "name": "Bánh Kem LL11",
     "price": 129000,
@@ -1308,8 +2280,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 110,
-    "sku": "FB0312000110",
+    "id": 191,
+    "sku": "FB0312000191",
     "slug": "banh-kem-lq19",
     "name": "Bánh Kem LQ19",
     "price": 330000,
@@ -1320,8 +2292,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 111,
-    "sku": "FB0312000111",
+    "id": 192,
+    "sku": "FB0312000192",
     "slug": "banh-kem-lq23",
     "name": "Bánh Kem LQ23",
     "price": 330000,
@@ -1332,8 +2304,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 112,
-    "sku": "FB0312000112",
+    "id": 193,
+    "sku": "FB0312000193",
     "slug": "banh-kem-ht09",
     "name": "Bánh Kem HT09",
     "price": 310000,
@@ -1344,8 +2316,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 113,
-    "sku": "FB0312000113",
+    "id": 194,
+    "sku": "FB0312000194",
     "slug": "banh-kem-ht14",
     "name": "Bánh Kem HT14",
     "price": 310000,
@@ -1356,8 +2328,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 114,
-    "sku": "FB0312000114",
+    "id": 195,
+    "sku": "FB0312000195",
     "slug": "banh-kem-qd01",
     "name": "Bánh Kem QD01",
     "price": 350000,
@@ -1368,8 +2340,8 @@
     "subcategory": "qd"
   },
   {
-    "id": 115,
-    "sku": "FB0312000115",
+    "id": 196,
+    "sku": "FB0312000196",
     "slug": "banh-kem-ll18",
     "name": "Bánh Kem LL18",
     "price": 129000,
@@ -1380,8 +2352,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 116,
-    "sku": "FB0312000116",
+    "id": 197,
+    "sku": "FB0312000197",
     "slug": "banh-kem-ll03",
     "name": "Bánh Kem LL03",
     "price": 129000,
@@ -1392,8 +2364,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 117,
-    "sku": "FB0312000117",
+    "id": 198,
+    "sku": "FB0312000198",
     "slug": "banh-kem-ll07",
     "name": "Bánh Kem LL07",
     "price": 129000,
@@ -1404,8 +2376,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 118,
-    "sku": "FB0312000118",
+    "id": 199,
+    "sku": "FB0312000199",
     "slug": "banh-kem-lq04",
     "name": "Bánh Kem LQ04",
     "price": 330000,
@@ -1416,8 +2388,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 119,
-    "sku": "FB0312000119",
+    "id": 200,
+    "sku": "FB0312000200",
     "slug": "banh-kem-ll15",
     "name": "Bánh Kem LL15",
     "price": 129000,
@@ -1428,8 +2400,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 120,
-    "sku": "FB0312000120",
+    "id": 201,
+    "sku": "FB0312000201",
     "slug": "banh-kem-ll01",
     "name": "Bánh Kem LL01",
     "price": 129000,
@@ -1440,8 +2412,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 121,
-    "sku": "FB0312000121",
+    "id": 202,
+    "sku": "FB0312000202",
     "slug": "banh-kem-ht06",
     "name": "Bánh Kem HT06",
     "price": 310000,
@@ -1452,8 +2424,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 122,
-    "sku": "FB0312000122",
+    "id": 203,
+    "sku": "FB0312000203",
     "slug": "banh-kem-ll16",
     "name": "Bánh Kem LL16",
     "price": 129000,
@@ -1464,8 +2436,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 123,
-    "sku": "FB0312000123",
+    "id": 204,
+    "sku": "FB0312000204",
     "slug": "banh-kem-lq21",
     "name": "Bánh Kem LQ21",
     "price": 330000,
@@ -1476,8 +2448,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 124,
-    "sku": "FB0312000124",
+    "id": 205,
+    "sku": "FB0312000205",
     "slug": "banh-kem-qd04",
     "name": "Bánh Kem QD04",
     "price": 350000,
@@ -1488,8 +2460,8 @@
     "subcategory": "qd"
   },
   {
-    "id": 125,
-    "sku": "FB0312000125",
+    "id": 206,
+    "sku": "FB0312000206",
     "slug": "banh-kem-ht01",
     "name": "Bánh Kem HT01",
     "price": 310000,
@@ -1500,8 +2472,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 126,
-    "sku": "FB0312000126",
+    "id": 207,
+    "sku": "FB0312000207",
     "slug": "banh-kem-ht10",
     "name": "Bánh Kem HT10",
     "price": 310000,
@@ -1512,8 +2484,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 127,
-    "sku": "FB0312000127",
+    "id": 208,
+    "sku": "FB0312000208",
     "slug": "banh-kem-lq01",
     "name": "Bánh Kem LQ01",
     "price": 330000,
@@ -1524,8 +2496,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 128,
-    "sku": "FB0312000128",
+    "id": 209,
+    "sku": "FB0312000209",
     "slug": "banh-kem-qd07",
     "name": "Bánh Kem QD07",
     "price": 350000,
@@ -1536,8 +2508,8 @@
     "subcategory": "qd"
   },
   {
-    "id": 129,
-    "sku": "FB0312000129",
+    "id": 210,
+    "sku": "FB0312000210",
     "slug": "banh-kem-ll10",
     "name": "Bánh Kem LL10",
     "price": 129000,
@@ -1548,8 +2520,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 130,
-    "sku": "FB0312000130",
+    "id": 211,
+    "sku": "FB0312000211",
     "slug": "banh-kem-lq05",
     "name": "Bánh Kem LQ05",
     "price": 330000,
@@ -1560,8 +2532,8 @@
     "subcategory": "lq"
   },
   {
-    "id": 131,
-    "sku": "FB0312000131",
+    "id": 212,
+    "sku": "FB0312000212",
     "slug": "banh-kem-ht07",
     "name": "Bánh Kem HT07",
     "price": 310000,
@@ -1572,8 +2544,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 132,
-    "sku": "FB0312000132",
+    "id": 213,
+    "sku": "FB0312000213",
     "slug": "banh-kem-ll12",
     "name": "Bánh Kem LL12",
     "price": 129000,
@@ -1584,8 +2556,8 @@
     "subcategory": "ll"
   },
   {
-    "id": 133,
-    "sku": "FB0312000133",
+    "id": 214,
+    "sku": "FB0312000214",
     "slug": "banh-kem-ht19",
     "name": "Bánh Kem HT19",
     "price": 310000,
@@ -1596,8 +2568,8 @@
     "subcategory": "ht"
   },
   {
-    "id": 134,
-    "sku": "FB0312000134",
+    "id": 215,
+    "sku": "FB0312000215",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tn1",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TN1",
     "price": 650000,
@@ -1608,8 +2580,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 135,
-    "sku": "FB0312000135",
+    "id": 216,
+    "sku": "FB0312000216",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tn2",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TN2",
     "price": 750000,
@@ -1620,8 +2592,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 136,
-    "sku": "FB0312000136",
+    "id": 217,
+    "sku": "FB0312000217",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tn3",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TN3",
     "price": 700000,
@@ -1632,8 +2604,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 137,
-    "sku": "FB0312000137",
+    "id": 218,
+    "sku": "FB0312000218",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tn4",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TN4",
     "price": 750000,
@@ -1644,8 +2616,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 138,
-    "sku": "FB0312000138",
+    "id": 219,
+    "sku": "FB0312000219",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tn5",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TN5",
     "price": 850000,
@@ -1656,8 +2628,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 139,
-    "sku": "FB0312000139",
+    "id": 220,
+    "sku": "FB0312000220",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tn6",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TN6",
     "price": 899000,
@@ -1668,8 +2640,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 140,
-    "sku": "FB0312000140",
+    "id": 221,
+    "sku": "FB0312000221",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tn8",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TN8",
     "price": 899000,
@@ -1680,8 +2652,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 141,
-    "sku": "FB0312000141",
+    "id": 222,
+    "sku": "FB0312000222",
     "slug": "gio-trai-cay-kem-hoa-tuoi-tn9",
     "name": "Giỏ Trái Cây Kèm Hoa Tươi TN9",
     "price": 950000,
@@ -1692,8 +2664,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 142,
-    "sku": "FB0312000142",
+    "id": 223,
+    "sku": "FB0312000223",
     "slug": "gio-trai-cay-tn10",
     "name": "Giỏ Trái Cây TN10",
     "price": 500000,
@@ -1704,8 +2676,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 143,
-    "sku": "FB0312000143",
+    "id": 224,
+    "sku": "FB0312000224",
     "slug": "gio-trai-cay-tn11",
     "name": "Giỏ Trái Cây TN11",
     "price": 600000,
@@ -1716,8 +2688,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 144,
-    "sku": "FB0312000144",
+    "id": 225,
+    "sku": "FB0312000225",
     "slug": "gio-trai-cay-tn12",
     "name": "Giỏ Trái Cây TN12",
     "price": 600000,
@@ -1728,8 +2700,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 145,
-    "sku": "FB0312000145",
+    "id": 226,
+    "sku": "FB0312000226",
     "slug": "gio-trai-cay-tn13",
     "name": "Giỏ Trái Cây TN13",
     "price": 600000,
@@ -1740,8 +2712,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 146,
-    "sku": "FB0312000146",
+    "id": 227,
+    "sku": "FB0312000227",
     "slug": "gio-trai-cay-tn14",
     "name": "Giỏ Trái Cây TN14",
     "price": 600000,
@@ -1752,8 +2724,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 147,
-    "sku": "FB0312000147",
+    "id": 228,
+    "sku": "FB0312000228",
     "slug": "gio-trai-cay-tn15",
     "name": "Giỏ Trái Cây TN15",
     "price": 600000,
@@ -1764,8 +2736,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 148,
-    "sku": "FB0312000148",
+    "id": 229,
+    "sku": "FB0312000229",
     "slug": "gio-trai-cay-tn16",
     "name": "Giỏ Trái Cây TN16",
     "price": 650000,
@@ -1776,8 +2748,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 149,
-    "sku": "FB0312000149",
+    "id": 230,
+    "sku": "FB0312000230",
     "slug": "gio-trai-cay-tn17",
     "name": "Giỏ Trái Cây TN17",
     "price": 550000,
@@ -1788,8 +2760,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 150,
-    "sku": "FB0312000150",
+    "id": 231,
+    "sku": "FB0312000231",
     "slug": "gio-trai-cay-tn18",
     "name": "Giỏ Trái Cây TN18",
     "price": 600000,
@@ -1800,8 +2772,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 151,
-    "sku": "FB0312000151",
+    "id": 232,
+    "sku": "FB0312000232",
     "slug": "gio-trai-cay-tn25",
     "name": "Giỏ Trái Cây TN25",
     "price": 500000,
@@ -1812,8 +2784,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 152,
-    "sku": "FB0312000152",
+    "id": 233,
+    "sku": "FB0312000233",
     "slug": "gio-trai-cay-tn26",
     "name": "Giỏ Trái Cây TN26",
     "price": 600000,
@@ -1824,8 +2796,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 153,
-    "sku": "FB0312000153",
+    "id": 234,
+    "sku": "FB0312000234",
     "slug": "gio-trai-cay-tn27",
     "name": "Giỏ Trái Cây TN27",
     "price": 600000,
@@ -1836,8 +2808,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 154,
-    "sku": "FB0312000154",
+    "id": 235,
+    "sku": "FB0312000235",
     "slug": "gio-trai-cay-tn28",
     "name": "Giỏ Trái Cây TN28",
     "price": 600000,
@@ -1848,8 +2820,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 155,
-    "sku": "FB0312000155",
+    "id": 236,
+    "sku": "FB0312000236",
     "slug": "gio-trai-cay-tn30",
     "name": "Giỏ Trái Cây TN30",
     "price": 600000,
@@ -1860,8 +2832,8 @@
     "subcategory": "fresh"
   },
   {
-    "id": 156,
-    "sku": "FB0312000156",
+    "id": 237,
+    "sku": "FB0312000237",
     "slug": "hop-qua-trai-cay-tn19",
     "name": "Hộp Quà Trái Cây TN19",
     "price": 500000,
@@ -1872,8 +2844,8 @@
     "subcategory": "box"
   },
   {
-    "id": 157,
-    "sku": "FB0312000157",
+    "id": 238,
+    "sku": "FB0312000238",
     "slug": "hop-qua-trai-cay-tn20",
     "name": "Hộp Quà Trái Cây TN20",
     "price": 450000,
@@ -1884,8 +2856,8 @@
     "subcategory": "box"
   },
   {
-    "id": 158,
-    "sku": "FB0312000158",
+    "id": 239,
+    "sku": "FB0312000239",
     "slug": "hop-qua-trai-cay-tn21",
     "name": "Hộp Quà Trái Cây TN21",
     "price": 699000,
@@ -1896,8 +2868,8 @@
     "subcategory": "box"
   },
   {
-    "id": 159,
-    "sku": "FB0312000159",
+    "id": 240,
+    "sku": "FB0312000240",
     "slug": "hop-qua-trai-cay-tn22",
     "name": "Hộp Quà Trái Cây TN22",
     "price": 1200000,
@@ -1908,8 +2880,8 @@
     "subcategory": "box"
   },
   {
-    "id": 160,
-    "sku": "FB0312000160",
+    "id": 241,
+    "sku": "FB0312000241",
     "slug": "hop-qua-trai-cay-tn23",
     "name": "Hộp Quà Trái Cây TN23",
     "price": 999000,
@@ -1920,8 +2892,8 @@
     "subcategory": "box"
   },
   {
-    "id": 161,
-    "sku": "FB0312000161",
+    "id": 242,
+    "sku": "FB0312000242",
     "slug": "hop-qua-trai-cay-tn24",
     "name": "Hộp Quà Trái Cây TN24",
     "price": 750000,
@@ -1932,8 +2904,8 @@
     "subcategory": "box"
   },
   {
-    "id": 162,
-    "sku": "FB0312000162",
+    "id": 243,
+    "sku": "FB0312000243",
     "slug": "hop-qua-trai-cay-tn29",
     "name": "Hộp Quà Trái Cây TN29",
     "price": 450000,
@@ -1944,8 +2916,8 @@
     "subcategory": "box"
   },
   {
-    "id": 163,
-    "sku": "FB0312000163",
+    "id": 244,
+    "sku": "FB0312000244",
     "slug": "hop-qua-trai-cay-tn31",
     "name": "Hộp Quà Trái Cây TN31",
     "price": 600000,
@@ -1956,8 +2928,8 @@
     "subcategory": "box"
   },
   {
-    "id": 164,
-    "sku": "FB0312000164",
+    "id": 245,
+    "sku": "FB0312000245",
     "slug": "hop-qua-trai-cay-tn7",
     "name": "Hộp Quà Trái Cây TN7",
     "price": 899000,
@@ -1968,8 +2940,8 @@
     "subcategory": "box"
   },
   {
-    "id": 165,
-    "sku": "FB0312000165",
+    "id": 246,
+    "sku": "FB0312000246",
     "slug": "banh-kem-tot-nghiep-yv1",
     "name": "Bánh Kem Tốt Nghiệp YV1",
     "price": 129000,
@@ -1980,8 +2952,8 @@
     "subcategory": "yv"
   },
   {
-    "id": 166,
-    "sku": "FB0312000166",
+    "id": 247,
+    "sku": "FB0312000247",
     "slug": "banh-kem-tot-nghiep-yv2",
     "name": "Bánh Kem Tốt Nghiệp YV2",
     "price": 129000,
@@ -1992,8 +2964,8 @@
     "subcategory": "yv"
   },
   {
-    "id": 167,
-    "sku": "FB0312000167",
+    "id": 248,
+    "sku": "FB0312000248",
     "slug": "banh-kem-tot-nghiep-yv3",
     "name": "Bánh Kem Tốt Nghiệp YV3",
     "price": 129000,
@@ -2004,8 +2976,8 @@
     "subcategory": "yv"
   },
   {
-    "id": 168,
-    "sku": "FB0312000168",
+    "id": 249,
+    "sku": "FB0312000249",
     "slug": "banh-kem-tot-nghiep-yv4",
     "name": "Bánh Kem Tốt Nghiệp YV4",
     "price": 129000,
@@ -2016,8 +2988,8 @@
     "subcategory": "yv"
   },
   {
-    "id": 169,
-    "sku": "FB0312000169",
+    "id": 250,
+    "sku": "FB0312000250",
     "slug": "banh-kem-tot-nghiep-yv5",
     "name": "Bánh Kem Tốt Nghiệp YV5",
     "price": 129000,
@@ -2028,8 +3000,8 @@
     "subcategory": "yv"
   },
   {
-    "id": 170,
-    "sku": "FB0312000170",
+    "id": 251,
+    "sku": "FB0312000251",
     "slug": "banh-kem-tot-nghiep-yv6",
     "name": "Bánh Kem Tốt Nghiệp YV6",
     "price": 129000,
@@ -2040,8 +3012,8 @@
     "subcategory": "yv"
   },
   {
-    "id": 171,
-    "sku": "FB0312000171",
+    "id": 252,
+    "sku": "FB0312000252",
     "slug": "banh-kem-tot-nghiep-yv7",
     "name": "Bánh Kem Tốt Nghiệp YV7",
     "price": 129000,
@@ -2052,8 +3024,8 @@
     "subcategory": "yv"
   },
   {
-    "id": 172,
-    "sku": "FB0312000172",
+    "id": 253,
+    "sku": "FB0312000253",
     "slug": "banh-kem-tot-nghiep-yv8",
     "name": "Bánh Kem Tốt Nghiệp YV8",
     "price": 129000,

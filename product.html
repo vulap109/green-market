@@ -90,6 +90,10 @@
             return qty;
         }
 
+        function isProductContactPrice(product) {
+            return Number(product && product.price || 0) === 0;
+        }
+
         function handleAddToCart() {
             if (!currentProduct) {
                 Swal.fire({
@@ -102,7 +106,9 @@
 
             const qty = getSelectedQty();
             const selectedCakeSize = getSelectedCakeSize();
-            const selectedPrice = selectedCakeSize ? selectedCakeSize.price : Number(currentProduct.finalprice || 0);
+            const selectedPrice = isProductContactPrice(currentProduct)
+                ? 0
+                : (selectedCakeSize ? selectedCakeSize.price : Number(currentProduct.finalprice || 0));
 
             addToCart({
                 id: currentProduct.id,
@@ -155,6 +161,13 @@
             const ogrPriceElement = document.getElementById("productOgrPrice");
             if (!priceElement || !ogrPriceElement || !product) return;
 
+            if (isProductContactPrice(product)) {
+                priceElement.innerText = "Liên hệ";
+                ogrPriceElement.innerText = "";
+                ogrPriceElement.classList.add("hidden");
+                return;
+            }
+
             if (product.category === "cream-cake") {
                 const sizeOptions = getCreamCakeSizeOptions(product);
                 const selectedCakeSize = getSelectedCakeSize() || sizeOptions[0];
@@ -169,7 +182,7 @@
             const ogPrice = Number(product.price || 0);
 
             priceElement.innerText = formatProductMoney(finalPrice);
-            if (ogPrice >= finalPrice) {
+            if (ogPrice > finalPrice) {
                 ogrPriceElement.innerText = formatProductMoney(ogPrice);
                 ogrPriceElement.classList.remove("hidden");
             } else {

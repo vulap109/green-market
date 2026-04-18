@@ -11,15 +11,22 @@ function getProductSlug(product) {
 
 function productCard(p) {
     const productSlug = getProductSlug(p);
+    const originalPrice = Number(p.price || 0);
+    const finalPrice = Number(p.finalprice || 0);
+    const isContactPrice = originalPrice === 0 && finalPrice === 0;
     const discountPercent = "-" + p.discount + "%";
     const flashSaleIcon = p.discount >= 11
         ? '<img id="icon-flash-sale" src="./images/icon_flash_sale.png" class="absolute top-0 right-2 img-conver" width="80px">'
         : "";
     let discountSpan = "";
     let priceSpan = "";
-    if (p.discount > 0){
+    const finalPriceText = isContactPrice
+        ? "Liên hệ"
+        : `${finalPrice.toLocaleString()} ₫`;
+
+    if (!isContactPrice && p.discount > 0){
         discountSpan = `<span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-medium px-2 py-1 rounded">${discountPercent}</span>`;
-        priceSpan = `<span class="text-gray-400 line-through text-xs font-medium">${p.price.toLocaleString()} ₫</span>`;
+        priceSpan = `<span class="text-gray-400 line-through text-xs font-medium">${originalPrice.toLocaleString()} ₫</span>`;
     }
 
     return `
@@ -34,7 +41,7 @@ function productCard(p) {
                 <a href="product.html?slug=${encodeURIComponent(productSlug)}" class="text-sm font-bold text-gray-800 line-clamp-2 mb-2 leading-tight hover:text-primary transition cursor-pointer">${p.name}</a>
                 <div class="mt-auto">
                     <div class="flex flex-wrap justify-center items-center gap-2">
-                        <span class="text-red-600 font-black text-base">${p.finalprice.toLocaleString()} ₫</span>
+                        <span class="text-red-600 font-black text-base">${finalPriceText}</span>
                         ${priceSpan}
                     </div>
                     <button onclick="handleAddToCartAndOrder('${productSlug}')"
